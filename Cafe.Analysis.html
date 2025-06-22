@@ -2,28 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=5.0"/>
-  <title>Café Harmony Sales Performnace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Harmony Dashboard</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f6f9fc;
       margin: 0;
       padding: 0;
+      background-image: url('https://images.unsplash.com/photo-1542831371-d531d36971e6'); /* Replace with your own image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
     }
 
     header {
-      background-color: #3f51b5;
-      color: white;
-      padding: 20px;
       text-align: center;
+      color: #3f51b5;
+      margin-bottom: 30px;
     }
 
     .dashboard {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 20px;
     }
 
     .card {
@@ -36,19 +46,21 @@
     h2 {
       font-size: 1.2rem;
       margin-bottom: 10px;
+      color: #333;
     }
 
     .kpi {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: bold;
-      color: #333;
+      color: #222;
     }
 
     .section-title {
       grid-column: 1 / -1;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #444;
       margin-top: 40px;
+      font-weight: bold;
     }
 
     ul {
@@ -64,133 +76,63 @@
 </head>
 <body>
 
-<header>
-  <h1>Café Harmony Sales Performance Dashboard</h1>
-</header>
+  <div class="container">
+    <header>
+      <h1>Café Harmony Sales Dashboard</h1>
+    </header>
 
-<main class="dashboard">
+    <main class="dashboard">
 
-  <!-- KPIs -->
-  <div class="card">
-    <h2>Total Revenue</h2>
-    <div class="kpi">$12.59K</div>
-  </div>
+      <!-- KPIs -->
+      <div class="card"><h2>Total Revenue</h2><div class="kpi">$12.59K</div></div>
+      <div class="card"><h2>Total Sales</h2><div class="kpi">3,012 Units</div></div>
+      <div class="card"><h2>Transactions</h2><div class="kpi">1,000</div></div>
+      <div class="card"><h2>Customers</h2><div class="kpi">1,003</div></div>
+      <div class="card"><h2>Avg. Rating</h2><div class="kpi">3.05 ⭐</div></div>
+      <div class="card"><h2>Female Contribution</h2><div class="kpi">54%</div></div>
 
-  <div class="card">
-    <h2>Total Sales</h2>
-    <div class="kpi">3,012 Units</div>
-  </div>
+      <!-- Sales Trend -->
+      <div class="section-title">📈 Sales Trend</div>
+      <div class="card" style="grid-column: 1 / -1;">
+        <canvas id="salesChart"></canvas>
+      </div>
 
-  <div class="card">
-    <h2>Transactions</h2>
-    <div class="kpi">1,000</div>
-  </div>
+      <!-- Top Products -->
+      <div class="section-title">🥇 Top-Selling Products</div>
+      <div class="card">
+        <h2>Top 3 Products</h2>
+        <ul>
+          <li>Muffin – 2.4K sold</li>
+          <li>Cappuccino – 2.32K sold</li>
+          <li>Iced Tea – 2.23K sold</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <h2>Customers</h2>
-    <div class="kpi">1,003</div>
-  </div>
+      <!-- Ratings -->
+      <div class="section-title">⭐ Customer Ratings</div>
+      <div class="card">
+        <h2>Ratings Breakdown</h2>
+        <ul>
+          <li>Positive: 32%</li>
+          <li>Neutral: 34%</li>
+          <li>Negative: 34%</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <h2>Avg. Rating</h2>
-    <div class="kpi">3.05 ⭐</div>
-  </div>
+      <!-- Sales by Location -->
+      <div class="section-title">📍 Sales by Location</div>
+      <div class="card">
+        <h2>Location Contribution</h2>
+        <ul>
+          <li>Uptown – 27%</li>
+          <li>Suburbs – 26%</li>
+          <li>Downtown – 25%</li>
+          <li>Airport – 23%</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <h2>Female Contribution</h2>
-    <div class="kpi">54%</div>
-  </div>
-
-  <!-- Sales Trend -->
-  <div class="section-title">📈 Sales Trend</div>
-  <div class="card" style="grid-column: 1 / -1;">
-    <canvas id="salesChart"></canvas>
-  </div>
-
-  <!-- Top Products -->
-  <div class="section-title">🥇 Top-Selling Products</div>
-  <div class="card">
-    <h2>Top 3 Products</h2>
-    <ul>
-      <li>Muffin – 2.4K sold</li>
-      <li>Cappuccino – 2.32K sold</li>
-      <li>Iced Tea – 2.23K sold</li>
-    </ul>
-  </div>
-
-  <!-- Ratings -->
-  <div class="section-title">⭐ Customer Ratings</div>
-  <div class="card">
-    <h2>Ratings Breakdown</h2>
-    <ul>
-      <li>Positive: 32%</li>
-      <li>Neutral: 34%</li>
-      <li>Negative: 34%</li>
-    </ul>
-  </div>
-
-  <!-- Sales by Location -->
-  <div class="section-title">📍 Sales by Location</div>
-  <div class="card">
-    <h2>Location Contribution</h2>
-    <ul>
-      <li>Uptown – 27%</li>
-      <li>Suburbs – 26%</li>
-      <li>Downtown – 25%</li>
-      <li>Airport – 23%</li>
-    </ul>
-  </div>
-
-  <!-- Employee Performance -->
-  <div class="section-title">👩‍💼 Top Employees</div>
-  <div class="card">
-    <h2>Top Performers</h2>
-    <ul>
-      <li>Elizabeth – $2,973</li>
-      <li>Elizabeth Allen – $2,960</li>
-      <li>David Smith – $2,852</li>
-    </ul>
-  </div>
-
-  <!-- Inventory -->
-  <div class="section-title">📦 Inventory Overview</div>
-  <div class="card">
-    <h2>Stock Changes</h2>
-    <ul>
-      <li>+30% Sandwich Bread</li>
-      <li>+18% Coffee Beans</li>
-      <li>-52% Milk</li>
-      <li>-49% Iced Tea Bags</li>
-    </ul>
-  </div>
-
-</main>
-
-<!-- Chart.js for Sales Trend -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const ctx = document.getElementById('salesChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      datasets: [{
-        label: 'Units Sold',
-        data: [1170, 1003, 1010, 993, 1085, 1182, 1179, 1220, 891, 783, 783, 895],
-        borderColor: '#3f51b5',
-        backgroundColor: 'rgba(63, 81, 181, 0.1)',
-        fill: true,
-        tension: 0.3
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: { beginAtZero: true }
-      }
-    }
-  });
-</script>
-
-</body>
-</html>
+      <!-- Employee Performance -->
+      <div class="section-title">👩‍💼 Top Employees</div>
+      <div class="card">
+        <h2>Top Performers</h2>
+        <
