@@ -1,32 +1,196 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-
-
-
-
-<html>
-	<head>
-		<title>Café Harmony Sales Analysis</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-       <style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Harmony Sales Performnace</title>
+  <style>
     body {
-      background-color: #0d0d0d; /* light gray */
+      font-family: Arial, sans-serif;
+      background-color: #f6f9fc;
       margin: 0;
       padding: 0;
+    }
+
+    header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .kpi {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .section-title {
+      grid-column: 1 / -1;
+      font-size: 1.5rem;
+      color: #444;
+      margin-top: 40px;
+    }
+
+    ul {
       margin: 0;
-    padding: 0;
+      padding-left: 20px;
+    }
+
+    canvas {
+      width: 100% !important;
+      max-height: 250px;
     }
   </style>
-	</head>
-					<!-- Header -->
-					<header id="header">
-						<a  class="logo">Café Harmony Sales Analysis</a>
-						
-					</header>
+</head>
+<body>
+
+<header>
+  <h1>Café Harmony Sales Performance Dashboard</h1>
+</header>
+
+<main class="dashboard">
+
+  <!-- KPIs -->
+  <div class="card">
+    <h2>Total Revenue</h2>
+    <div class="kpi">$12.59K</div>
+  </div>
+
+  <div class="card">
+    <h2>Total Sales</h2>
+    <div class="kpi">3,012 Units</div>
+  </div>
+
+  <div class="card">
+    <h2>Transactions</h2>
+    <div class="kpi">1,000</div>
+  </div>
+
+  <div class="card">
+    <h2>Customers</h2>
+    <div class="kpi">1,003</div>
+  </div>
+
+  <div class="card">
+    <h2>Avg. Rating</h2>
+    <div class="kpi">3.05 ⭐</div>
+  </div>
+
+  <div class="card">
+    <h2>Female Contribution</h2>
+    <div class="kpi">54%</div>
+  </div>
+
+  <!-- Sales Trend -->
+  <div class="section-title">📈 Sales Trend</div>
+  <div class="card" style="grid-column: 1 / -1;">
+    <canvas id="salesChart"></canvas>
+  </div>
+
+  <!-- Top Products -->
+  <div class="section-title">🥇 Top-Selling Products</div>
+  <div class="card">
+    <h2>Top 3 Products</h2>
+    <ul>
+      <li>Muffin – 2.4K sold</li>
+      <li>Cappuccino – 2.32K sold</li>
+      <li>Iced Tea – 2.23K sold</li>
+    </ul>
+  </div>
+
+  <!-- Ratings -->
+  <div class="section-title">⭐ Customer Ratings</div>
+  <div class="card">
+    <h2>Ratings Breakdown</h2>
+    <ul>
+      <li>Positive: 32%</li>
+      <li>Neutral: 34%</li>
+      <li>Negative: 34%</li>
+    </ul>
+  </div>
+
+  <!-- Sales by Location -->
+  <div class="section-title">📍 Sales by Location</div>
+  <div class="card">
+    <h2>Location Contribution</h2>
+    <ul>
+      <li>Uptown – 27%</li>
+      <li>Suburbs – 26%</li>
+      <li>Downtown – 25%</li>
+      <li>Airport – 23%</li>
+    </ul>
+  </div>
+
+  <!-- Employee Performance -->
+  <div class="section-title">👩‍💼 Top Employees</div>
+  <div class="card">
+    <h2>Top Performers</h2>
+    <ul>
+      <li>Elizabeth – $2,973</li>
+      <li>Elizabeth Allen – $2,960</li>
+      <li>David Smith – $2,852</li>
+    </ul>
+  </div>
+
+  <!-- Inventory -->
+  <div class="section-title">📦 Inventory Overview</div>
+  <div class="card">
+    <h2>Stock Changes</h2>
+    <ul>
+      <li>+30% Sandwich Bread</li>
+      <li>+18% Coffee Beans</li>
+      <li>-52% Milk</li>
+      <li>-49% Iced Tea Bags</li>
+    </ul>
+  </div>
+
+</main>
+
+<!-- Chart.js for Sales Trend -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('salesChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Units Sold',
+        data: [1170, 1003, 1010, 993, 1085, 1182, 1179, 1220, 891, 783, 783, 895],
+        borderColor: '#3f51b5',
+        backgroundColor: 'rgba(63, 81, 181, 0.1)',
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
