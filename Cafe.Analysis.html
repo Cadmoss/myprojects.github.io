@@ -103,10 +103,12 @@
 
       <!-- Sales Trend -->
       <div class="section-title">📈 Sales Trend</div>
-      <div class="card" style="grid-column: 1 / -1;">
-        <canvas id="salesChart"></canvas>
-<!-- Dashboard Screenshot (semi-transparent) -->
-  <img src="images/Capture 3.PNG" alt="Dashboard Screenshot"
+<div class="card" style="grid-column: 1 / -1; position: relative; overflow: hidden;">
+  <!-- Chart Canvas -->
+  <canvas id="salesChart"></canvas>
+
+  <!-- Dashboard Screenshot (semi-transparent) -->
+  <img src="images/dashboard-screenshot.png" alt="Dashboard Screenshot"
        style="
          position: absolute;
          top: 50%;
@@ -117,9 +119,7 @@
          pointer-events: none;
          border-radius: 8px;
        " />
-
-      </div>
-
+</div>
       <!-- Top Products -->
       <div class="section-title">🥇 Top-Selling Products</div>
       <div class="card">
