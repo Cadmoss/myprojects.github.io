@@ -1,92 +1,168 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Afolayan | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512..." crossorigin="anonymous" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #0a192f;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    header p {
+      color: #8892b0;
+      font-size: 1.2rem;
+    }
+    nav {
+      background: #112240;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    nav a {
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #64ffda;
+      padding-left: 10px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-card .content {
+      padding: 1rem;
+    }
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .project-card p {
+      font-size: 0.95rem;
+    }
+    .about-me {
+      background: #e0f7fa;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    .about-me p {
+      max-width: 800px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #0a192f;
+      color: #8892b0;
+    }
+    .icons a {
+      margin: 0 10px;
+      color: #64ffda;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Michael Afolayan</h1>
+    <p>Data Analyst | Excel | SQL | Power BI | Python</p>
+  </header>
 
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="mailto:your-email@example.com">Contact</a>
+  </nav>
 
-<html>
-	<head>
-		<title>MICHAEL AFOLAYAN PORTFOLIO</title>
-		
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <div class="container">
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="images/nick-fewings-mMLCPVp0N7M-unsplash.jpg" alt="NHTSA Dashboard" />
+          <div class="content">
+            <h3>NHTSA Vehicle Recalls</h3>
+            <p>25-Year Analysis (2000-2025) using Power BI and open data from NHTSA to reveal patterns and safety insights.</p>
+            <a href="generic.html">View Project</a>
+          </div>
+        </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+        <div class="project-card">
+          <img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Cafe Harmony" />
+          <div class="content">
+            <h3>Café Harmony Sales Analysis</h3>
+            <p>A detailed Excel-based report on inventory, sales, and customer trends with actionable recommendations.</p>
+            <a href="Cafe.Analysis.html">View Project</a>
+          </div>
+        </div>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>My<br />
-						Projects</h1>
-						
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+        <!-- Add more projects here -->
+      </div>
+    </section>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">EXPLORE PROJECTS</a>
-					</header>
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-me">
+        <p>
+          I'm a passionate Data Analyst with a keen eye for uncovering insights in data. Proficient in tools like Excel, SQL, Power BI, and Python, I love solving business problems through analytics and visualization. This portfolio showcases a collection of projects that reflect my experience and interests in data storytelling and problem-solving.
+        </p>
+      </div>
+    </section>
+  </div>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">PROJECTS</a></li>
-							<li class="active"><a href="index.html">ABOUT</a></li>
-						
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/michael-afolayann" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2>NHTSA Vehicle<br />
-									Recalls</a></h2>
-									<p>A 25-Year Analysis (2000-2025).</p>
-					
-								</header>
-								<a  class="image main"><img src="images/nick-fewings-mMLCPVp0N7M-unsplash.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="generic.html" class="button large">Let's Dive In!</a></li>
-								</ul>
-							
-								<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2>Café Harmony Sales Analysis <br />
-									</a></h2>
-									<p>This is a comprehensive analysis of our sales performance, inventory levels, customer demographics, and employee contributions and recommendations, with Microsoft Excel.</p>
-					
-								</header>
-								<a  class="image main"><img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="Cafe.Analysis.html" class="button large">Let's Dive In!</a></li>
-								</ul>
-							</article>
-
-
-
-					
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  <footer>
+    <p>Connect with me:</p>
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/michael-afolayann" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+    <p>&copy; 2025 Michael Afolayan</p>
+  </footer>
+</body>
 </html>
 
 
