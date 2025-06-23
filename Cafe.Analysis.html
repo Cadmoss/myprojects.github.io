@@ -54,7 +54,7 @@
     .dashboard {
       width: 100%;
       height: 500px;
-      background-color: #e3e3e3;
+      background-color: #080808;
       border-radius: 8px;
       overflow: hidden;
       display: flex;
@@ -78,16 +78,46 @@
     }
 
     .download-link a {
-      background-color: #Bf8B4B;
-      color: rgb(17, 17, 17);
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      background-color: #bf8b4b;
+  color: #fff;
+  padding: 14px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  display: inline-block;
+  max-width: 100%;
+  text-align: center;
+  word-wrap: break-word;
     }
 
     .download-link a:hover {
       background-color: #5a6268;
+
+ @media (max-width: 768px) {
+      .dashboard {
+        height: 300px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .notes h3 {
+        font-size: 1.2rem;
+      }
+      
+	  }
+
+  .download-link a {
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 100%;
+
+      }
+
     }
   </style>
 </head>
@@ -96,7 +126,7 @@
     <div class="content-box">
 
 <div class="header-row">
-  <a href="index.html" class="home-button">🏠 Home</a>
+  <a href="index.html" class="home-button">Home</a>
   
 </div>
 
