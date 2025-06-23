@@ -1,174 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Café Harmony PDF Generator</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Harmony Sales Performnace Analysis</title>
+  
   <style>
+.home-button {
+  background-color: #Bf8B4B;
+  color: #0c0c0c;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.home-button:hover {
+  background-color: #5a6268;
+}
+
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -2;
+      font-family: Arial, sans-serif;
+      background: url('images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      color: #063a40;
     }
 
     .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-      background-color: rgba(255, 255, 255, 0.85); /* Adjust opacity here */
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
     }
 
-    .container {
+    .content-box {
+      background-color: rgba#063a40(255, 255, 255, 0.95);
+      color: #f8f7f7;
       max-width: 900px;
-      margin: 60px auto;
+      width: 100%;
       padding: 30px;
-      background: rgba(255, 255, 255, 0.95);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
     h1 {
       text-align: center;
-      color: #3f51b5;
+      margin-bottom: 30px;
     }
 
-    label {
+    .dashboard {
+      width: 100%;
+      height: 500px;
+      background-color: #e3e3e3;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .dashboard img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .notes {
+      margin-bottom: 30px;
+    }
+
+    .download-link {
+      text-align: center;
+    }
+
+    .download-link a {
+      background-color: #Bf8B4B;
+      color: rgb(17, 17, 17);
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
       font-weight: bold;
-      display: block;
-      margin: 20px 0 10px;
     }
 
-    textarea {
-      width: 100%;
-      height: 150px;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    #dashboardPreview {
-      max-width: 100%;
-      margin-top: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    }
-
-    input[type="file"] {
-      margin-top: 10px;
-    }
-
-    button {
-      margin-top: 30px;
-      display: block;
-      width: 100%;
-      padding: 14px;
-      font-size: 1rem;
-      color: white;
-      background-color: #3f51b5;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #2c3a9e;
+    .download-link a:hover {
+      background-color: #5a6268;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="content-box">
 
-<!-- Background image -->
-<div class="background" id="pageBackground"></div>
-<div class="overlay"></div>
-
-<div class="container">
-  <h1>Café Harmony – Report Builder</h1>
-
-  <!-- Upload background -->
-  <label for="bgUpload">Upload Page Background</label>
-  <input type="file" id="bgUpload" accept="image/*">
-
-  <!-- Upload dashboard -->
-  <label for="dashboardUpload">Upload Dashboard Image</label>
-  <input type="file" id="dashboardUpload" accept="image/*">
-  <img id="dashboardPreview" alt="Dashboard Preview" />
-
-  <!-- Notes area -->
-  <label for="notes">Background Analysis / Notes</label>
-  <textarea id="notes" placeholder="Write your observations here..."></textarea>
-
-  <!-- Download Button -->
-  <button onclick="downloadPDF()">📥 Download PDF Presentation</button>
+<div class="header-row">
+  <a href="index.html" class="home-button">🏠 Home</a>
+  
 </div>
 
-<script>
-  const bgUpload = document.getElementById("bgUpload");
-  const pageBackground = document.getElementById("pageBackground");
-  const dashboardUpload = document.getElementById("dashboardUpload");
-  const dashboardPreview = document.getElementById("dashboardPreview");
+      <h1>Café Harmony Sales Performnace Analysis</h1>
 
-  // Set page background image
-  bgUpload.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = e => {
-        pageBackground.style.backgroundImage = `url(${e.target.result})`;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
+      <div class="dashboard">
+        <img src="images/NHTSA.PNG" alt="NHTSA Dashboard" />
+      </div>
 
-  // Show dashboard preview
-  let dashboardImageData = "";
-  dashboardUpload.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = e => {
-        dashboardImageData = e.target.result;
-        dashboardPreview.src = dashboardImageData;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
+      <div class="notes">
+        <h3>Presentation Notes:</h3>
+        <p>
+          This dashboard summarizes key NHTSA recall trends. You can add your own insights or analysis in this section.
+        </p>
+      </div>
 
-  // Download PDF
-  async function downloadPDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    doc.setFontSize(16);
-    doc.text("Café Harmony Sales Dashboard", 15, 20);
-
-    // Add dashboard image
-    if (dashboardImageData) {
-      doc.addImage(dashboardImageData, "PNG", 15, 30, 180, 100);
-    }
-
-    // Add notes
-    doc.setFontSize(12);
-    const notes = document.getElementById("notes").value.trim() || "No notes provided.";
-    const lines = doc.splitTextToSize(notes, 180);
-
-    doc.text("Background Analysis:", 15, 140);
-    doc.text(lines, 15, 150);
-
-    doc.save("Cafe_Harmony_Report.pdf");
-  }
-</script>
-
+      <div class="download-link">
+        <a href="presentation.pdf" download>📥 Download PDF Presentation</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
