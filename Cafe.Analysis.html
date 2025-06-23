@@ -107,22 +107,37 @@
   <img src="images/Capture 3.PNG"
        alt="Dashboard Screenshot 1"
        style="
-        position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         max-width: 60%;
+       position: absolute;
+         top: 0;
+         left: 0;
+         width: 40%;
+         height: 80%;
+         object-fit: cover;
          opacity: 0.6;
+         border-radius: 0;
          pointer-events: none;
-         border-radius: 8px;
        " />
-</div>
- <!-- Full-Width Notes (below chart) -->
-  <p style="margin-top: 10px; font-weight: bold;">Sales Trend Notes:</p>
-  <textarea style="width: 100%; height: 100px;"
-            placeholder="Write your observations or analysis for the sales trend chart here...">
+
+  <img src="images/Capture 4.PNG"
+       alt="Dashboard Screenshot 2"
+       style="
+          position: absolute;
+         top: 0;
+         right: 0;
+         width: 30%;
+         height: 60%;
+         object-fit: cover;
+         opacity: 0.6;
+         border-radius: 0;
+         pointer-events: none;
+       " />
+
+  <!-- Notes under chart -->
+  <textarea style="width: 100%; margin-top: 250px; height: 100px;"
+            placeholder="Write observations on the sales trend and attached visuals...">
   </textarea>
 </div>
+
 
       <!-- Top Products -->
       <div class="section-title">🥇 Top-Selling Products</div>
@@ -162,26 +177,29 @@
       <div class="section-title">👩‍💼 Top Employees</div>
       <div class="card">
         <h2>Top Performers</h2>
-        <ul>
-          <li>Elizabeth – $2,973</li>
-          <li>Elizabeth Allen – $2,960</li>
-          <li>David Smith – $2,852</li>
-        </ul>
-      </div>
+        <
 
-      <!-- Inventory -->
-      <div class="section-title">📦 Inventory Overview</div>
-      <div class="card">
-        <h2>Stock Changes</h2>
-        <ul>
-          <li>+30% Sandwich Bread</li>
-          <li>+18% Coffee Beans</li>
-          <li>-52% Milk</li>
-          <li>-49% Iced Tea Bags</li>
-        </ul>
-        </div>
 
-    </main>
-  </div>
 
-</div>
+
+        <script>
+  const trendImageInput = document.getElementById("trendImageInput");
+  const trendImageOverlay = document.getElementById("trendImageOverlay");
+
+  trendImageInput.addEventListener("change", function () {
+    trendImageOverlay.innerHTML = ""; // Clear existing
+    Array.from(this.files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.style.width = "120px";
+        img.style.opacity = "0.7";
+        img.style.borderRadius = "8px";
+        img.style.boxShadow = "0 0 5px rgba(0,0,0,0.2)";
+        trendImageOverlay.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
