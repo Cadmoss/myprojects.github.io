@@ -97,48 +97,36 @@
         <textarea style="width: 100%; height: 120px;" placeholder="Write your overall observations or interpretation of the KPIs here..."></textarea>
         </div>
 
-  <div class="section-title">📈 Sales Trend</div>
-<div class="card" style="grid-column: 1 / -1; position: relative; overflow: hidden;">
 
+
+
+
+      <!-- Sales Trend -->
+      <div class="section-title">📈 Sales Trend</div>
+<div class="card" style="grid-column: 1 / -1; position: relative; overflow: hidden;">
   <!-- Chart Canvas -->
   <canvas id="salesChart"></canvas>
 
-  <!-- Static Images Overlaid -->
-  <img src="images/Capture 3.PNG"
-       alt="Dashboard Screenshot 1"
+  <!-- Dashboard Screenshot (semi-transparent) -->
+  <img src="images/Capture 3.PNG" alt="Dashboard Screenshot"
        style="
-       position: absolute;
-         top: 0;
-         left: 0;
-         width: 40%;
-         height: 80%;
-         object-fit: cover;
-         opacity: 0.6;
-         border-radius: 0;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         max-width: 70%;
+         opacity: 0.9;
          pointer-events: none;
+         border-radius: 8px;
        " />
-
-  <img src="images/Capture 4.PNG"
-       alt="Dashboard Screenshot 2"
-       style="
-          position: absolute;
-         top: 0;
-         right: 0;
-         width: 30%;
-         height: 60%;
-         object-fit: cover;
-         opacity: 0.6;
-         border-radius: 0;
-         pointer-events: none;
-       " />
-
-  <!-- Notes under chart -->
-  <textarea style="width: 100%; margin-top: 250px; height: 100px;"
-            placeholder="Write observations on the sales trend and attached visuals...">
+<!-- Notes Area -->
+ </div>
+  <textarea style="width: 100%; margin-top: 20px; height: 100px;"
+            placeholder="Write your observations on the sales trend here...">
   </textarea>
 </div>
 
-
+</div>
       <!-- Top Products -->
       <div class="section-title">🥇 Top-Selling Products</div>
       <div class="card">
@@ -178,28 +166,3 @@
       <div class="card">
         <h2>Top Performers</h2>
         <
-
-
-
-
-        <script>
-  const trendImageInput = document.getElementById("trendImageInput");
-  const trendImageOverlay = document.getElementById("trendImageOverlay");
-
-  trendImageInput.addEventListener("change", function () {
-    trendImageOverlay.innerHTML = ""; // Clear existing
-    Array.from(this.files).forEach(file => {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const img = document.createElement("img");
-        img.src = e.target.result;
-        img.style.width = "120px";
-        img.style.opacity = "0.7";
-        img.style.borderRadius = "8px";
-        img.style.boxShadow = "0 0 5px rgba(0,0,0,0.2)";
-        trendImageOverlay.appendChild(img);
-      };
-      reader.readAsDataURL(file);
-    });
-  });
-</script>
