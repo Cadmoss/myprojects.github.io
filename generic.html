@@ -5,31 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NHTSA Dashboard Presentation</title>
-  
-  <style>
-.home-button {
-  background-color: #Bf8B4B;
-  color: #0c0c0c;
-  padding: 10px 16px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-.home-button:hover {
-  background-color: #5a6268;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    
+      font-family: 'Inter', sans-serif;
+      background: url('images/background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #0d0e0e;
     }
 
     .overlay {
-      background-color: rgba(161, 25, 25, 0.6);
+      background-color: rgba(0, 0, 0, 0.6);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -38,17 +31,38 @@
     }
 
     .content-box {
-      background-color: rgba#063a40(255, 255, 255, 0.95);
-      color: #f8f7f7;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #1a1a1a;
       max-width: 900px;
       width: 100%;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .home-button {
+      background-color: #bf8b4b;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #8a6233;
     }
 
     h1 {
       text-align: center;
+      font-size: 2rem;
       margin-bottom: 30px;
     }
 
@@ -56,12 +70,12 @@
       width: 100%;
       height: 500px;
       background-color: #063a40;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .dashboard img {
@@ -74,21 +88,48 @@
       margin-bottom: 30px;
     }
 
+    .notes h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #063a40;
+    }
+
+    .notes p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     .download-link {
       text-align: center;
     }
 
     .download-link a {
-      background-color: #Bf8B4B;
-      color: rgb(17, 17, 17);
-      padding: 12px 24px;
+      background-color: #bf8b4b;
+      color: #fff;
+      padding: 14px 28px;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
 
     .download-link a:hover {
-      background-color: #5a6268;
+      background-color: #8a6233;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        height: 300px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .notes h3 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -96,10 +137,9 @@
   <div class="overlay">
     <div class="content-box">
 
-<div class="header-row">
-  <a href="index.html" class="home-button">Home</a>
-  
-</div>
+      <div class="header-row">
+        <a href="index.html" class="home-button">🏠 Home</a>
+      </div>
 
       <h1>NHTSA Dashboard Presentation</h1>
 
@@ -108,15 +148,19 @@
       </div>
 
       <div class="notes">
-        <h3>Presentation Notes:</h3>
+        <h3>Presentation Notes</h3>
         <p>
-          This dashboard summarizes key NHTSA recall trends. You can add your own insights or analysis in this section.
+          This dashboard presents a 25-year historical analysis of vehicle recall patterns reported to the NHTSA.
+          It highlights key trends, safety concerns, and the evolution of recall volumes over time, offering insight
+          into manufacturer responsiveness and policy impact. Use these insights to explore actionable recommendations
+          for compliance and vehicle safety improvements.
         </p>
       </div>
 
       <div class="download-link">
-        <a href="presentation.pdf" download>📥 Download PDF Presentation</a>
+        <a href="presentation.pdf" download>📥 Download Full PDF Presentation</a>
       </div>
+
     </div>
   </div>
 </body>
