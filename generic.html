@@ -9,24 +9,24 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('your-background.jpg') no-repeat center center fixed;
+      background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.6); /* dark overlay for contrast */
+      background-color: rgba(0, 0, 0, 0.6);
       min-height: 100vh;
-      padding: 40px 20px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      padding: 40px 20px;
     }
 
     .content-box {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.95);
       color: #000;
-      max-width: 1000px;
+      max-width: 900px;
       width: 100%;
       padding: 30px;
       border-radius: 12px;
@@ -42,15 +42,22 @@
       width: 100%;
       height: 500px;
       background-color: #e3e3e3;
-      border: 2px dashed #aaa;
+      border-radius: 8px;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 20px;
     }
 
+    .dashboard img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .notes {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .download-link {
@@ -60,7 +67,7 @@
     .download-link a {
       background-color: #007BFF;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
@@ -76,26 +83,21 @@
     <div class="content-box">
       <h1>NHTSA Dashboard Presentation</h1>
 
-      <div class="dashboard" id="dashboard-container">
-        <!-- Replace with iframe or image -->
-       <div class="dashboard" id="dashboard-container">
-  <img src="dashboard-snapshot.jpg" alt="NHTSA Dashboard" class="dashboard-image">
-</div>
+      <div class="dashboard">
+        <img src="images/NHTSA.PNG" alt="NHTSA Dashboard" />
+      </div>
 
       <div class="notes">
         <h3>Presentation Notes:</h3>
         <p>
-          Include any insights, summaries, or important notes related to the dashboard.
-          For example: “The data highlights a significant increase in recalls during Q3 2023 due to airbag issues...”
+          This dashboard summarizes key NHTSA recall trends. You can add your own insights or analysis in this section.
         </p>
       </div>
 
       <div class="download-link">
-        <a href="presentation.pdf" download>Download Full Presentation (PDF)</a>
+        <a href="presentation.pdf" download>📥 Download Full PDF Presentation</a>
       </div>
     </div>
   </div>
 </body>
 </html>
-
-
