@@ -4,27 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Café Harmony Sales Performnace Analysis</title>
-  
-  <style>
-.home-button {
-  background-color: #Bf8B4B;
-  color: #0c0c0c;
-  padding: 10px 16px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-.home-button:hover {
-  background-color: #5a6268;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg') no-repeat center center fixed;
+      font-family: 'Inter', sans-serif;
+      background: url('images/ihwal-hambali-rH_lxr44wZo-unsplash.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #063a40;
+      color: #0d0e0e;
     }
 
     .overlay {
@@ -37,30 +30,51 @@
     }
 
     .content-box {
-      background-color: rgba#063a40(255, 255, 255, 0.95);
-      color: #f8f7f7;
+      background-color: rgba(8, 8, 8, 0.95);
+      color: #fdfcfc;
       max-width: 900px;
       width: 100%;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .home-button {
+      background-color: #bf8b4b;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #8a6233;
     }
 
     h1 {
       text-align: center;
+      font-size: 2rem;
       margin-bottom: 30px;
     }
 
     .dashboard {
       width: 100%;
       height: 500px;
-      background-color: #080808;
-      border-radius: 8px;
+      background-color: #063a40;
+      border-radius: 10px;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .dashboard img {
@@ -71,6 +85,17 @@
 
     .notes {
       margin-bottom: 30px;
+    }
+
+    .notes h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #f8fafa;
+    }
+
+    .notes p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .download-link {
@@ -90,12 +115,12 @@
   max-width: 100%;
   text-align: center;
   word-wrap: break-word;
+}
+    .download-link a:hover {
+      background-color: #8a6233;
     }
 
-    .download-link a:hover {
-      background-color: #5a6268;
-
- @media (max-width: 768px) {
+    @media (max-width: 768px) {
       .dashboard {
         height: 300px;
       }
@@ -106,8 +131,6 @@
 
       .notes h3 {
         font-size: 1.2rem;
-      }
-      
 	  }
 
   .download-link a {
@@ -117,7 +140,6 @@
     max-width: 100%;
 
       }
-
     }
   </style>
 </head>
@@ -125,27 +147,27 @@
   <div class="overlay">
     <div class="content-box">
 
-<div class="header-row">
-  <a href="index.html" class="home-button">Home</a>
-  
-</div>
+      <div class="header-row">
+        <a href="index.html" class="home-button">Home</a>
+      </div>
 
       <h1>Café Harmony Sales Performnace Analysis</h1>
 
       <div class="dashboard">
-        <img src="images/Cafe Harm.PNG" alt="Cafe Harmony Dashboard" />
+        <img src="Cafe.Analysis.html" alt="Café Harmony Sales Performnace Analysis" />
       </div>
 
       <div class="notes">
-        <h3>Presentation Notes:</h3>
+        <h3>Presentation Notes</h3>
         <p>
-          This dashboard summarizes key NHTSA recall trends. You can add your own insights or analysis in this section.
+          This is a comprehensive analysis of our sales performance, inventory levels, customer demographics, and employee contributions and recommendations.
         </p>
       </div>
 
       <div class="download-link">
-        <a href="Dark Mode Competitive Analysis Brainstorm Presentation (1).pdf" download>📥 Download PDF Presentation</a>
+        <a href="presentation.pdf" download>Download PDF Presentation</a>
       </div>
+
     </div>
   </div>
 </body>
