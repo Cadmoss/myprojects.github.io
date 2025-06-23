@@ -101,28 +101,19 @@
 
 
 
-      <!-- Sales Trend -->
-      <div class="section-title">📈 Sales Trend</div>
+  <div class="section-title">📈 Sales Trend</div>
 <div class="card" style="grid-column: 1 / -1; position: relative; overflow: hidden;">
   <!-- Chart Canvas -->
   <canvas id="salesChart"></canvas>
 
-  <!-- Dashboard Screenshot (semi-transparent) -->
-  <img src="images/Capture 3.PNG" alt="Dashboard Screenshot"
-       style="
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         max-width: 70%;
-         opacity: 0.8;
-         pointer-events: none;
-         border-radius: 8px;
-       " />
-<!-- Notes Area -->
- </div>
-  <textarea style="width: 100%; margin-top: 20px; height: 100px;"
-            placeholder="Write your observations on the sales trend here...">
+  <!-- Upload Field -->
+  <p style="margin-top: 15px; font-weight: bold;">images/Capture 3.PNG,images/Capture 4.PNG :</p>
+  <input type="file" id="trendImageInput" accept="image/*" multiple />
+  <div id="trendImageOverlay" style="position: absolute; top: 10px; left: 10px; display: flex; gap: 10px;"></div>
+
+  <!-- Optional Notes Under Chart -->
+  <textarea style="width: 100%; margin-top: 250px; height: 100px;"
+            placeholder="Write observations on the sales trend and attached visuals...">
   </textarea>
 </div>
 
@@ -166,3 +157,28 @@
       <div class="card">
         <h2>Top Performers</h2>
         <
+
+
+
+
+        <script>
+  const trendImageInput = document.getElementById("trendImageInput");
+  const trendImageOverlay = document.getElementById("trendImageOverlay");
+
+  trendImageInput.addEventListener("change", function () {
+    trendImageOverlay.innerHTML = ""; // Clear existing
+    Array.from(this.files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.style.width = "120px";
+        img.style.opacity = "0.7";
+        img.style.borderRadius = "8px";
+        img.style.boxShadow = "0 0 5px rgba(0,0,0,0.2)";
+        trendImageOverlay.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
