@@ -32,6 +32,29 @@
 }
 
 
+
+.header-top {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.home-button {
+  background-color: #04a755;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #028e49;
+}
+
+
+
     .header h1 {
       margin: 0;
       font-size: 2.2rem;
@@ -107,11 +130,13 @@
 </head>
 <body>
 
-  <div class="header">
-    <h1>Shopify Sales Analysis Power BI Dashboard</h1>
-      <a href="index.html" class="home-button">HOME</a>
-    <p>Explore trends, insights & KPIs with Power BI</p>
+<div class="header">
+  <div class="header-top">
+    <a href="index.html" class="home-button">HOME</a>
   </div>
+  <h1>Shopify Sales Analysis Power BI Dashboard</h1>
+  <p>Explore trends, insights & KPIs with Power BI</p>
+</div>
 
   <div class="container">
 
