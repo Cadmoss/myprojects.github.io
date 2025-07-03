@@ -12,6 +12,30 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+.about-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px;
+  max-width: 700px;
+}
+
+
+
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f5f7fa;
@@ -156,14 +180,16 @@
     </section>
 
     <section id="about">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-me">
-        <p>
-          As a passionate Data Analyst, I transitioned from a data entry officer role seven years ago to leveraging data for impactful problem-solving and insights. Mastering Advanced Excel, Power BI, Tableau, SQL, and Python, I craft compelling data visualizations and analytics solutions. My portfolio reflects expertise in data storytelling, driving business decisions through robust tools and a keen analytical mindset, honed over years of dedicated practice.
-        </p>
-      </div>
-    </section>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-me about-flex">
+    <img src="images/Data Analysis.jpeg" alt="Michael Afolayan" class="profile-pic" />
+    <div class="about-text">
+      <p>
+        As a passionate Data Analyst, I transitioned from a data entry officer role seven years ago to leveraging data for impactful problem-solving and insights. Mastering Advanced Excel, Power BI, Tableau, SQL, and Python, I craft compelling data visualizations and analytics solutions. My portfolio reflects expertise in data storytelling, driving business decisions through robust tools and a keen analytical mindset, honed over years of dedicated practice.
+      </p>
+    </div>
   </div>
+</section>
 
   <footer>
     <p>Connect with me:</p>
