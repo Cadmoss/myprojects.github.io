@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthcare Economics Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef6f9;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .header {
+      background-color: #006d77;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      background-color: #83c5be;
+      color: #003845;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #4db4a5;
+      color: white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .embed-box {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .embed-box iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .info-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #caf0f8;
+      border-left: 5px solid #0077b6;
+      border-radius: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #003049;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .dark-mode .header {
+      background-color: #004d5a;
+    }
+
+    .dark-mode .info-box {
+      background-color: #2a2a2a;
+      color: #ddd;
+      border-left-color: #00b4d8;
+    }
+
+    .dark-mode .home-button {
+      background-color: #0096c7;
+      color: #fff;
+    }
+
+    .toggle-theme {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .toggle-theme button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0077b6;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <a href="index.html" class="home-button">HOME</a>
+  </div>
+  <h1>Healthcare Economics</h1>
+  <p>A Comprehensive Review of Financial and Provider Metrics</p>
+</div>
+
+<div class="container">
+
+  <!-- Power BI Embed -->
+  <div class="embed-box">
+    <iframe title="Healthcare Dashboard" width="100%" height="100%" 
+      src="https://app.powerbi.com/reportEmbed?reportId=YOUR_REPORT_ID&autoAuth=true&ctid=YOUR_CTID&actionBarEnabled=true"
+      frameborder="0" allowFullScreen="true">
+    </iframe>
+  </div>
+
+  <!-- PDF Link -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="Healthcare_Economics_Report.pdf" target="_blank"
+       style="background-color: #0077b6; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+      View PDF Presentation
+    </a>
+  </div>
+
+  <!-- Power BI Direct Link -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://app.powerbi.com/reportEmbed?reportId=YOUR_REPORT_ID&autoAuth=true&ctid=YOUR_CTID&actionBarEnabled=true" 
+       target="_blank" 
+       style="color: #0077b6; text-decoration: none; font-weight: 600;">
+      🔗 Open in Power BI
+    </a>
+  </div>
+
+  <!-- Info Box -->
+  <div class="info-box">
+    <strong>About this dashboard:</strong><br/>
+    This dashboard presents a financial and operational overview of a simulated healthcare center. It focuses on revenue trends, cost distribution, and provider performance metrics—designed to support decision-making and strategic planning in healthcare management.
+  </div>
+</div>
+
+<!-- Optional: Dark Mode Toggle -->
+<div class="toggle-theme">
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+</div>
+
+</body>
+</html>
