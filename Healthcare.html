@@ -52,16 +52,17 @@
       padding: 20px;
     }
 
-    .embed-box {
+    .embed-box, .video-box {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
     }
 
-    .embed-box iframe {
+    iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%;
@@ -130,9 +131,9 @@
 
   <!-- Power BI Embed -->
   <div class="embed-box">
-    <iframe title="Healthcare Dashboard" width="100%" height="100%" 
+    <iframe title="Healthcare Dashboard"
       src="https://app.powerbi.com/reportEmbed?reportId=YOUR_REPORT_ID&autoAuth=true&ctid=YOUR_CTID&actionBarEnabled=true"
-      frameborder="0" allowFullScreen="true">
+      allowFullScreen="true">
     </iframe>
   </div>
 
