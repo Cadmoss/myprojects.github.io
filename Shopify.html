@@ -30,6 +30,15 @@
 }
 
 
+.responsive-chart {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0; /* centers the image and adds space */
+  border-radius: 8px; /* optional: rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* optional: subtle shadow */
+}
+
     .header {
       background-color: #095325;
       color: white;
@@ -212,30 +221,33 @@
 <h3>DATA DICTIONARY</h3>
     <p>
       <ul>
-        <li><b>Admin GraphQL API ID:</b>This is a globally unique identifier utilized by systems that implement GraphQL APIs. It enables accurate retrieval of specific records, such as orders or products within a backend system. This ID is typically not human-readable and is intended for programmatic use.</li>
-        <li><b>Order Number:</b>This is a unique, often sequential number or code assigned to each customer order. It facilitates order tracking, reference, and support inquiries, and is commonly displayed in confirmation emails or invoices (e.g., #12345).</li>
-        <li><b>Billing Address City:</b>The city specified in the customer's billing address during checkout or registration. It is used for purposes such as tax calculation, fraud prevention, and maintaining accurate records.</li>
-        <li><b>Billing Address Country:</b>The country associated with the billing address. It can be helpful in tax rules, payment gateway processing, and regional business reporting.</li>
-        <li><b>Billing Address First Name:</b>The first name of the person associated with the billing address. Often required for processing payments and generating invoices.</li>
-        <li><b>Billing Address Last Name:</b>The last name (surname) of the person on the billing address. Combined with the first name, it provides full identification.</li>
-        <li><b>Billing Address Province:</b>The province, state, or region as per the billing address. For example, "California". This is often required for tax calculations and regional reporting.</li>
-        <li><b>Billing Address Zip:</b>The postal code (ZIP code) of the billing address. Used in shipping and tax estimation, and sometimes in fraud prevention by validating card transactions.</li>
-        <li><b>CITY:</b>Likely a redundant or duplicate field of "Billing Address City," but it could also be intended for a shipping city or a manually entered override field. Needs clarification or cleanup in the dataset.</li>
-        <li><b>Currency:</b>The type of currency used in the transaction, represented in ISO format (e.g., USD for US Dollars, EUR for Euros). It indicates the financial context in which the prices are recorded.</li>
-        <li><b>Customer ID:</b>A system-generated unique identifier for a customer. Used to link orders, communications, preferences, and order history to a specific customer.</li>
-        <li><b>Invoice Date:</b>The date the invoice was created or finalized for the transaction. This can be important for accounting, tax reporting, and determining payment terms.</li>
-        <li><b>Gateway:</b>The payment processing service used to complete the transaction. Examples include Stripe, PayPal, Razorpay, etc. This helps in reconciling payments and understanding transaction channels.</li>
-        <li><b>Product ID:</b>A unique identifier for the product being purchased. This is used internally to track inventory, pricing, and product performance across sales.</li>
-        <li><b>Product Type:</b>A classification or category of the product. For instance, it could be "Software," "Clothing," "Electronics," etc. Helps in reporting and filtering products.</li>
-        <li><b>Variant ID:</b>Products may come in multiple variants (e.g., different sizes or colors). The Variant ID uniquely identifies a specific version of the product.</li>
-        <li><b>Quantity:</b>The number of units of the product purchased in the order. Important for inventory management and sales volume analysis.</li>
-        <li><b>Subtotal Price:</b>The total cost of all items before applying taxes, shipping charges, or discounts. It reflects the base cost of the order.</li>
-        <li><b>Total Price USD:</b>The total price paid, including taxes and possibly shipping, converted to USD (if the transaction was in another currency). Useful for standardizing financial reporting across currencies.</li>
-        <li><b>Total Tax:</b>The total amount of tax (like VAT or GST) applied to the order. This is important for compliance and reporting in many regions.</li>
+        <li><b>Admin GraphQL API ID:</b> This is a globally unique identifier utilized by systems that implement GraphQL APIs. It enables accurate retrieval of specific records, such as orders or products within a backend system. This ID is typically not human-readable and is intended for programmatic use.</li>
+        <li><b>Order Number:</b> This is a unique, often sequential number or code assigned to each customer order. It facilitates order tracking, reference, and support inquiries, and is commonly displayed in confirmation emails or invoices (e.g., #12345).</li>
+        <li><b>Billing Address City:</b> The city specified in the customer's billing address during checkout or registration. It is used for purposes such as tax calculation, fraud prevention, and maintaining accurate records.</li>
+        <li><b>Billing Address Country:</b> The country associated with the billing address. It can be helpful in tax rules, payment gateway processing, and regional business reporting.</li>
+        <li><b>Billing Address First Name:</b> The first name of the person associated with the billing address. Often required for processing payments and generating invoices.</li>
+        <li><b>Billing Address Last Name:</b> The last name (surname) of the person on the billing address. Combined with the first name, it provides full identification.</li>
+        <li><b>Billing Address Province:</b> The province, state, or region as per the billing address. For example, "California". This is often required for tax calculations and regional reporting.</li>
+        <li><b>Billing Address Zip:</b> The postal code (ZIP code) of the billing address. Used in shipping and tax estimation, and sometimes in fraud prevention by validating card transactions.</li>
+        <li><b>CITY:</b> Likely a redundant or duplicate field of "Billing Address City," but it could also be intended for a shipping city or a manually entered override field. Needs clarification or cleanup in the dataset.</li>
+        <li><b>Currency:</b> The type of currency used in the transaction, represented in ISO format (e.g., USD for US Dollars, EUR for Euros). It indicates the financial context in which the prices are recorded.</li>
+        <li><b>Customer ID:</b> A system-generated unique identifier for a customer. Used to link orders, communications, preferences, and order history to a specific customer.</li>
+        <li><b>Invoice Date:</b> The date the invoice was created or finalized for the transaction. This can be important for accounting, tax reporting, and determining payment terms.</li>
+        <li><b>Gateway:</b> The payment processing service used to complete the transaction. Examples include Stripe, PayPal, Razorpay, etc. This helps in reconciling payments and understanding transaction channels.</li>
+        <li><b>Product ID:</b> A unique identifier for the product being purchased. This is used internally to track inventory, pricing, and product performance across sales.</li>
+        <li><b>Product Type:</b> A classification or category of the product. For instance, it could be "Software," "Clothing," "Electronics," etc. Helps in reporting and filtering products.</li>
+        <li><b>Variant ID:</b> Products may come in multiple variants (e.g., different sizes or colors). The Variant ID uniquely identifies a specific version of the product.</li>
+        <li><b>Quantity:</b> The number of units of the product purchased in the order. Important for inventory management and sales volume analysis.</li>
+        <li><b>Subtotal Price:</b> The total cost of all items before applying taxes, shipping charges, or discounts. It reflects the base cost of the order.</li>
+        <li><b>Total Price USD:</b> The total price paid, including taxes and possibly shipping, converted to USD (if the transaction was in another currency). Useful for standardizing financial reporting across currencies.</li>
+        <li><b>Total Tax:</b> The total amount of tax (like VAT or GST) applied to the order. This is important for compliance and reporting in many regions.</li>
         </ul>
     </p>
 
-
+    <h3>Unravelling the insights</h3>
+    <p>The transaction performance paints an impressive picture, with net sales reaching $4,180,874 across 7,534 total quantities, averaging a net order value of $562.6. This hefty revenue underscores a thriving marketplace where each sale reflects customer trust and product appeal. The standout figure here is the net sales, a testament to the store’s ability to generate significant income in just six days.</p>
+    <img src="images/Shopify 1.PNG" alt="Product Performance" class="responsive-chart" />
+    <p>Our customer base is a vibrant mix of 4,431 total customers, with 2,392 being single-order shoppers and 2,039 repeat buyers. The repeat rate of 46% and a purchase frequency of 1.68 indicate a loyal core, although the moderate frequency suggests room for encouraging more frequent purchases. The lifetime value of $ 943.60 per customer stands out as a key metric, highlighting the long-term potential of our repeat clientele.</p>
 
 
  <!-- PDF Link -->
