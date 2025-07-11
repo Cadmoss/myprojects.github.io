@@ -8,7 +8,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    /* Base Styles */
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -46,7 +45,7 @@
       color: #0a58ca;
     }
 
-    /* Project Grid Section */
+    /* Grid Section */
     section.project-grid {
       padding: 3rem 5%;
       display: grid;
@@ -58,9 +57,7 @@
       background: #ffffff;
       border-left: 4px solid #0a58ca;
       border-radius: 12px;
-      padding: 1.5rem;
-      text-decoration: none;
-      color: inherit;
+      overflow: hidden;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -70,16 +67,43 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card .content {
+      padding: 1.2rem;
+    }
+
     .project-card h3 {
-      margin-bottom: 0.6rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
       color: #0a58ca;
       font-size: 1.2rem;
     }
 
     .project-card p {
       font-size: 0.95rem;
-      line-height: 1.5;
       color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .project-card a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #0a58ca;
+      color: white;
+      font-size: 0.85rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .project-card a:hover {
+      background: #004aad;
     }
 
     footer {
@@ -111,22 +135,24 @@
     <a href="index.html" class="back-link">← Back to Home</a>
   </header>
 
-  <div class="project-card">
-          <img src="images/nick-fewings-mMLCPVp0N7M-unsplash.jpg" alt="NHTSA Dashboard" />
-          <div class="content">
-            <h3>NHTSA Vehicle Recalls</h3>
-            <p>25-Year Analysis (2000-2025) using SQL, Excel and open data from NHTSA to reveal patterns and safety insights.</p>
-            <a href="generic.html">View Project</a>
-          </div>
-        </div>
+  <section class="project-grid">
 
-    <!-- You can duplicate the block above for more archived projects -->
+    <div class="project-card">
+      <img src="images/nick-fewings-mMLCPVp0N7M-unsplash.jpg" alt="NHTSA Dashboard" />
+      <div class="content">
+        <h3>NHTSA Vehicle Recalls</h3>
+        <p>25-Year Analysis (2000–2025) using SQL, Excel, and open data from NHTSA to reveal trends and safety insights.</p>
+        <a href="generic.html" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <!-- Add more .project-card blocks here for more projects -->
 
   </section>
 
   <footer>
-    &copy; 2025 Michael Afolayan. 
-    </footer>
+    &copy; 2025 Michael Afolayan.
+  </footer>
 
 </body>
 </html>
