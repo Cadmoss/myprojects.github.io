@@ -3,99 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project Archive – Michael</title>
+  <title>Project Archive – Michael Afolayan</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <style>
+    /* Base Styles */
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 2rem;
-      background: #f9fafc;
-      color: #333;
+      padding: 0;
+      background: linear-gradient(to right, #e0f0ff, #f2f9ff);
+      color: #1f2e4d;
     }
 
     header {
+      padding: 2rem 5%;
+      background: #0a58ca;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
     }
 
     .back-link {
       text-decoration: none;
       font-size: 0.95rem;
-      color: #007bff;
-      border: 1px solid #007bff;
+      color: white;
+      border: 1px solid #fff;
       padding: 0.4rem 0.8rem;
       border-radius: 5px;
-      transition: 0.2s ease;
+      transition: background 0.2s, color 0.2s;
     }
 
     .back-link:hover {
-      background: #007bff;
-      color: white;
+      background: white;
+      color: #0a58ca;
     }
 
-    h1 {
-      font-size: 2rem;
-    }
-
-    .project-grid {
+    /* Project Grid Section */
+    section.project-grid {
+      padding: 3rem 5%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
     .project-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      background: #ffffff;
+      border-left: 4px solid #0a58ca;
+      border-radius: 12px;
       padding: 1.5rem;
-      transition: 0.3s;
       text-decoration: none;
       color: inherit;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     .project-card h3 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      color: #0a58ca;
+      font-size: 1.2rem;
     }
 
     .project-card p {
       font-size: 0.95rem;
-      line-height: 1.4;
+      line-height: 1.5;
+      color: #444;
     }
 
     footer {
       margin-top: 3rem;
       text-align: center;
+      padding: 2rem;
+      background: #0a58ca;
+      color: white;
       font-size: 0.85rem;
-      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      section.project-grid {
+        padding: 2rem 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Project Archive</h1>
+    <h1>📦 Project Archive</h1>
     <a href="index.html" class="back-link">← Back to Home</a>
   </header>
 
-  <section class="project-grid">
-    <a href="generic.html" class="project-card" target="_blank">
-      <h3>NHTSA Vehicle Recalls</h3>
-      <p>25-Year Analysis (2000-2025) using SQL, Excel and open data from NHTSA to reveal patterns and safety insights.</p>
-    </a>
-    
+  <div class="project-card">
+          <img src="images/nick-fewings-mMLCPVp0N7M-unsplash.jpg" alt="NHTSA Dashboard" />
+          <div class="content">
+            <h3>NHTSA Vehicle Recalls</h3>
+            <p>25-Year Analysis (2000-2025) using SQL, Excel and open data from NHTSA to reveal patterns and safety insights.</p>
+            <a href="generic.html">View Project</a>
+          </div>
+        </div>
+
+    <!-- You can duplicate the block above for more archived projects -->
+
   </section>
 
   <footer>
     &copy; 2025 Michael Afolayan. 
-  </footer>
+    </footer>
 
 </body>
 </html>
