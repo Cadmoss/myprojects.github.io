@@ -18,7 +18,7 @@
 
     header {
       padding: 2rem 5%;
-      background: #0a58ca;
+      background: #0a192f;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -42,37 +42,40 @@
 
     .back-link:hover {
       background: white;
-      color: #0a58ca;
+      color: #0a192f;
     }
 
     /* Grid Section */
     section.project-grid {
-      padding: 3rem 5%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+  padding: 3rem 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
 
-    .project-card {
-      background: #ffffff;
-      border-left: 4px solid #0a58ca;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+.project-card {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  border-left: 4px solid #0a58ca;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
     .project-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
+  .project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
     .project-card .content {
       padding: 1.2rem;
@@ -81,7 +84,7 @@
     .project-card h3 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      color: #0a58ca;
+      color: #1a3a6b;
       font-size: 1.2rem;
     }
 
@@ -94,7 +97,7 @@
     .project-card a {
       display: inline-block;
       padding: 0.5rem 1rem;
-      background: #0a58ca;
+      background: #142a4b;
       color: white;
       font-size: 0.85rem;
       border-radius: 5px;
@@ -110,7 +113,7 @@
       margin-top: 3rem;
       text-align: center;
       padding: 2rem;
-      background: #0a58ca;
+      background: #0a192f;
       color: white;
       font-size: 0.85rem;
     }
@@ -131,7 +134,7 @@
 <body>
 
   <header>
-    <h1>📦 Project Archive</h1>
+    <h1>Project Archive</h1>
     <a href="index.html" class="back-link">← Back to Home</a>
   </header>
 
