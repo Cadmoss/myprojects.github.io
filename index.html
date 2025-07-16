@@ -213,10 +213,7 @@
 
 <body id="top">
 
-  <!-- D3 Background -->
-  <div id="d3-background">
-    <svg></svg>
-  </div>
+  
 
   <header>
     <h1>Michael Afolayan</h1>
@@ -311,8 +308,8 @@
   </div>
 
 <section style="background-color: #fff3cd; color: #856404; padding: 1.5rem; margin: -2rem auto 2rem auto; border-left: 5px solid #ffeeba; max-width: 800px; border-radius: 6px; font-size: 0.95rem;">
-    <p><strong>Disclaimer:</strong> The data used in these projects is entirely fictional or simulated. It has been created solely for learning and demonstration purposes and does not reflect real-world information.</p>
-  </section>
+  <p><strong>Disclaimer:</strong> The data used in these projects is entirely fictional or simulated. It has been created solely for learning and demonstration purposes and does not reflect real-world information.</p>
+</section>
 
   <footer>
     <p>Connect with me:</p>
@@ -328,80 +325,23 @@
   </footer>
 
   <!-- Back to Top Button -->
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <i class="fas fa-arrow-up"></i>
-  </a>
+ <a href="#top" class="back-to-top" title="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</a>
 
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-<script>
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  <script>
+      const backToTopBtn = document.querySelector('.back-to-top');
 
-  const svg = d3.select("#d3-background svg")
-    .attr("viewBox", [0, 0, width, height]);
-
-  const numNodes = 35;
-  const nodes = d3.range(numNodes).map(() => ({
-    x: Math.random() * width,
-    y: Math.random() * height
-  }));
-  const links = d3.range(numNodes * 1.2).map(() => ({
-    source: Math.floor(Math.random() * numNodes),
-    target: Math.floor(Math.random() * numNodes)
-  }));
-
-  const link = svg.append("g")
-    .attr("stroke", "#64ffda")
-    .attr("stroke-opacity", 0.2)
-    .selectAll("line")
-    .data(links)
-    .join("line");
-
-  const node = svg.append("g")
-    .attr("fill", "#64ffda")
-    .selectAll("circle")
-    .data(nodes)
-    .join("circle")
-    .attr("r", 2.5);
-
-  const simulation = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(links).distance(80).strength(0.4))
-    .force("charge", d3.forceManyBody().strength(-40))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .alphaDecay(0.05)
-    .on("tick", ticked);
-
-  function ticked() {
-    link
-      .attr("x1", d => d.source.x)
-      .attr("y1", d => d.source.y)
-      .attr("x2", d => d.target.x)
-      .attr("y2", d => d.target.y);
-
-    node
-      .attr("cx", d => d.x)
-      .attr("cy", d => d.y);
-  }
-
-  // Add interactivity with mouse position using forceX and forceY
-  let mouseX = width / 2;
-  let mouseY = height / 2;
-
-  svg.on("mousemove", (event) => {
-    const [x, y] = d3.pointer(event);
-    mouseX = x;
-    mouseY = y;
-    simulation.force("attractX", d3.forceX(mouseX).strength(0.03));
-    simulation.force("attractY", d3.forceY(mouseY).strength(0.03));
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
   });
+  </script>
 
-  svg.on("mouseleave", () => {
-    // Reset to center if mouse leaves window
-    simulation.force("attractX", d3.forceX(width / 2).strength(0.01));
-    simulation.force("attractY", d3.forceY(height / 2).strength(0.01));
-  });
 
-  window.addEventListener("resize", () => {
-    location.reload(); // refresh on resize
-  });
-</script>
+
+</body>
+</html>
