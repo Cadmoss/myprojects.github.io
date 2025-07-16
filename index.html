@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <style>
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -16,13 +16,30 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f5f7fa;
+      background-color: #0a192f;
       color: #333;
       line-height: 1.6;
     }
 
-    header {
+    #d3-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    #d3-background svg {
+      display: block;
+      width: 100%;
+      height: 100%;
       background: #0a192f;
+    }
+
+    header {
+      background: transparent;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
@@ -63,6 +80,7 @@
       margin-bottom: 1rem;
       border-left: 5px solid #64ffda;
       padding-left: 10px;
+      color: white;
     }
 
     .projects-grid {
@@ -158,43 +176,47 @@
       max-width: 700px;
     }
 
-    /* Back to Top Button */
     .back-to-top {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 42px;
-  height: 42px;
-  background-color: transparent;
-  color: #64ffda;
-  border: 2px solid #64ffda;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-}
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 42px;
+      height: 42px;
+      background-color: transparent;
+      color: #64ffda;
+      border: 2px solid #64ffda;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+    }
 
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-}
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
 
-.back-to-top:hover {
-  background-color: #64ffda;
-  color: #0a192f;
-  transform: translateY(-4px);
-}
+    .back-to-top:hover {
+      background-color: #64ffda;
+      color: #0a192f;
+      transform: translateY(-4px);
+    }
   </style>
 </head>
 
 <body id="top">
+
+  <!-- D3 Background -->
+  <div id="d3-background">
+    <svg></svg>
+  </div>
 
   <header>
     <h1>Michael Afolayan</h1>
@@ -289,8 +311,8 @@
   </div>
 
 <section style="background-color: #fff3cd; color: #856404; padding: 1.5rem; margin: -2rem auto 2rem auto; border-left: 5px solid #ffeeba; max-width: 800px; border-radius: 6px; font-size: 0.95rem;">
-  <p><strong>Disclaimer:</strong> The data used in these projects is entirely fictional or simulated. It has been created solely for learning and demonstration purposes and does not reflect real-world information.</p>
-</section>
+    <p><strong>Disclaimer:</strong> The data used in these projects is entirely fictional or simulated. It has been created solely for learning and demonstration purposes and does not reflect real-world information.</p>
+  </section>
 
   <footer>
     <p>Connect with me:</p>
@@ -306,23 +328,75 @@
   </footer>
 
   <!-- Back to Top Button -->
- <a href="#top" class="back-to-top" title="Back to Top">
-  <i class="fas fa-arrow-up"></i>
-</a>
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 
+  <!-- Back to Top JS -->
   <script>
-      const backToTopBtn = document.querySelector('.back-to-top');
+    const backToTopBtn = document.querySelector('.back-to-top');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.classList.add('show');
-    } else {
-      backToTopBtn.classList.remove('show');
-    }
-  });
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
   </script>
 
+  <!-- D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
+    const svg = d3.select("#d3-background svg")
+      .attr("viewBox", [0, 0, width, height]);
+
+    const numNodes = 40;
+
+    const nodes = d3.range(numNodes).map(() => ({}));
+    const links = d3.range(numNodes * 1.5).map(() => ({
+      source: Math.floor(Math.random() * numNodes),
+      target: Math.floor(Math.random() * numNodes)
+    }));
+
+    const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).distance(80).strength(0.5))
+      .force("charge", d3.forceManyBody().strength(-60))
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+    const link = svg.append("g")
+      .attr("stroke", "#64ffda")
+      .attr("stroke-opacity", 0.2)
+      .selectAll("line")
+      .data(links)
+      .join("line");
+
+    const node = svg.append("g")
+      .attr("fill", "#64ffda")
+      .selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      .attr("r", 2.5);
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+    });
+
+    window.addEventListener("resize", () => {
+      location.reload();
+    });
+  </script>
 
 </body>
 </html>
