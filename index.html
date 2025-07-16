@@ -332,7 +332,6 @@
     <i class="fas fa-arrow-up"></i>
   </a>
 
-  <!-- Back to Top JS -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
   const width = window.innerWidth;
@@ -341,23 +340,15 @@
   const svg = d3.select("#d3-background svg")
     .attr("viewBox", [0, 0, width, height]);
 
-  const numNodes = 60;
-  const nodes = d3.range(numNodes).map(() => ({}));
-  const mouseNode = { x: width / 2, y: height / 2 }; // invisible node that follows mouse
-
+  const numNodes = 35;
+  const nodes = d3.range(numNodes).map(() => ({
+    x: Math.random() * width,
+    y: Math.random() * height
+  }));
   const links = d3.range(numNodes * 1.2).map(() => ({
     source: Math.floor(Math.random() * numNodes),
     target: Math.floor(Math.random() * numNodes)
   }));
-
-  // Add the mouse node to the simulation
-  nodes.push(mouseNode);
-
-  const simulation = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(links).distance(80).strength(0.5))
-    .force("charge", d3.forceManyBody().strength(-40))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .alphaTarget(0.3).restart();
 
   const link = svg.append("g")
     .attr("stroke", "#64ffda")
@@ -369,11 +360,18 @@
   const node = svg.append("g")
     .attr("fill", "#64ffda")
     .selectAll("circle")
-    .data(nodes.slice(0, -1)) // exclude the mouse node from drawing
+    .data(nodes)
     .join("circle")
     .attr("r", 2.5);
 
-  simulation.on("tick", () => {
+  const simulation = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).distance(80).strength(0.4))
+    .force("charge", d3.forceManyBody().strength(-40))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .alphaDecay(0.05)
+    .on("tick", ticked);
+
+  function ticked() {
     link
       .attr("x1", d => d.source.x)
       .attr("y1", d => d.source.y)
@@ -383,17 +381,27 @@
     node
       .attr("cx", d => d.x)
       .attr("cy", d => d.y);
-  });
+  }
 
-  // Mouse interaction
+  // Add interactivity with mouse position using forceX and forceY
+  let mouseX = width / 2;
+  let mouseY = height / 2;
+
   svg.on("mousemove", (event) => {
     const [x, y] = d3.pointer(event);
-    mouseNode.x = x;
-    mouseNode.y = y;
-    simulation.alpha(0.3).restart(); // refresh simulation slightly
+    mouseX = x;
+    mouseY = y;
+    simulation.force("attractX", d3.forceX(mouseX).strength(0.03));
+    simulation.force("attractY", d3.forceY(mouseY).strength(0.03));
+  });
+
+  svg.on("mouseleave", () => {
+    // Reset to center if mouse leaves window
+    simulation.force("attractX", d3.forceX(width / 2).strength(0.01));
+    simulation.force("attractY", d3.forceY(height / 2).strength(0.01));
   });
 
   window.addEventListener("resize", () => {
-    location.reload(); // redraw on resize
+    location.reload(); // refresh on resize
   });
 </script>
