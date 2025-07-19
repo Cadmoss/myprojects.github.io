@@ -98,6 +98,38 @@
       border: none;
     }
 
+.notes h3 {
+      margin-top: 30px;
+    }
+
+    .notes ul {
+      margin-left: 20px;
+      padding-left: 10px;
+    }
+
+    .notes ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .responsive-chart {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .zoomed {
+      transform: scale(2);
+      cursor: zoom-out;
+      z-index: 1000;
+    }
+
+
     .fun-box {
       margin-top: 30px;
       padding: 20px;
@@ -300,6 +332,11 @@
   function toggleTheme() {
     document.body.classList.toggle('dark-mode');
   }
+   document.querySelectorAll('.responsive-chart').forEach(img => {
+    img.addEventListener('click', () => {
+      img.classList.toggle('zoomed');
+    });
+  });
 </script>
 
 </body>
