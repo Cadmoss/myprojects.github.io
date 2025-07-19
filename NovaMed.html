@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NovaMed Sales and Customer Performance Analysis</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef6f9;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .header {
+      background-color: #3c613f;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      background-color: #70eec4;
+      color: #003845;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #4db4a5;
+      color: white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .embed-box, .video-box {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .info-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #caf8ee;
+      border-left: 5px solid #026e3c;
+      border-radius: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #004945;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .dark-mode .header {
+      background-color: #004424;
+    }
+
+    .dark-mode .info-box {
+      background-color: #2a2a2a;
+      color: #ddd;
+      border-left-color: #00d8a2;
+    }
+
+    .dark-mode .home-button {
+      background-color: #018f70;
+      color: #fff;
+    }
+
+    .toggle-theme {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .toggle-theme button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #00b679;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <a href="index.html" class="home-button">HOME</a>
+  </div>
+  <h1>Healthcare Economics</h1>
+  <p>A Comprehensive Review of Financial and Provider Metrics</p>
+</div>
+
+<div class="container">
+
+ <!-- Power BI Embed -->
+<div class="embed-box">
+  <iframe title="Medical Metrics Dashboard"
+    src="https://app.powerbi.com/reportEmbed?reportId=0bce5c26-296e-4691-b972-e3a2b7d60e23&autoAuth=true&ctid=79401934-75b9-4f0a-b2e1-6bc24af8c9c9"
+    allowFullScreen="true">
+  </iframe>
+</div>
+
+  <!-- Video Presentation Embed -->
+  <div class="video-box">
+    <iframe title="Healthcare Presentation Video"
+      src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- PDF Link -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="Healthcare_Economics_Report.pdf" target="_blank"
+       style="background-color: #00b661; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+      View PDF Presentation
+    </a>
+  </div>
+
+  <!-- Power BI Direct Link -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://app.powerbi.com/reportEmbed?reportId=YOUR_REPORT_ID&autoAuth=true&ctid=YOUR_CTID&actionBarEnabled=true" 
+       target="_blank" 
+       style="color: #00b652; text-decoration: none; font-weight: 600;">
+      🔗 Open in Power BI
+    </a>
+  </div>
+
+<!-- Dashboard Snippets Section -->
+<div style="margin-top: 50px;">
+  <h2 style="text-align: center; color: #00b652;">Dashboard Highlights</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin-top: 20px;">
+    
+    <!-- Snippet 1 -->
+    <div style="flex: 1; min-width: 280px; background: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;">
+      <img src="images/Capture 1.PNG" alt="Detail" style="width: 100%; display: block;">
+      <div style="padding: 15px; color: #004931;">
+        <strong>Detail</strong><br>
+        This Dashboard provides a comprehensive overview of healthcare billing and costs across various cities in the United Kingdom, detailing average expenses, procedure-specific billing, departmental breakdowns, and diagnosis-related services.
+      </div>
+    </div>
+
+    <!-- Snippet 2 -->
+    <div style="flex: 1; min-width: 280px; background: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden;">
+      <img src="images/Capture 2.PNG" alt="Trend" style="width: 100%; display: block;">
+      <div style="padding: 15px; color: #004927;">
+        <strong>Trend</strong><br>
+        The Medical Metrics Trend dashboard provides a comprehensive overview of billing amounts and trends across months, weeks, quarters, and departments, highlighting average billing per visit and year-over-year changes.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Info Box -->
+  <div class="info-box">
+    <strong>About this dashboard:</strong><br/>
+    This dashboard presents a financial and operational overview of a simulated healthcare center. It focuses on revenue trends, cost distribution, and provider performance metrics—designed to support decision-making and strategic planning in healthcare management.
+  </div>
+</div>
+
+<!-- Optional: Dark Mode Toggle -->
+<div class="toggle-theme">
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+</div>
+
+</body>
+</html>
