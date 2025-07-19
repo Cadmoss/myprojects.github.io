@@ -123,11 +123,17 @@
   transition: transform 0.3s ease;
 }
 
-    .zoomed {
-      transform: scale(2);
-      cursor: zoom-out;
-      z-index: 1000;
-    }
+   .responsive-chart.zoomed {
+  transform: scale(2.5);
+  z-index: 999;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .responsive-chart.zoomed {
+    transform: scale(1.5);
+  }
+}
 
 
     .fun-box {
