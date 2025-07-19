@@ -242,19 +242,17 @@
   
 
     <h3>Data Dictionary</h3>
-    <p>The data dictionary includes eight datasets: <b>Cities, Departments, Diagnoses, Insurance, Patients, Procedures, Providers,</b><b>and Visits.</b></p>
+    <p>The data dictionary includes eight datasets: <b>Cities, Departments, Diagnoses, Insurance, Patients, Procedures, Providers,</b><b> and Visits.</b></p>
     <p><ul>
-      <li><b>Cities -</b>This dataset contains information about various cities, with each record consisting of three main columns: City ID, City, and State. The City ID is a unique numerical identifier assigned to each city to ensure distinct referencing within the database. The City column provides the name of the city, while the State column indicates the broader region, such as a state or province, where the city is located.</li>
-      <li><b>Departments -</b>This consists of two columns: Department ID and Department. The Department ID is a unique numerical identifier used to distinguish each department in the system. The Department column contains the name of the department, such as General Surgery.</li>
-
-
-
-
+      <li><b>Cities -</b> This dataset contains information about various cities, with each record consisting of three main columns: City ID, City, and State. The City ID is a unique numerical identifier assigned to each city to ensure distinct referencing within the database. The City column provides the name of the city, while the State column indicates the broader region, such as a state or province, where the city is located.</li>
+      <li><b>Departments -</b> This consists of two columns: Department ID and Department. The Department ID is a unique numerical identifier used to distinguish each department in the system. The Department column contains the name of the department, such as General Surgery.</li>
+      <li><b>Diagnoses -</b> This dataset includes two columns: Diagnosis ID and Diagnosis. The Diagnosis ID is a unique numerical code assigned to each medical condition for identification reference purposes. The Diagnosis column contains the name of the condition, such as Appendicitis.</li>
+      <li><b>Insurance -</b> This contains Insurance providers associated with patient coverage. It includes two columns: Insurance ID and Insurance Provider. The Insurance ID is a unique numerical identifier assigned to each insurance provider, ensuring accurate referencing across the database. The Insurance Provider column lists the name of the insurance company.</li>
+      <li><b>Patients -</b> This contains demographic and geographic information about individuals receiving medical care. Each record includes a Patient ID, which uniquely identifies each patient, along with their Patient Name, Gender, and Age. The City ID links to the Cities dataset, indicating the city of residence for each patient, while the Race column captures the patient's racial or ethnic background.</li>
+      <li><b>Procedures -</b> The Procedures dataset lists medical procedures performed during patient care. The Procedure ID is a unique numerical identifier assigned to each procedure, ensuring consistent referencing across related datasets. The Procedure column specifies the name of the medical procedure.</li>
+      <li><b>Providers -</b> The Providers dataset contains information about healthcare professionals who deliver medical services. It includes the following columns: Provider ID, a unique numerical identifier for each provider; Provider Name, which records the full name of the healthcare professional (e.g., Dr. Olu Abisola); Gender and Age, which provide demographic details; and Nationality, which indicates the provider’s country of origin (e.g., Nigerian).</li>
+      <li><b>Visits -</b> The Visits dataset records detailed information about each patient’s healthcare encounter, including the Date of Visit and identifiers such as Patient ID, Provider ID, Department ID, Diagnosis ID, Procedure ID, and Insurance ID, which link to their respective datasets. It captures the Service Type (e.g., outpatient), Treatment Cost, and Medication Cost, along with the Follow-Up Visit Date and Patient Satisfaction Score to track patient outcomes. Additional fields include Referral Source, whether the visit was an Emergency, and the Payment Status. For inpatient visits, the dataset also records Admitted Date, Discharge Date, Room Type, Insurance Coverage, and Room Charges (daily rate).</li>
     </ul>
-
-
-
-
     </p>
 
 
