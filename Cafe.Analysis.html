@@ -34,19 +34,21 @@
     }
 
     .home-button {
-      background-color: #f2a154;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #0a9396;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 1000;
+}
 
-    .home-button:hover {
-      background-color: #db874d;
-    }
+.home-button:hover {
+  background-color: #007f8c;
+}
 
     .content-section {
       background: #fff;
@@ -178,9 +180,8 @@
   </style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <a href="index.html" class="home-button">Home</a>
+  <a href="index.html" class="home-button">Home</a>
+ <div class="header">
     <h1>Café Harmony Sales Performance Analysis</h1>
   </div>
 
