@@ -61,14 +61,20 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.content-section img,
 .content-section iframe {
   width: 100%;
+  height: 500px; /* adjust to your preference */
   max-width: 100%;
-  height: auto;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+.content-section h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #7a583a;
+  margin-bottom: 20px;
 }
 
     .responsive-chart {
@@ -193,13 +199,13 @@
 
     <!-- Dashboard Image -->
   <div class="content-section">
-    <h2>Dashboard Overview</h2>
+    <h3>Dashboard Overview</h3>
     <img src="images/Cafe Harm.PNG" alt="Dashboard" class="responsive-chart">
   </div>
 
      <!-- Video -->
   <div class="content-section">
-    <h2>Video Walkthrough</h2>
+    <h3>Video Walkthrough</h3>
     <iframe width="100%" height="315"
       src="https://www.youtube.com/embed/-9Gznofa5Cs"
       frameborder="0"
