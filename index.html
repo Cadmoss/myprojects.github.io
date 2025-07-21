@@ -165,11 +165,12 @@ header p {
       max-width: 700px;
     }
 
-    /* Back to Top Button */
-    .back-to-top {
+/* Back to Top Button - Centered */
+.back-to-top {
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 42px;
   height: 42px;
   background-color: transparent;
@@ -196,7 +197,7 @@ header p {
 .back-to-top:hover {
   background-color: #64ffda;
   color: #0a192f;
-  transform: translateY(-4px);
+  transform: translate(-50%, -4px);
 }
   </style>
 </head>
