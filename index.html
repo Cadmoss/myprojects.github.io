@@ -339,31 +339,35 @@ header p {
     }
   });
 
-  // 👇 Add this code below your existing script
+  // Show chat popup after 5 seconds
   window.onload = () => {
     setTimeout(() => {
-      document.getElementById("popup-form").style.display = "block";
-    }, 5000); // 5 seconds
+      document.getElementById("popup-chat").style.display = "block";
+    }, 5000); // Delay in milliseconds
   };
 
-  function closePopup() {
-    document.getElementById("popup-form").style.display = "none";
+  function closeChat() {
+    document.getElementById("popup-chat").style.display = "none";
   }
 </script>
 
 
 
-<!-- Inquiry Popup -->
-<div id="popup-form" style="display: none; position: fixed; top: 20%; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; padding: 1.5rem; z-index: 1000;">
-  <h3 style="margin-top: 0;">👋 Hi there!</h3>
-  <p>I'm Michael. How can I help you explore my portfolio today?</p>
-  <form action="https://formsubmit.co/michaelcadmoss@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="New message from portfolio site">
-    <textarea name="message" placeholder="Type your question here..." required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px;"></textarea>
-    <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px;" />
-    <button type="submit" style="background: #64ffda; color: #0a192f; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Send</button>
-  </form>
-  <button onclick="closePopup()" style="margin-top: 10px; background: none; border: none; color: #aaa; cursor: pointer;">Dismiss</button>
+<!-- Stylish Chat-style Popup -->
+<div id="popup-chat" style="display: none; position: fixed; bottom: 30px; right: 30px; width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; overflow: hidden; font-family: 'Roboto', sans-serif;">
+  <div style="background: #0a192f; color: #64ffda; padding: 12px 16px; font-weight: bold;">
+    👋 Hi, I'm Michael
+  </div>
+  <div style="padding: 12px; font-size: 0.95rem; color: #333;">
+    How can I help you explore my portfolio today?
+    <form action="https://formsubmit.co/michaelcadmoss@gmail.com" method="POST" style="margin-top: 10px;">
+      <input type="hidden" name="_subject" value="Portfolio Inquiry">
+      <textarea name="message" placeholder="Your question..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; resize: none; font-size: 0.85rem;" rows="3"></textarea>
+      <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; margin-top: 8px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem;" />
+      <button type="submit" style="margin-top: 10px; background: #64ffda; color: #0a192f; border: none; padding: 8px 14px; border-radius: 6px; font-weight: bold; cursor: pointer;">Send</button>
+    </form>
+    <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
+  </div>
 </div>
 
 </body>
