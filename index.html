@@ -471,15 +471,47 @@ header p {
 <p style="margin-top: 10px;">
   You can also <a href="https://www.linkedin.com/in/michael-afolayann" target="_blank" style="color: #0a192f; font-weight: bold; text-decoration: underline;">connect with me on LinkedIn</a>.
 </p>
-    <form action="https://formsubmit.co/michaelcadmoss@gmail.com" method="POST" style="margin-top: 10px;">
-      <input type="hidden" name="_subject" value="Portfolio Inquiry">
+    <form id="chat-form" action="https://formsubmit.co/michaelcadmoss@gmail.com" method="POST" style="margin-top: 10px;">
+    <input type="hidden" name="_redirect" value="none">
       <textarea name="message" placeholder="Your question..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; resize: none; font-size: 0.85rem;" rows="3"></textarea>
       <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; margin-top: 8px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem;" />
       <button type="submit" style="margin-top: 10px; background: #64ffda; color: #0a192f; border: none; padding: 8px 14px; border-radius: 6px; font-weight: bold; cursor: pointer;">Send</button>
     </form>
+    <p id="chat-confirmation" style="display: none; color: green; font-weight: bold; margin-top: 10px;">
+  ✅ Message received! I’ll get back to you shortly.</p>
     <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  document.getElementById("chat-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset();
+        document.getElementById("chat-confirmation").style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("There was a problem submitting your message.");
+    });
+  });
+</script>
+
 </body>
 </html>
