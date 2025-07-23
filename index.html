@@ -214,25 +214,41 @@ header p {
   transform: translate(-50%, -4px);
 }
 
-/* Image Carousel */
+/* Swiper Container */
 .swiper {
   width: 95%;
-  max-width: 1100px; /* Adjust this number to make it wider or narrower */
-  height: 250px;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
   margin: 2rem auto;
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
   background: transparent;
 }
 
-/* Images inside Swiper */
+/* Slide */
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Images */
 .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* show full image without cropping */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   display: block;
 }
 
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  background: #64ffda;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  background: #0a192f;
+  opacity: 1;
+}
 /* Hide arrows by default */
 .swiper-button-next,
 .swiper-button-prev {
@@ -285,7 +301,7 @@ header p {
   </div>
   <div class="swiper-pagination"></div>
 </div>
- 
+ <div class="container"></div>
   <!-- Dots -->
   <div class="swiper-pagination"></div>
 </div>
@@ -460,6 +476,6 @@ header p {
     <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
   </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
