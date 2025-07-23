@@ -231,6 +231,19 @@ header p {
   object-fit: cover;
 }
 
+/* Hide arrows by default */
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show arrows on hover */
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-button-prev {
+  opacity: 1;
+}
+
   </style>
 </head>
 
