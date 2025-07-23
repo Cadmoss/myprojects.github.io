@@ -477,8 +477,9 @@ header p {
       <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; margin-top: 8px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem;" />
       <button type="submit" style="margin-top: 10px; background: #64ffda; color: #0a192f; border: none; padding: 8px 14px; border-radius: 6px; font-weight: bold; cursor: pointer;">Send</button>
     </form>
-    <p id="chat-confirmation" style="display: none; color: green; font-weight: bold; margin-top: 10px;">
-  ✅ Message received! I’ll get back to you shortly.</p>
+   <p id="chat-confirmation" style="display: none; color: #0a192f; font-weight: bold; margin-top: 10px;">
+  <i class="fas fa-check-circle" style="color: #28a745; margin-right: 6px;"></i> Message received! I’ll get back to you shortly.
+</p>
     <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
   </div>
 </div>
@@ -486,31 +487,38 @@ header p {
 
 <script>
   document.getElementById("chat-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
+  const form = e.target;
+  const formData = new FormData(form);
 
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        form.reset();
-        document.getElementById("chat-confirmation").style.display = "block";
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    })
-    .catch(error => {
-      console.error("Error:", error);
-      alert("There was a problem submitting your message.");
-    });
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      form.reset();
+      const confirmation = document.getElementById("chat-confirmation");
+      confirmation.style.display = "block";
+
+      // Automatically close chat after 5 seconds
+      setTimeout(() => {
+        confirmation.style.display = "none";
+        document.getElementById("popup-chat").style.display = "none";
+      }, 5000); // 5000 = 5 seconds
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    alert("There was a problem submitting your message.");
   });
+});
 </script>
 
 </body>
