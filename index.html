@@ -15,6 +15,11 @@
   <title>Michael Afolayan | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
   <style>
     * {
@@ -210,33 +215,20 @@ header p {
 }
 
 /* Image Carousel */
-.carousel {
+.swiper {
   width: 100%;
   max-width: 1000px;
+  height: 250px;
   margin: 2rem auto;
-  overflow: hidden;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.carousel-track {
-  display: flex;
-  width: 300%;
-  animation: slide 90s infinite;
-}
-
-.carousel img {
+.swiper-slide img {
   width: 100%;
-  flex-shrink: 0;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
-}
-
-@keyframes slide {
-  0% { transform: translateX(0%); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0%); }
 }
 
   </style>
@@ -256,13 +248,20 @@ header p {
     <a href="#background">Background</a>
     <a href="#Contact">Contact</a>
   </nav>
-<!-- Auto Image Carousel -->
-<div class="carousel">
-  <div class="carousel-track">
-    <img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Slide 1">
-    <img src="images/alesia-kazantceva-iYoAPaSPBKI-unsplash.jpg" alt="Slide 2">
-    <img src="images/online-marketing-hIgeoQjS_iE-unsplash.jpg" alt="Slide 3">
+<!-- Swiper Carousel -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Slide 1" /></div>
+    <div class="swiper-slide"><img src="images/alesia-kazantceva-iYoAPaSPBKI-unsplash.jpg" alt="Slide 2" /></div>
+    <div class="swiper-slide"><img src="images/online-marketing-hIgeoQjS_iE-unsplash.jpg" alt="Slide 3" /></div>
   </div>
+  
+  <!-- Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  
+  <!-- Dots -->
+  <div class="swiper-pagination"></div>
 </div>
   <div class="container">
     <section id="projects">
@@ -399,6 +398,24 @@ header p {
   }
 </script>
 
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    speed: 500, // Fast transition
+    autoplay: {
+      delay: 30000, // 30 seconds per slide
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 
 
 <!-- Stylish Chat-style Popup -->
