@@ -218,18 +218,18 @@ header p {
 .swiper {
   width: 100%;
   max-width: 1000px;
-  height: 250px; /* fixed height you want */
+  height: 250px; /* or your preferred fixed height */
   margin: 2rem auto;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: #000; /* optional, helps with letterboxing */
+  box-shadow: none;      /* remove shadow */
+  background: transparent; /* remove background */
 }
 
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* show full image without cropping */
+  object-fit: contain;  /* Show the full image */
   display: block;
 }
 
