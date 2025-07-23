@@ -246,6 +246,18 @@ header p {
   opacity: 1;
 }
 
+/* Default dot color */
+.swiper-pagination-bullet {
+  background: #64ffda; /* your desired color */
+  opacity: 0.6;
+}
+
+/* Active dot color */
+.swiper-pagination-bullet-active {
+  background: #0a192f; /* a contrasting color for active dot */
+  opacity: 1;
+}
+
   </style>
 </head>
 
@@ -415,7 +427,7 @@ header p {
     loop: true,
     speed: 500,
     autoplay: {
-      delay: 30000,
+      delay: 5000,
       disableOnInteraction: false,
     },
     pagination: {
