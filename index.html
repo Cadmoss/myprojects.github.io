@@ -230,7 +230,7 @@ header p {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
-  align-items: stretch; /* 🔥 this stretches both items to equal height */
+  align-items: stretch;
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
@@ -240,7 +240,7 @@ header p {
   flex: 1;
   min-width: 250px;
   max-width: 500px;
-  background: #fff9e6; /* 🌟 change this to your preferred color */
+  background: #fff9e6;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -249,6 +249,7 @@ header p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
 
 .swiper.mySwiper {
   flex: 1;
@@ -268,7 +269,7 @@ header p {
   .left-content,
   .swiper.mySwiper {
     max-width: 100%;
-    height: auto; /* let height adjust on mobile */
+    height: auto;
   }
 }
 
@@ -296,6 +297,7 @@ header p {
   background: #0a192f;
   opacity: 1;
 }
+
 /* Hide arrows by default */
 .swiper-button-next,
 .swiper-button-prev {
@@ -306,18 +308,6 @@ header p {
 /* Show arrows on hover */
 .swiper:hover .swiper-button-next,
 .swiper:hover .swiper-button-prev {
-  opacity: 1;
-}
-
-/* Default dot color */
-.swiper-pagination-bullet {
-  background: #64ffda; /* your desired color */
-  opacity: 0.6;
-}
-
-/* Active dot color */
-.swiper-pagination-bullet-active {
-  background: #0a192f; /* a contrasting color for active dot */
   opacity: 1;
 }
 
@@ -342,13 +332,6 @@ header p {
   transform: scale(1.1);
   opacity: 1;
 }
-
-
-.tool-icons img:hover {
-  transform: scale(1.1);
-}
-
-  </style>
 </head>
 
 <body id="top">
