@@ -225,6 +225,38 @@ header p {
   background: transparent;
 }
 
+.carousel-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.left-content {
+  flex: 1;
+  min-width: 250px;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  color: #333;
+}
+
+.swiper.mySwiper {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 /* Slide */
 .swiper-slide {
   display: flex;
@@ -319,18 +351,25 @@ header p {
     <a href="#Contact">Contact</a>
   </nav>
 <!-- Swiper Carousel -->
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="images/Cafe Harm.PNG" alt="Slide 1" /></div>
-    <div class="swiper-slide"><img src="images/Provider.PNG" alt="Slide 2" /></div>
-    <div class="swiper-slide"><img src="images/Trend.PNG" alt="Slide 3" /></div>
-    <div class="swiper-slide"><img src="images/Details.PNG" alt="Slide 4" /></div>
-    <div class="swiper-slide"><img src="images/Shopify PBI.PNG" alt="Slide 4" /></div>
-    <div class="swiper-slide"><img src="images/Health9.PNG" alt="Slide 4" /></div>
-    <div class="swiper-slide"><img src="images/Capture 2.PNG" alt="Slide 4" /></div>
-    <div class="swiper-slide"><img src="images/Capture 1.PNG" alt="Slide 4" /></div>
+<div class="carousel-layout">
+  <div class="left-content">
+    <h3>Featured Dashboard</h3>
+    <p>This dashboard shows insights from multiple projects including sales trends, provider metrics, and healthcare analysis. It’s designed using Power BI, Excel, and Python.</p>
   </div>
-  <div class="swiper-pagination"></div>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/Cafe Harm.PNG" alt="Cafe Harm" /></div>
+      <div class="swiper-slide"><img src="images/Provider.PNG" alt="Provider" /></div>
+      <div class="swiper-slide"><img src="images/Trend.PNG" alt="Trend" /></div>
+      <div class="swiper-slide"><img src="images/Details.PNG" alt="Details" /></div>
+      <div class="swiper-slide"><img src="images/Shopify PBI.PNG" alt="Shopify PBI" /></div>
+      <div class="swiper-slide"><img src="images/Health9.PNG" alt="Health 9" /></div>
+      <div class="swiper-slide"><img src="images/Capture 2.PNG" alt="Capture 2" /></div>
+      <div class="swiper-slide"><img src="images/Capture 1.PNG" alt="Capture 1" /></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
  <div class="container"></div>
   <!-- Dots -->
