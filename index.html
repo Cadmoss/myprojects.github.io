@@ -230,7 +230,7 @@ header p {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch; /* 🔥 this stretches both items to equal height */
   max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
@@ -240,13 +240,15 @@ header p {
   flex: 1;
   min-width: 250px;
   max-width: 500px;
-  background: #ffffff;
+  background: #fff9e6; /* 🌟 change this to your preferred color */
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   font-size: 1rem;
   color: #333;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 .swiper.mySwiper {
   flex: 1;
@@ -255,6 +257,19 @@ header p {
   aspect-ratio: 16 / 9;
   border-radius: 10px;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .carousel-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-content,
+  .swiper.mySwiper {
+    max-width: 100%;
+    height: auto; /* let height adjust on mobile */
+  }
 }
 
 /* Slide */
