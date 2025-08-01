@@ -382,6 +382,10 @@ header p {
   }
 }
 
+.align-fix {
+  margin-top: -12px; /* Try -8px or -16px if needed */
+}
+
 .carousel-row {
   display: flex;
   justify-content: center;
@@ -635,19 +639,19 @@ header p {
   </div>
 
   <!-- Swiper dashboard carousel -->
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/Cafe Harm.PNG" /></div>
-      <div class="swiper-slide"><img src="images/Provider.PNG" /></div>
-      <div class="swiper-slide"><img src="images/Trend.PNG" /></div>
-      <div class="swiper-slide"><img src="images/Details.PNG" /></div>
-      <div class="swiper-slide"><img src="images/Shopify PBI.PNG" /></div>
-      <div class="swiper-slide"><img src="images/Health9.PNG" /></div>
-      <div class="swiper-slide"><img src="images/Capture 2.PNG" /></div>
-      <div class="swiper-slide"><img src="images/Capture 1.PNG" /></div>
-    </div>
-    <div class="swiper-pagination"></div>
+ <div class="swiper mySwiper align-fix"> <!-- ⬅️ added align-fix -->
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/Cafe Harm.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Provider.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Trend.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Details.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Shopify PBI.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Health9.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Capture 2.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Capture 1.PNG" /></div>
   </div>
+  <div class="swiper-pagination"></div>
+</div>
 </div>
   <div class="container">
     <section id="projects">
