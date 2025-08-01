@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Intelligent Automation Projects | Michael Afolayan</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -17,25 +16,10 @@
       position: relative;
       background: #0073a8;
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1.5rem;
       border-radius: 0 0 12px 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
-    }
-
-    .header-banner h1 {
-      font-size: 2.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 0;
-    }
-
-    .header-banner p {
-      font-size: 1rem;
-      color: #d6f3ff;
-      margin-top: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .back-link {
@@ -49,6 +33,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 0.85rem;
+      z-index: 10;
       transition: background 0.3s ease;
     }
 
@@ -56,9 +41,28 @@
       background: #004766;
     }
 
-    .n8n-icon {
+    .header-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-title img {
       width: 40px;
       height: 40px;
+    }
+
+    .header-title h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .header-banner p {
+      font-size: 1rem;
+      color: #d6f3ff;
+      margin-top: 0.5rem;
     }
 
     .projects-grid {
@@ -86,10 +90,9 @@
 
     .content {
       padding: 1rem;
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      flex-grow: 1;
     }
 
     h3 {
@@ -132,13 +135,24 @@
       text-decoration: underline;
     }
 
+    /* Mobile Fixes */
     @media (max-width: 600px) {
-      .header-banner h1 {
-        font-size: 1.5rem;
+      .header-title h1 {
+        font-size: 1.4rem;
       }
-      .n8n-icon {
+
+      .header-title img {
         width: 32px;
         height: 32px;
+      }
+
+      .back-link {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+
+      .projects-grid {
+        padding: 1rem;
       }
     }
   </style>
@@ -146,19 +160,18 @@
 
 <body>
 
-  <!-- Header Banner with Home Link -->
+  <!-- Header -->
   <div class="header-banner">
     <a href="index.html" class="back-link">← Home</a>
-    <h1>
-      <img src="images/artificial-intelligence.png" alt="n8n Icon" class="n8n-icon" />
-      Intelligent Automation Projects
-    </h1>
+    <div class="header-title">
+      <img src="images/artificial-intelligence.png" alt="n8n Icon" />
+      <h1>Intelligent Automation Projects</h1>
+    </div>
     <p>Workflow automations and integrations using n8n and more</p>
   </div>
 
   <!-- Projects Grid -->
   <div class="projects-grid">
-
     <div class="project-card">
       <img src="images/n8n-whatsapp.jpg" alt="WhatsApp Lead Notification Bot" />
       <div class="content">
@@ -177,7 +190,7 @@
       <img src="images/n8n-gsheet.jpg" alt="Google Sheet Auto Update" />
       <div class="content">
         <h3>Auto-Google Sheet Reporting</h3>
-        <p>Fetches API data hourly, transforms it, and updates a live Google Sheet via n8n automation.</p>
+        <p>This automation pulls data from an API every hour, transforms it, and updates a Google Sheet for real-time tracking.</p>
         <div class="tool-icons">
           <span class="tool-label">Tools:</span>
           <img src="images/n8n-icon.png" alt="n8n" title="n8n" />
@@ -186,8 +199,7 @@
         <a href="GSheetUpdate.html">View Project</a>
       </div>
     </div>
-
   </div>
 
 </body>
-</html>
+</html
