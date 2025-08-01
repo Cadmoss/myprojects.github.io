@@ -382,22 +382,41 @@ header p {
 
 .carousel-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-  margin-top: 2rem;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 1rem;
 }
 
 .carousel-block {
-  flex: 1 1 400px; /* allow responsiveness */
-  max-width: 500px;
+  background: #070707;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  flex: 1 1 500px;
+  max-width: 550px;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.carousel-container {
-  position: relative;
+.carousel-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carousel-container,
+.swiper.mySwiper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: 8px;
-  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .carousel-slides {
@@ -531,7 +550,7 @@ header p {
  
 <!-- Swiper Carousel -->
 <div class="carousel-row">
-  <!-- Carousel 1 -->
+  <!-- Left Carousel -->
   <div class="carousel-block">
     <h3>n8n Automation Workflow A</h3>
     <div class="carousel-container">
@@ -543,20 +562,25 @@ header p {
     </div>
   </div>
 
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/Cafe Harm.PNG" alt="Cafe Harm" /></div>
-      <div class="swiper-slide"><img src="images/Provider.PNG" alt="Provider" /></div>
-      <div class="swiper-slide"><img src="images/Trend.PNG" alt="Trend" /></div>
-      <div class="swiper-slide"><img src="images/Details.PNG" alt="Details" /></div>
-      <div class="swiper-slide"><img src="images/Shopify PBI.PNG" alt="Shopify PBI" /></div>
-      <div class="swiper-slide"><img src="images/Health9.PNG" alt="Health 9" /></div>
-      <div class="swiper-slide"><img src="images/Capture 2.PNG" alt="Capture 2" /></div>
-      <div class="swiper-slide"><img src="images/Capture 1.PNG" alt="Capture 1" /></div>
+  <!-- Right Carousel (Swiper) -->
+  <div class="carousel-block">
+    <h3>Visual Dashboard Slides</h3>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/Cafe Harm.PNG" alt="Cafe Harm" /></div>
+        <div class="swiper-slide"><img src="images/Provider.PNG" alt="Provider" /></div>
+        <div class="swiper-slide"><img src="images/Trend.PNG" alt="Trend" /></div>
+        <div class="swiper-slide"><img src="images/Details.PNG" alt="Details" /></div>
+        <div class="swiper-slide"><img src="images/Shopify PBI.PNG" alt="Shopify PBI" /></div>
+        <div class="swiper-slide"><img src="images/Health9.PNG" alt="Health 9" /></div>
+        <div class="swiper-slide"><img src="images/Capture 2.PNG" alt="Capture 2" /></div>
+        <div class="swiper-slide"><img src="images/Capture 1.PNG" alt="Capture 1" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-pagination"></div>
   </div>
 </div>
+
  <div class="container"></div>
   <!-- Dots -->
   <div class="swiper-pagination"></div>
