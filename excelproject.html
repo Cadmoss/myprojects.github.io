@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Excel Projects | Michael Afolayan</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-   body {
+    body {
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(to bottom right, #f7f8fc, #e4ebf5);
       color: #333;
@@ -63,11 +63,18 @@
 
     .tool-icons {
       margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .tool-label {
       font-weight: bold;
-      margin-right: 0.5rem;
+    }
+
+    .tool-icons img {
+      width: 24px;  /* smaller icons */
+      height: 24px;
     }
 
     a {
@@ -114,38 +121,21 @@
   <h1>Excel Projects</h1>
 
   <div class="projects-grid">
-
- <img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Cafe Harmony" />
-          <div class="content">
-            <h3>A strategic Review of Café Harmony's Performance</h3>
-            <p>A detailed Excel-based report on inventory, sales, and customer trends with actionable recommendations.</p>
-            <div class="tool-icons">
-          <span class="tool-label"><b>Tools Used:</b></span>
-          <img src="images/icons8-microsoft-excel-48.png" alt="Excel" title="Excel">
-          </div>
-            <a href="Cafe.Analysis.html">View Project</a>
-          </div>
-        </div>
-
-    <!-- Add more Excel projects here -->
-
-    <div class="projects-grid">
-
     <div class="project-card">
       <img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Cafe Harmony" />
       <div class="content">
         <h3>A strategic Review of Café Harmony's Performance</h3>
         <p>A detailed Excel-based report on inventory, sales, and customer trends with actionable recommendations.</p>
         <div class="tool-icons">
-          <span class="tool-label"><b>Tools Used:</b></span>
+          <span class="tool-label">Tools Used:</span>
           <img src="images/icons8-microsoft-excel-48.png" alt="Excel" title="Excel" />
         </div>
         <a href="Cafe.Analysis.html">View Project</a>
       </div>
     </div>
 
-</div>
-
+    <!-- Add more project-card divs here for more projects -->
+  </div>
 
   <a href="index.html" class="back-link">← Back to Home</a>
 
