@@ -380,6 +380,43 @@ header p {
   }
 }
 
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slides img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  gap: 8px;
+}
+
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
 /* Slide */
 .swiper-slide {
   display: flex;
@@ -478,9 +515,18 @@ header p {
 <!-- Swiper Carousel -->
 <div class="carousel-layout">
   <div class="left-content">
-  <h3>n8n Automation Workflow</h3>
-  <p>This automation handles data extraction, transformation, and notification via email using n8n.</p>
-  <img src="images/Agent AI.PNG" alt="n8n workflow" style="width: 100%; border-radius: 8px; margin-top: 1rem;" />
+    <h3>n8n Automation Workflow</h3>
+    <p></p>
+
+    <div class="carousel-container">
+      <div class="carousel-slides">
+        <img src="images/Agent AI.PNG" alt="n8n Workflow 1" />
+        <img src="images/AnotherWorkflow.png" alt="n8n Workflow 2" />
+        <img src="images/Example3.png" alt="n8n Workflow 3" />
+      </div>
+      <div class="carousel-dots"></div>
+    </div>
+  </div>
 </div>
 
   <div class="swiper mySwiper">
@@ -750,6 +796,37 @@ header p {
     }
   };
 </script>
+
+<script>
+  const slides = document.querySelector('.carousel-slides');
+  const images = document.querySelectorAll('.carousel-slides img');
+  const dotsContainer = document.querySelector('.carousel-dots');
+
+  let index = 0;
+
+  function createDots() {
+    images.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.addEventListener('click', () => showSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  function showSlide(i) {
+    index = i;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    updateDots();
+  }
+
+  createDots();
+  showSlide(0);
+</script
 
 </body>
 </html>
