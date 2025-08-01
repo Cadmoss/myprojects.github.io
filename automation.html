@@ -10,41 +10,17 @@
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(to bottom right, #e0f7ff, #c6ecff);
       color: #333;
-      padding: 2rem;
-    }
-
-    .top-bar {
-      position: relative;
-      height: 0;
-    }
-
-    .back-link {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: #0073a8;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
-      z-index: 1000;
-      transform: translate(1rem, 1rem);
-    }
-
-    .back-link:hover {
-      background: #005b84;
+      margin: 0;
     }
 
     .header-banner {
-      text-align: center;
+      position: relative;
       background: #0073a8;
       color: white;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
+      padding: 2rem 1rem;
+      border-radius: 0 0 12px 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     .header-banner h1 {
@@ -62,6 +38,24 @@
       margin-top: 0.5rem;
     }
 
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: #005b84;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      transition: background 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: #004766;
+    }
+
     .n8n-icon {
       width: 40px;
       height: 40px;
@@ -71,6 +65,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      padding: 2rem;
     }
 
     .project-card {
@@ -136,23 +131,29 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 600px) {
+      .header-banner h1 {
+        font-size: 1.5rem;
+      }
+      .n8n-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Back to Home -->
-  <div class="top-bar">
-    <a href="index.html" class="back-link">Home</a>
-  </div>
-
-  <!-- Header Banner -->
+  <!-- Header Banner with Home Link -->
   <div class="header-banner">
+    <a href="index.html" class="back-link">← Home</a>
     <h1>
       <img src="images/artificial-intelligence.png" alt="n8n Icon" class="n8n-icon" />
-     Intelligent Automation Projects
+      Intelligent Automation Projects
     </h1>
-    <p></p>
+    <p>Workflow automations and integrations using n8n and more</p>
   </div>
 
   <!-- Projects Grid -->
@@ -162,7 +163,7 @@
       <img src="images/n8n-whatsapp.jpg" alt="WhatsApp Lead Notification Bot" />
       <div class="content">
         <h3>WhatsApp Lead Notification Bot</h3>
-        <p></p>
+        <p>Real-time WhatsApp alerts triggered from new CRM or form entries using n8n and WhatsApp APIs.</p>
         <div class="tool-icons">
           <span class="tool-label">Tools:</span>
           <img src="images/n8n-icon.png" alt="n8n" title="n8n" />
@@ -176,7 +177,7 @@
       <img src="images/n8n-gsheet.jpg" alt="Google Sheet Auto Update" />
       <div class="content">
         <h3>Auto-Google Sheet Reporting</h3>
-        <p>This automation pulls data from an API every hour, transforms it, and updates a Google Sheet report for real-time tracking.</p>
+        <p>Fetches API data hourly, transforms it, and updates a live Google Sheet via n8n automation.</p>
         <div class="tool-icons">
           <span class="tool-label">Tools:</span>
           <img src="images/n8n-icon.png" alt="n8n" title="n8n" />
@@ -185,8 +186,6 @@
         <a href="GSheetUpdate.html">View Project</a>
       </div>
     </div>
-
-    <!-- Add more project cards here -->
 
   </div>
 
