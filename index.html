@@ -380,11 +380,24 @@ header p {
   }
 }
 
+.carousel-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.carousel-block {
+  flex: 1 1 400px; /* allow responsiveness */
+  max-width: 500px;
+}
+
 .carousel-container {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .carousel-slides {
@@ -398,7 +411,7 @@ header p {
   border-radius: 8px;
 }
 
-/* Dots */
+/* Dots only */
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -414,6 +427,10 @@ header p {
   background: #ccc;
   cursor: pointer;
   transition: background 0.3s;
+}
+
+.carousel-dots button.active {
+  background: #306998;
 }
 
 
@@ -513,20 +530,18 @@ header p {
 
  
 <!-- Swiper Carousel -->
-<div class="carousel-layout">
-  <div class="left-content">
-    <h3>n8n Automation Workflow</h3>
-    <p></p>
-
+<div class="carousel-row">
+  <!-- Carousel 1 -->
+  <div class="carousel-block">
+    <h3>n8n Automation Workflow A</h3>
     <div class="carousel-container">
       <div class="carousel-slides">
-        <img src="images/Agent AI.PNG" alt="n8n Workflow 1" />
-        <img src="images/Agent AI2.PNG" alt="n8n Workflow 2" />
-        </div>
+        <img src="images/Agent AI.PNG" alt="Workflow A1" />
+        <img src="images/Agent AI2.PNG" alt="Workflow A2" />
+      </div>
       <div class="carousel-dots"></div>
     </div>
   </div>
-</div>
 
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -797,34 +812,36 @@ header p {
 </script>
 
 <script>
-  const slides = document.querySelector('.carousel-slides');
-  const images = document.querySelectorAll('.carousel-slides img');
-  const dotsContainer = document.querySelector('.carousel-dots');
+  document.querySelectorAll('.carousel-container').forEach((container) => {
+    const slides = container.querySelector('.carousel-slides');
+    const images = container.querySelectorAll('img');
+    const dotsContainer = container.querySelector('.carousel-dots');
+    let index = 0;
 
-  let index = 0;
+    function createDots() {
+      images.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.addEventListener('click', () => showSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+    }
 
-  function createDots() {
-    images.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.addEventListener('click', () => showSlide(i));
-      dotsContainer.appendChild(dot);
-    });
-  }
+    function updateDots() {
+      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
 
-  function updateDots() {
-    dotsContainer.querySelectorAll('button').forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
-    });
-  }
+    function showSlide(i) {
+      index = i;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      updateDots();
+    }
 
-  function showSlide(i) {
-    index = i;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-    updateDots();
-  }
-
-  createDots();
-  showSlide(0);
+    createDots();
+    showSlide(0);
+  });
+</script>
 </script
 
 </body>
