@@ -21,9 +21,7 @@
 }
 
 .back-link {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: inline-block;
   background: #1d6f42;
   color: white;
   padding: 0.5rem 1rem;
@@ -31,13 +29,39 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
-  z-index: 1000;
-  transform: translate(1rem, 1rem);
+  margin-bottom: 1rem;
   transition: background 0.3s ease;
 }
 
 .back-link:hover {
   background: #145c35;
+}
+
+.excel-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.excel-icon {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 600px) {
+  .excel-title {
+    font-size: 1.4rem;
+    flex-direction: column;
+  }
+
+  .excel-icon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .header-banner {
@@ -166,17 +190,17 @@ a:hover {
 
 <body>
 
-  <!-- Back to Home Button (moved above and outside) -->
-  <div class="top-bar">
-    <a href="index.html" class="back-link">← Back to Home</a>
-  </div>
+ <body>
+
+  <!-- Back to Home Button -->
+  <a href="index.html" class="back-link">Home</a>
 
   <!-- Header Banner -->
   <div class="header-banner">
     <div class="title-text">
-      <h1>
+      <h1 class="excel-title">
         <img src="images/icons8-microsoft-excel-48.png" alt="Excel Icon" class="excel-icon" />
-        Excel Projects
+        <span>Excel Projects</span>
       </h1>
       <p>Insights, automation, and dashboards powered by Excel</p>
     </div>
@@ -197,8 +221,9 @@ a:hover {
       </div>
     </div>
 
-    <!-- Add more project-card divs here -->
-  </div>
+     <!-- Add more project-card divs here -->
 
+  </div>
 </body>
+
 </html>
