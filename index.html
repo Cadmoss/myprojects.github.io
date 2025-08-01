@@ -382,6 +382,32 @@ header p {
   }
 }
 
+@media (max-width: 768px) {
+  .n8n-carousel {
+    width: 100%;
+    min-height: 240px;
+  }
+
+  .n8n-slide img {
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  .n8n-slide {
+    padding: 1rem 0.5rem;
+  }
+
+  .carousel-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-block {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 .align-fix {
   margin-top: -8px; /* Try -8px or -16px if needed */
 }
