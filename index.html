@@ -280,6 +280,8 @@ header p {
   aspect-ratio: 16 / 9;
   border-radius: 10px;
   overflow: hidden;
+  background: transparent;
+  box-shadow: none;
 }
 
 /* TOP NAV */
@@ -512,6 +514,60 @@ header p {
   transform: scale(1.1);
   opacity: 1;
 }
+
+.n8n-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111;
+}
+
+.n8n-slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.n8n-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fafafa;
+}
+
+.n8n-slide img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: block;
+  object-fit: contain;
+}
+
+.caption {
+  padding: 0.8rem;
+  background: #1a1a1a;
+  font-size: 0.9rem;
+}
+
+.n8n-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.n8n-dots button {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.n8n-dots button.active {
+  background: #64ffda;
+}
 </style>
 
 </head>
@@ -549,36 +605,36 @@ header p {
 
  
 <!-- Swiper Carousel -->
-<div class="carousel-row">
-  <!-- Left Carousel -->
-  <div class="carousel-block">
-    <h3>n8n Automation Workflow A</h3>
-    <div class="carousel-container">
-      <div class="carousel-slides">
-        <img src="images/Agent AI.PNG" alt="Workflow A1" />
-        <img src="images/Agent AI2.PNG" alt="Workflow A2" />
+<div class="carousel-block">
+  <h3>n8n Automation Workflow</h3>
+  <div class="n8n-carousel">
+    <div class="n8n-slides">
+      <div class="n8n-slide">
+        <img src="images/Agent AI.PNG" alt="n8n workflow 1" />
+        <p class="caption"></p>
       </div>
-      <div class="carousel-dots"></div>
+      <div class="n8n-slide">
+        <img src="images/Agent AI2.PNG" alt="n8n workflow 2" />
+        <p class="caption"></p>
+      </div>
     </div>
+    <div class="n8n-dots"></div>
   </div>
+</div>
 
   <!-- Right Carousel (Swiper) -->
-  <div class="carousel-block">
-    <h3>Visual Dashboard Slides</h3>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/Cafe Harm.PNG" alt="Cafe Harm" /></div>
-        <div class="swiper-slide"><img src="images/Provider.PNG" alt="Provider" /></div>
-        <div class="swiper-slide"><img src="images/Trend.PNG" alt="Trend" /></div>
-        <div class="swiper-slide"><img src="images/Details.PNG" alt="Details" /></div>
-        <div class="swiper-slide"><img src="images/Shopify PBI.PNG" alt="Shopify PBI" /></div>
-        <div class="swiper-slide"><img src="images/Health9.PNG" alt="Health 9" /></div>
-        <div class="swiper-slide"><img src="images/Capture 2.PNG" alt="Capture 2" /></div>
-        <div class="swiper-slide"><img src="images/Capture 1.PNG" alt="Capture 1" /></div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
+  <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/Cafe Harm.PNG" alt="Cafe Harm" /></div>
+    <div class="swiper-slide"><img src="images/Provider.PNG" alt="Provider" /></div>
+    <div class="swiper-slide"><img src="images/Trend.PNG" alt="Trend" /></div>
+    <div class="swiper-slide"><img src="images/Details.PNG" alt="Details" /></div>
+    <div class="swiper-slide"><img src="images/Shopify PBI.PNG" alt="Shopify PBI" /></div>
+    <div class="swiper-slide"><img src="images/Health9.PNG" alt="Health 9" /></div>
+    <div class="swiper-slide"><img src="images/Capture 2.PNG" alt="Capture 2" /></div>
+    <div class="swiper-slide"><img src="images/Capture 1.PNG" alt="Capture 1" /></div>
   </div>
+  <div class="swiper-pagination"></div>
 </div>
 
  <div class="container"></div>
@@ -866,7 +922,48 @@ header p {
     showSlide(0);
   });
 </script>
-</script
+
+<script>
+  document.querySelectorAll('.n8n-carousel').forEach((carousel) => {
+    const slides = carousel.querySelector('.n8n-slides');
+    const slideItems = carousel.querySelectorAll('.n8n-slide');
+    const dotsContainer = carousel.querySelector('.n8n-dots');
+    let currentIndex = 0;
+    let interval;
+
+    // Create dots
+    slideItems.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        showSlide();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const updateDots = () => {
+      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    };
+
+    const showSlide = () => {
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      updateDots();
+    };
+
+    const startAutoSlide = () => {
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slideItems.length;
+        showSlide();
+      }, 4000);
+    };
+
+    showSlide();
+    updateDots();
+    startAutoSlide();
+  });
+</script>
 
 </body>
 </html>
