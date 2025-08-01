@@ -4,210 +4,190 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Excel Projects | Michael Afolayan</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    
- body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom right, #e5e7e2, #d8e0ca);
-  color: #333;
-  padding: 2rem;
-  position: relative;
-}
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #e5e7e2, #d8e0ca);
+      color: #333;
+      margin: 0;
+    }
 
-.top-bar {
-  position: relative;
-  height: 0;
-}
+    /* HEADER SECTION */
+    .header-banner {
+      position: relative;
+      background: #1d6f42;
+      color: white;
+      padding: 3.5rem 1rem 2rem;
+      border-radius: 0 0 12px 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-.back-link {
-  display: inline-block;
-  background: #1d6f42;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  transition: background 0.3s ease;
-}
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: #145c35;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      z-index: 10;
+      transition: background 0.3s ease;
+    }
 
-.back-link:hover {
-  background: #145c35;
-}
+    .back-link:hover {
+      background: #0e4a29;
+    }
 
-.excel-title {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 2rem;
-  margin: 0;
-}
+    .header-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-.excel-icon {
-  width: 40px;
-  height: 40px;
-}
+    .header-title h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
 
-@media (max-width: 600px) {
-  .excel-title {
-    font-size: 1.4rem;
-    flex-direction: column;
-  }
+    .excel-icon {
+      width: 40px;
+      height: 40px;
+    }
 
-  .excel-icon {
-    width: 32px;
-    height: 32px;
-  }
-}
+    .header-banner p {
+      font-size: 1rem;
+      color: #d1f2d5;
+      margin-top: 0.5rem;
+    }
 
-.header-banner {
-  text-align: center;
-  background: #1d6f42;
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    /* PROJECT GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 2rem;
+    }
 
-.header-banner h1 {
-  font-size: 2.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 0;
-}
+    .project-card {
+      background: #dff7d6;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
 
-.header-banner p {
-  font-size: 1rem;
-  color: #d1f2d5;
-  margin-top: 0.5rem;
-}
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
 
-.excel-icon {
-  width: 40px;
-  height: 40px;
-}
+    .content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
+    h3 {
+      margin: 0 0 0.5rem 0;
+      color: #0a192f;
+      font-size: 1rem;
+    }
 
-.project-card {
-  background: rgb(182, 247, 169);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+    p {
+      flex-grow: 1;
+      font-size: 0.85rem;
+      color: #555;
+    }
 
-.project-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+    .tool-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-.content {
-  padding: 1rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    .tool-label {
+      font-weight: bold;
+    }
 
-h3 {
-  margin: 0 0 0.5rem 0;
-  color: #0a192f;
-  font-size: 1.1rem;
-}
+    .tool-icons img {
+      width: 20px;
+      height: 20px;
+    }
 
-p {
-  flex-grow: 1;
-  font-size: 0.9rem;
-  color: #555;
-}
+    a {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+      color: #1d6f42;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-.tool-icons {
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.tool-label {
-  font-weight: bold;
-}
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-.tool-icons img {
-  width: 22px;
-  height: 22px;
-}
+    @media (max-width: 600px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
 
-a {
-  margin-top: 1rem;
-  display: inline-block;
-  color: #0a192f;
-  font-weight: bold;
-  text-decoration: none;
-}
+      .header-banner {
+        padding-top: 4rem;
+      }
 
-a:hover {
-  text-decoration: underline;
-}
+      .header-title h1 {
+        font-size: 1.4rem;
+      }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+      .excel-icon {
+        width: 32px;
+        height: 32px;
+      }
 
-@media (max-width: 600px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .header-banner h1 {
-    font-size: 1.5rem;
-  }
-
-  .excel-icon {
-    width: 32px;
-    height: 32px;
-  }
-}
+      .back-link {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
- <body>
-
-  <!-- Back to Home Button -->
-  <a href="index.html" class="back-link">Home</a>
-
-  <!-- Header Banner -->
+  <!-- Header -->
   <div class="header-banner">
-    <div class="title-text">
-      <h1 class="excel-title">
-        <img src="images/icons8-microsoft-excel-48.png" alt="Excel Icon" class="excel-icon" />
-        <span>Excel Projects</span>
-      </h1>
-      <p></p>
+    <a href="index.html" class="back-link">← Home</a>
+    <div class="header-title">
+      <img src="images/icons8-microsoft-excel-48.png" alt="Excel Icon" class="excel-icon" />
+      <h1>Excel Projects</h1>
     </div>
+    <p>Dashboards, analysis and data transformation using Microsoft Excel</p>
   </div>
 
-  <!-- Project Cards Grid -->
+  <!-- Projects -->
   <div class="projects-grid">
+    <!-- Project 1 -->
     <div class="project-card">
       <img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Cafe Harmony" />
       <div class="content">
@@ -217,9 +197,8 @@ a:hover {
       </div>
     </div>
 
-     <!-- Add more project-card divs here -->
-
+    <!-- Add more project cards as needed -->
   </div>
-</body>
 
+</body>
 </html>
