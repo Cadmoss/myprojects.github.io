@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SQL Projects | Michael Afolayan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #f4f6fa, #c9e0f3);
+      color: #333;
+      padding: 2rem;
+    }
+
+    .top-bar {
+      position: relative;
+      height: 0;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #1b4f72;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      z-index: 1000;
+      transform: translate(1rem, 1rem);
+    }
+
+    .back-link:hover {
+      background: #13374e;
+    }
+
+    .header-banner {
+      text-align: center;
+      background: #1b4f72;
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-banner h1 {
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .header-banner p {
+      font-size: 1rem;
+      color: #d0e7f9;
+      margin-top: 0.5rem;
+    }
+
+    .sql-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h3 {
+      margin: 0 0 0.5rem 0;
+      color: #0a192f;
+      font-size: 1.1rem;
+    }
+
+    p {
+      flex-grow: 1;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .tool-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tool-label {
+      font-weight: bold;
+    }
+
+    .tool-icons img {
+      width: 22px;
+      height: 22px;
+    }
+
+    a {
+      margin-top: 1rem;
+      display: inline-block;
+      color: #1b4f72;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <div class="header-banner">
+    <h1>
+      <img src="images/sql-icon.png" alt="SQL Icon" class="sql-icon" />
+      SQL Projects
+    </h1>
+    <p>Data wrangling, reporting, and complex queries using SQL Server and PostgreSQL</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="images/database1.jpg" alt="Sales Query Optimization" />
+      <div class="content">
+        <h3>Optimizing Retail Sales Queries</h3>
+        <p>Used CTEs, joins, and indexing in PostgreSQL to speed up analytics on 2M+ transactions.</p>
+        <div class="tool-icons">
+          <span class="tool-label">Tools:</span>
+          <img src="images/sql-icon.png" alt="SQL" title="SQL" />
+          <img src="images/icons8-microsoft-excel-48.png" alt="Excel" title="Excel" />
+        </div>
+        <a href="RetailSQL.html">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/sql-healthcare.jpg" alt="Hospital DB Analysis" />
+      <div class="content">
+        <h3>Hospital Patient Records Analysis</h3>
+        <p>Analyzed length of stay and diagnosis frequency using window functions and temp tables.</p>
+        <div class="tool-icons">
+          <span class="tool-label">Tools:</span>
+          <img src="images/sql-icon.png" alt="SQL" title="SQL" />
+        </div>
+        <a href="HospitalSQL.html">View Project</a>
+      </div>
+    </div>
+
+    <!-- Add more project cards as needed -->
+
+  </div>
+
+</body>
+</html>
