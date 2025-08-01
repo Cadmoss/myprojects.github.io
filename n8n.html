@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>n8n Automation Projects | Michael Afolayan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7ff, #c6ecff);
+      color: #333;
+      padding: 2rem;
+    }
+
+    .top-bar {
+      position: relative;
+      height: 0;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #0073a8;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      z-index: 1000;
+      transform: translate(1rem, 1rem);
+    }
+
+    .back-link:hover {
+      background: #005b84;
+    }
+
+    .header-banner {
+      text-align: center;
+      background: #0073a8;
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-banner h1 {
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .header-banner p {
+      font-size: 1rem;
+      color: #d6f3ff;
+      margin-top: 0.5rem;
+    }
+
+    .n8n-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h3 {
+      margin: 0 0 0.5rem 0;
+      color: #0a192f;
+      font-size: 1.1rem;
+    }
+
+    p {
+      flex-grow: 1;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .tool-icons {
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tool-label {
+      font-weight: bold;
+    }
+
+    .tool-icons img {
+      width: 22px;
+      height: 22px;
+    }
+
+    a {
+      margin-top: 1rem;
+      display: inline-block;
+      color: #0073a8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Back to Home -->
+  <div class="top-bar">
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <h1>
+      <img src="images/n8n-icon.png" alt="n8n Icon" class="n8n-icon" />
+      n8n Automation Projects
+    </h1>
+    <p>Workflow automations and integrations built using n8n</p>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="images/n8n-whatsapp.jpg" alt="WhatsApp Lead Notification Bot" />
+      <div class="content">
+        <h3>WhatsApp Lead Notification Bot</h3>
+        <p>Created an n8n workflow that sends real-time WhatsApp alerts when a new form submission or CRM lead is captured.</p>
+        <div class="tool-icons">
+          <span class="tool-label">Tools:</span>
+          <img src="images/n8n-icon.png" alt="n8n" title="n8n" />
+          <img src="images/whatsapp.png" alt="WhatsApp" title="WhatsApp" />
+        </div>
+        <a href="LeadBot.html">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/n8n-gsheet.jpg" alt="Google Sheet Auto Update" />
+      <div class="content">
+        <h3>Auto-Google Sheet Reporting</h3>
+        <p>This automation pulls data from an API every hour, transforms it, and updates a Google Sheet report for real-time tracking.</p>
+        <div class="tool-icons">
+          <span class="tool-label">Tools:</span>
+          <img src="images/n8n-icon.png" alt="n8n" title="n8n" />
+          <img src="images/google-sheets-icon.png" alt="Google Sheets" title="Google Sheets" />
+        </div>
+        <a href="GSheetUpdate.html">View Project</a>
+      </div>
+    </div>
+
+    <!-- Add more project cards here -->
+
+  </div>
+
+</body>
+</html>
