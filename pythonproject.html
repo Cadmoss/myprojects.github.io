@@ -4,73 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Python Projects | Michael Afolayan</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #ffe9ec, #d3f5f1);
+      background: linear-gradient(to bottom right, #f7f9ff, #d4e4ff);
       color: #333;
-      padding: 2rem;
+      margin: 0;
     }
 
-    .top-bar {
+    .header-banner {
       position: relative;
-      height: 0;
+      background: #306998;
+      color: white;
+      padding: 2rem 1rem 1.5rem;
+      border-radius: 0 0 12px 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .back-link {
       position: absolute;
-      top: 0;
-      left: 0;
-      background: #4b4b9a;
+      top: 1rem;
+      left: 1rem;
+      background: #244a73;
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.9rem;
-      z-index: 1000;
-      transform: translate(1rem, 1rem);
+      font-size: 0.85rem;
+      z-index: 10;
+      transition: background 0.3s ease;
     }
 
     .back-link:hover {
-      background: #35357a;
+      background: #1c395b;
     }
 
-    .header-banner {
-      text-align: center;
-      background: #4b4b9a;
-      color: white;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-banner h1 {
-      font-size: 2.2rem;
+    .header-title {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header-title img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .header-title h1 {
+      font-size: 2rem;
       margin: 0;
     }
 
     .header-banner p {
       font-size: 1rem;
-      color: #e6eaf7;
+      color: #cfe9ff;
       margin-top: 0.5rem;
-    }
-
-    .python-icon {
-      width: 40px;
-      height: 40px;
     }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
+      padding: 2rem;
     }
 
     .project-card {
@@ -91,10 +90,9 @@
 
     .content {
       padding: 1rem;
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      flex-grow: 1;
     }
 
     h3 {
@@ -128,7 +126,7 @@
     a {
       margin-top: 1rem;
       display: inline-block;
-      color: #4b4b9a;
+      color: #306998;
       font-weight: bold;
       text-decoration: none;
     }
@@ -136,27 +134,46 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Mobile Fixes */
+    @media (max-width: 600px) {
+      .header-title h1 {
+        font-size: 1.4rem;
+      }
+
+      .header-title img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .back-link {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+
+      .projects-grid {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Back to Home -->
-  <div class="top-bar">
-    <a href="index.html" class="back-link">← Back to Home</a>
-  </div>
-
-  <!-- Header Banner -->
+  <!-- Header -->
   <div class="header-banner">
-    <h1>
-      <img src="images/icons8-python-50.png" alt="Python Icon" class="python-icon" />
-      Python Projects
-    </h1>
-    <p></p>
+    <a href="index.html" class="back-link">← Home</a>
+    <div class="header-title">
+      <img src="images/icons8-python-50.png" alt="Python Icon" />
+      <h1>Python Projects</h1>
+    </div>
+    <p>Data transformation, automation & analytics with Python</p>
   </div>
 
-  <!-- Project Grid -->
-         <div class="project-card">
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+
+    
           <img src="images/jakub-zerdzicki-_c-ZfHMlrWc-unsplash.jpg" alt="Loan Spark Analytics" />
           <div class="content">
             <h3>Loan Spark Analytics </h3>
@@ -170,7 +187,19 @@
           </div>
         </div>
 
-       <!-- Add more project-card blocks as needed -->
+    <div class="project-card">
+      <img src="images/api-weather.jpg" alt="API Weather App" />
+      <div class="content">
+        <h3>Live Weather Data App</h3>
+        <p>Pulls real-time weather data from an open API and displays it in a simple terminal UI. Built with requests and JSON parsing.</p>
+        <div class="tool-icons">
+          <span class="tool-label">Tools:</span>
+          <img src="images/python.png" alt="Python" title="Python" />
+          <img src="images/api.png" alt="API" title="API" />
+        </div>
+        <a href="WeatherApp.html">View Project</a>
+      </div>
+    </div>
 
   </div>
 
