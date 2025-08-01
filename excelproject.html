@@ -6,175 +6,179 @@
   <title>Excel Projects | Michael Afolayan</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #daf0b8, #c3f17e);
-      color: #333;
-      padding: 2rem;
-    }
+    
+ body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom right, #daf0b8, #c3f17e);
+  color: #333;
+  padding: 2rem;
+  position: relative;
+}
 
-    .header-banner {
-    display: flex;
-    align-items: center;
-    background: #1d6f42; /* Excel green */
-    color: white;
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-banner img {
-    width: 48px;
-    height: 48px;
-    margin-right: 1rem;
-    }
-
-    .header-banner .title-text h1 {
-    font-size: 2rem;
-    margin: 0;
-    }
-
-    .header-banner .title-text p {
-    font-size: 1rem;
-    margin: 4px 0 0;
-    color: #e6f4ea;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #0a192f;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 projects per row */
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .content {
-      padding: 1rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    h3 {
-      margin: 0 0 0.5rem 0;
-      color: #0a192f;
-      font-size: 1.1rem;
-    }
-
-    p {
-      flex-grow: 1;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .tool-icons {
-      margin-top: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .tool-label {
-      font-weight: bold;
-    }
-
-    .tool-icons img {
-      width: 24px;  /* smaller icons */
-      height: 24px;
-    }
-
-    a {
-      margin-top: 1rem;
-      display: inline-block;
-      color: #0f0f0f;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 3rem;
-      color: #0a192f;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    .back-link {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    color: #0a192f;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 10;
-    }
+.back-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #1d6f42;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
 
 .back-link:hover {
+  background: #145c35;
+}
+
+.header-banner {
+  text-align: center;
+  background: #1d6f42;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-banner h1 {
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.header-banner p {
+  font-size: 1rem;
+  color: #d1f2d5;
+  margin-top: 0.5rem;
+}
+
+.excel-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h3 {
+  margin: 0 0 0.5rem 0;
+  color: #0a192f;
+  font-size: 1.1rem;
+}
+
+p {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.tool-icons {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tool-label {
+  font-weight: bold;
+}
+
+.tool-icons img {
+  width: 22px;
+  height: 22px;
+}
+
+a {
+  margin-top: 1rem;
+  display: inline-block;
+  color: #0a192f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: underline;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    /* Responsive for smaller screens */
-    @media (max-width: 1024px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 
-    @media (max-width: 600px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+  .header-banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .excel-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
   </style>
 </head>
+
 <body>
-<a href="index.html" class="back-link">← Back to Home</a>
 
-<div class="header-banner">
-  <img src="images/icons8-microsoft-excel-48.png" alt="Excel Icon" />
-  <div class="title-text">
-    <h1>Excel Projects</h1>
-    <p>Insights, automation, and dashboards powered by Excel</p>
+  <!-- Back to Home Button -->
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <div class="title-text">
+      <h1>
+        <img src="images/icons8-microsoft-excel-48.png" alt="Excel Icon" class="excel-icon" />
+        Excel Projects
+      </h1>
+      <p>Insights, automation, and dashboards powered by Excel</p>
+    </div>
   </div>
-</div>
 
+  <!-- Project Cards Grid -->
   <div class="projects-grid">
     <div class="project-card">
       <img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Cafe Harmony" />
       <div class="content">
-        <h3>A strategic Review of Café Harmony's Performance</h3>
+        <h3>A Strategic Review of Café Harmony's Performance</h3>
         <p>A detailed Excel-based report on inventory, sales, and customer trends with actionable recommendations.</p>
         <div class="tool-icons">
           <span class="tool-label">Tools Used:</span>
@@ -184,10 +188,8 @@
       </div>
     </div>
 
-    <!-- Add more project-card divs here for more projects -->
+    <!-- Add more project-card divs here -->
   </div>
-
- 
 
 </body>
 </html>
