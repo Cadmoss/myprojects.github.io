@@ -394,16 +394,15 @@ header p {
 }
 
 .carousel-block {
-  background: #070707;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  flex: 1 1 500px;
-  max-width: 550px;
-  color: #fafafa;
+  flex: 1;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  background: #070707;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .carousel-block {
@@ -523,9 +522,11 @@ header p {
   background: #111;
 }
 
-.n8n-slides {
+.n8n-slide {
   display: flex;
-  transition: transform 0.6s ease-in-out;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .n8n-slide {
@@ -536,16 +537,17 @@ header p {
 }
 
 .n8n-slide img {
-  width: 100%;
-  border-radius: 10px 10px 0 0;
-  display: block;
+  flex: 1 1 auto;
   object-fit: contain;
+  max-height: 100%;
+  width: 100%;
+  display: block;
 }
 
 .caption {
-  padding: 0.8rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
   background: #1a1a1a;
-  font-size: 0.9rem;
 }
 
 .n8n-dots {
