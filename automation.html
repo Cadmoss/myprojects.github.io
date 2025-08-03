@@ -72,15 +72,12 @@
       padding: 2rem;
     }
 
-    .project-card {
-      background: #d5ebf7;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+    .project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #f4f4f4; /* Optional: fills blank space */
+}
 
     .project-card img {
       width: 100%;
@@ -175,8 +172,8 @@
     <div class="project-card">
       <img src="images/Agent AI.PNG" alt="Talkument" />
       <div class="content">
-        <h3>Coming Soon</h3>
-        <p>.</p>
+        <h3>Talkument</h3>
+        <p>Check back later</p>
         <div class="tool-icons">
           <span class="tool-label">Tools:</span>
           <img src="images/webhook.png" alt="webhook" title="webhook" />
