@@ -61,7 +61,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f0f4f8; /* light background */
+      background-color: #aac5e0; /* light background */
       color: #333;
     }
 
@@ -69,7 +69,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       max-width: 900px;
       margin: auto;
       padding: 2rem;
-      background-color: white;
+      background-color: rgb(195, 223, 250);
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       border-radius: 8px;
     }
@@ -96,14 +96,48 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
       font-size: 0.9rem;
     }
 
+.project-title {
+  background-color: #1d3557;
+  color: white;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 100%;
+  position: relative; /* Allows positioning of the home button */
+}
+
+.home-link {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #457b9d;
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.home-link:hover {
+  background: #2c5877;
+}    
 
   </style>
 
 <body>
-  <div class="page-container">
-    <div class="project-title">Workshop 2: Excel Analysis with Python</div>
+    <div class="page-container">
+  <div class="project-title">
+    <a href="index.html" class="home-link">Home</a>
+    Loan Spark Analysis
+  </div>
 
-    <div class="code-block">
+  <div class="code-block">
+    <!-- Your code content here -->
+  </div>
+</div>
 
 <style type="text/css">
 /*-----------------------------------------------------------------------------
