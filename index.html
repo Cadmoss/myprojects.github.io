@@ -616,6 +616,65 @@ img, body {
   -webkit-user-drag: none;
 }
 
+.tabs {
+  margin-top: 1.5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background: #112240;
+  color: #64ffda;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background: #64ffda;
+  color: #0a192f;
+}
+
+.tab-content {
+  display: none;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-inner {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tab-inner img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tab-inner div {
+  flex: 1;
+  min-width: 250px;
+}
+
 </style>
 
 </head>
@@ -766,6 +825,59 @@ img, body {
         </div>
       </div>
     </section>
+
+
+    <section id="data-topics" style="margin-bottom: 4rem;">
+  <h2 class="section-title">Explore Key Topics in Data Analytics</h2>
+  <div class="tabs">
+    <div class="tab-buttons">
+      <button class="tab-button active" onclick="openTab(event, 'modeling')">Data Modeling</button>
+      <button class="tab-button" onclick="openTab(event, 'automation')">Automation</button>
+      <button class="tab-button" onclick="openTab(event, 'extraction')">Data Extraction</button>
+      <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
+    </div>
+
+    <div class="tab-content active" id="modeling">
+      <div class="tab-inner">
+        <img src="images/datamodeling.png" alt="Data Modeling" />
+        <div>
+          <h3>Data Modeling</h3>
+          <p>Data modeling is the process of creating a structure for your data. In analytics, this step helps to establish relationships between tables and ensures accuracy in reporting. Tools like Power BI and SQL use data models to connect data sources efficiently.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="automation">
+      <div class="tab-inner">
+        <img src="images/automation.png" alt="Automation" />
+        <div>
+          <h3>Automation</h3>
+          <p>Automation helps eliminate repetitive tasks like report generation, data refreshes, or alerts. With tools like Power Automate, Python scripts, or n8n, you can create workflows that save time and reduce errors.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="extraction">
+      <div class="tab-inner">
+        <img src="images/dataextraction.png" alt="Data Extraction" />
+        <div>
+          <h3>Data Extraction</h3>
+          <p>Data extraction involves retrieving data from various sources such as databases, APIs, or spreadsheets. It’s the first step in data analysis and sets the stage for cleaning, transformation, and visualization.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="scraping">
+      <div class="tab-inner">
+        <img src="images/webscraping.png" alt="Web Scraping" />
+        <div>
+          <h3>Web Scraping</h3>
+          <p>Web scraping allows analysts to collect data from websites that don’t offer APIs. With Python libraries like BeautifulSoup or Scrapy, you can extract valuable data from webpages for further analysis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="about">
       <h2 class="section-title">About Me</h2>
@@ -1008,6 +1120,19 @@ img, body {
     updateDots();
     startAutoSlide();
   });
+</script>
+
+<script>
+  function openTab(evt, tabId) {
+    const tabs = document.querySelectorAll(".tab-content");
+    const buttons = document.querySelectorAll(".tab-button");
+
+    tabs.forEach(tab => tab.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
 </script>
 
 </body>
