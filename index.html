@@ -663,6 +663,14 @@ img, body {
   margin-top: 1.5rem;
 }
 
+.tab-inner {
+  display: none;
+}
+
+.tab-inner.active {
+  display: flex; /* or block depending on your layout */
+}
+
 .tab-image {
   flex: 1 1 300px;
   display: flex;
@@ -896,7 +904,7 @@ img, body {
       <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
     </div>
 
-            <div class="tab-inner">
+            <div id="Data Modeling" class="tab-inner">
           <div class="tab-image">
             <img src="images/Data modeling.PNG" alt="Data Modeling" />
           </div>
@@ -909,19 +917,18 @@ img, body {
       </div>
     </div>
 
-      <div class="tab-inner">
-          <div class="tab-image">
-            <img src="images/DataAutomation.jpg" alt="Intelligent Automation" />
-          </div>
-          <div class="tab-text">
+            <div id="automation" class="tab-inner">
+        <div class="tab-image">
+          <img src="images/DataAutomation.jpg" alt="Intelligent Automation" />
+        </div>
+        <div class="tab-text">
           <h3>What is Intelligent Automation?</h3>
           <p>Intelligent Automation (IA) combines AI technologies (like machine learning and natural language processing) with automation tools (like bots or scripts) to perform tasks that generally require human effort and decision-making. It’s smarter than basic automation because it can learn from data, adapt, and make decisions.</p>
           <p>As a Data Analyst, Intelligent Automation helps me save time, reduce errors, improve data quality, speed up data preparation, support advanced analysis, and keep stakeholders informed.</p>
         </div>
       </div>
-    </div>
 
-      <div class="tab-inner">
+      <div id="Data Extraction" class="tab-inner">
           <div class="tab-image">
             <img src="images/.PNG" alt="Data Extraction" />
           </div>
@@ -932,7 +939,7 @@ img, body {
       </div>
     </div>
 
-      <div class="tab-inner">
+      <div id="Web Scraping" class="tab-inner">
           <div class="tab-image">
             <img src="images/.PNG" alt="Web Scraping" />
           </div>
