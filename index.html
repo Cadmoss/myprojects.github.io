@@ -675,6 +675,43 @@ img, body {
   min-width: 250px;
 }
 
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+/* Modal image */
+.image-modal .modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+/* Close button */
+.image-modal .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.image-modal .close-btn:hover {
+  color: #64ffda;
+}
+
 </style>
 
 </head>
@@ -1138,5 +1175,32 @@ img, body {
   }
 </script>
 
+<script>
+  document.querySelectorAll('.clickable-image').forEach(img => {
+    img.addEventListener('click', () => {
+      const modal = document.getElementById('image-modal');
+      const modalImg = document.getElementById('modal-img');
+      modal.style.display = 'block';
+      modalImg.src = img.src;
+    });
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    document.getElementById('image-modal').style.display = 'none';
+  });
+
+  // Optional: Close modal when clicking outside the image
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('image-modal');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+<!-- Modal Overlay -->
+<div id="image-modal" class="image-modal">
+  <span class="close-btn">&times;</span>
+  <img class="modal-content" id="modal-img">
+</div>
 </body>
 </html>
