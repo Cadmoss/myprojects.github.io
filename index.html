@@ -658,21 +658,49 @@ img, body {
 
 .tab-inner {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tab-image {
+  flex: 1 1 300px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  background: none; /* No background for image */
 }
 
-.tab-inner img {
-  width: 300px;
+.tab-image img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.tab-inner div {
-  flex: 1;
-  min-width: 250px;
+.tab-text {
+  flex: 1 1 400px;
+  padding: 1.5rem;
+  background-color: #f9f9f9; /* Default background */
+  border-radius: 10px;
+}
+
+/* Optional: Add background image to text panel */
+.tab-text.with-bg {
+  background-image: url('images/your-background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tab-inner {
+    flex-direction: column;
+  }
+
+  .tab-text, .tab-image {
+    flex: 1 1 100%;
+  }
 }
 
 .image-modal {
@@ -868,10 +896,11 @@ img, body {
       <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
     </div>
 
-    <div class="tab-content active" id="modeling">
-      <div class="tab-inner">
-        <img src="images/Data modeling.PNG" alt="Data Modeling" class="clickable-image" />
-        <div>
+            <div class="tab-inner">
+          <div class="tab-image">
+            <img src="images/Data modeling.PNG" alt="Data Modeling" />
+          </div>
+          <div class="tab-text">
           <h3>What is Data Modeling?</h3>
           <p>Data modeling is the process of creating a visual map of how your data is organized. It shows what types of data you have, how they relate to each other, and how they should be stored and accessed.</p>
         <h3>Why is it important?</h3>
@@ -880,10 +909,11 @@ img, body {
       </div>
     </div>
 
-    <div class="tab-content" id="automation">
       <div class="tab-inner">
-        <img src="images/DataAutomation.jpg" alt="Automation" class="clickable-image" />
-        <div>
+          <div class="tab-image">
+            <img src="images/DataAutomation.jpg" alt="Intelligent Automation" />
+          </div>
+          <div class="tab-text">
           <h3>What is Intelligent Automation?</h3>
           <p>Intelligent Automation (IA) combines AI technologies (like machine learning and natural language processing) with automation tools (like bots or scripts) to perform tasks that generally require human effort and decision-making. It’s smarter than basic automation because it can learn from data, adapt, and make decisions.</p>
           <p>As a Data Analyst, Intelligent Automation helps me save time, reduce errors, improve data quality, speed up data preparation, support advanced analysis, and keep stakeholders informed.</p>
@@ -891,20 +921,22 @@ img, body {
       </div>
     </div>
 
-    <div class="tab-content" id="extraction">
       <div class="tab-inner">
-        <img src="images/dataextraction.png" alt="Data Extraction" />
-        <div>
+          <div class="tab-image">
+            <img src="images/.PNG" alt="Data Extraction" />
+          </div>
+          <div class="tab-text">
           <h3>Data Extraction</h3>
           <p>Data extraction involves retrieving data from various sources such as databases, APIs, or spreadsheets. It’s the first step in data analysis and sets the stage for cleaning, transformation, and visualization.</p>
         </div>
       </div>
     </div>
 
-    <div class="tab-content" id="scraping">
       <div class="tab-inner">
-        <img src="images/webscraping.png" alt="Web Scraping" />
-        <div>
+          <div class="tab-image">
+            <img src="images/.PNG" alt="Web Scraping" />
+          </div>
+          <div class="tab-text">
           <h3>Web Scraping</h3>
           <p>Web scraping allows analysts to collect data from websites that don’t offer APIs. With Python libraries like BeautifulSoup or Scrapy, you can extract valuable data from webpages for further analysis.</p>
         </div>
