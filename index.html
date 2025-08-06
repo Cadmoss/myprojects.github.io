@@ -646,7 +646,7 @@ img, body {
 
 .tab-content {
   display: none;
-  background: white;
+  background: #64ffda;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -831,25 +831,13 @@ img, body {
   <h2 class="section-title">Explore Key Topics in Data Analytics</h2>
   <div class="tabs">
     <div class="tab-buttons">
-      <button class="tab-button active" onclick="openTab(event, 'modeling')">Data Modeling</button>
       <button class="tab-button" onclick="openTab(event, 'automation')">Automation</button>
+      <button class="tab-button active" onclick="openTab(event, 'modeling')">Data Modeling</button>
       <button class="tab-button" onclick="openTab(event, 'extraction')">Data Extraction</button>
       <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
     </div>
 
-    <div class="tab-content active" id="modeling">
-      <div class="tab-inner">
-        <img src="images/Data modeling.PNG" alt="Data Modeling" class="clickable-image" />
-        <div>
-          <h3>What is Data Modeling?</h3>
-          <p>Data modeling is the process of creating a visual map of how your data is organized. It shows what types of data you have, how they relate to each other, and how they should be stored and accessed.</p>
-        <h3>Why is it important?</h3>
-        <p>As a data analyst, my job depends on finding, understanding, and analysing the correct data quickly and accurately. Data modelling sets me up for success by giving me a solid foundation of well-structured data so I can focus on what I do best, which is analysing and delivering insights.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="automation">
+      <div class="tab-content" id="automation">
       <div class="tab-inner">
         <img src="images/DataAutomation.jpg" alt="Automation" class="clickable-image" />
         <div>
@@ -859,7 +847,19 @@ img, body {
       </div>
     </div>
 
-    <div class="tab-content" id="extraction">
+    <div class="tab-content active" id="modeling">
+      <div class="tab-inner">
+        <img src="images/Data modeling.PNG" alt="Data Modeling" class="clickable-image" />
+        <div>
+          <h3>What is Data Modeling?</h3>
+          <p>Data modelling is the process of visually organising data to show what it is, how it's connected, and how it should be stored.</p>
+        <h3>Why is it important?</h3>
+        <p>As a data analyst, data modelling gives me a strong, organised data foundation so I can quickly find and analyse the correct information and deliver clear insights.</p>
+        </div>
+      </div>
+    </div>
+
+        <div class="tab-content" id="extraction">
       <div class="tab-inner">
         <img src="images/dataextraction.png" alt="Data Extraction" />
         <div>
