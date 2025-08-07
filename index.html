@@ -652,16 +652,22 @@ img, body {
 
 .tab-inner {
   display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px; /* reduce or increase spacing as needed */
+  justify-content: space-between;
+  align-items: center;
 }
 
-.tab-image,
+.tab-image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
 .tab-explanation {
-  flex: 1 1 45%;
-  text-align: center;
+  flex: 1 1 55%; /* slightly larger */
+  display: flex;
+  justify-content: center;
 }
 
 .tab-image img,
@@ -859,10 +865,10 @@ img, body {
     <div class="tab-content" id="modeling">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/DataModeling.jpg" alt="Data Modeling" />
+          <img src="images/Data modeling.PNG" alt="Data Modeling" />
         </div>
         <div class="tab-explanation">
-          <img src="images/modeling_explained.png" alt="Data Modeling Explained" />
+          <img src="images/Data Modeling PowerPoint.PNG" alt="Data Modeling Explained" />
         </div>
       </div>
     </div>
