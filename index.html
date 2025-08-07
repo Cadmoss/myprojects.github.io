@@ -617,39 +617,33 @@ img, body {
 }
 
 .tabs {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .tab-buttons {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  gap: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .tab-button {
-  background: #112240;
-  color: #64ffda;
-  padding: 10px 16px;
+  background-color: #e0e0e0;
   border: none;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 500;
   transition: background 0.3s ease;
 }
 
-.tab-button:hover,
 .tab-button.active {
-  background: #64ffda;
+  background-color: #64ffda;
   color: #0a192f;
 }
 
 .tab-content {
   display: none;
-  background: #b3fae9;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .tab-content.active {
@@ -658,34 +652,30 @@ img, body {
 
 .tab-inner {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.tab-image, .tab-explanation {
+.tab-image,
+.tab-explanation {
   flex: 1 1 45%;
   text-align: center;
 }
 
 .tab-image img,
 .tab-explanation img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   object-fit: contain;
 }
 
-/* Responsive layout for smaller screens */
 @media (max-width: 768px) {
   .tab-inner {
     flex-direction: column;
-  }
-
-  .tab-image, .tab-explanation {
-    flex: 1 1 100%;
   }
 }
 
@@ -844,6 +834,7 @@ img, body {
 
     <section id="data-topics" style="margin-bottom: 4rem;">
   <h2 class="section-title">Explore Key Topics in Data Analytics</h2>
+
   <div class="tabs">
     <div class="tab-buttons">
       <button class="tab-button active" onclick="openTab(event, 'automation')">Automation</button>
@@ -852,54 +843,53 @@ img, body {
       <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
     </div>
 
-            <div class="tab-content active" id="automation">
-        <div class="tab-inner">
-          <!-- Left image -->
-          <div class="tab-image">
-            <img src="images/DataAutomation.jpg" alt="Automation" class="clickable-image" />
-          </div>
+    <!-- TAB CONTENTS -->
 
-          <!-- Right image -->
-          <div class="tab-explanation">
-            <img src="images/automation_explained.png" alt="What is Automation" />
-          </div>
-        </div>
-      </div>
-
-    <div class="tab-content active" id="modeling">
+    <div class="tab-content active" id="automation">
       <div class="tab-inner">
-        <img src="images/Data modeling.PNG" alt="Data Modeling" class="clickable-image" />
-        <div>
-          <h3>What is Data Modeling?</h3>
-          <p>Data modelling is the process of visually organising data to show what it is, how it's connected, and how it should be stored.</p>
-        <h3>Why is it important?</h3>
-        <p>As a data analyst, data modelling gives me a strong, organised data foundation so I can quickly find and analyse the correct information and deliver clear insights.</p>
+        <div class="tab-image">
+          <img src="images/DataAutomation.jpg" alt="Automation" />
+        </div>
+        <div class="tab-explanation">
+          <img src="images/automation_explained.png" alt="Automation Explained" />
         </div>
       </div>
     </div>
 
-        <div class="tab-content" id="extraction">
+    <div class="tab-content" id="modeling">
       <div class="tab-inner">
-        <img src="images/dataextraction.png" alt="Data Extraction" />
-        <div>
-          <h3>Data Extraction</h3>
-          <p>Data extraction involves retrieving data from various sources such as databases, APIs, or spreadsheets. It’s the first step in data analysis and sets the stage for cleaning, transformation, and visualization.</p>
+        <div class="tab-image">
+          <img src="images/DataModeling.jpg" alt="Data Modeling" />
+        </div>
+        <div class="tab-explanation">
+          <img src="images/modeling_explained.png" alt="Data Modeling Explained" />
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="extraction">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/DataExtraction.jpg" alt="Data Extraction" />
+        </div>
+        <div class="tab-explanation">
+          <img src="images/extraction_explained.png" alt="Extraction Explained" />
         </div>
       </div>
     </div>
 
     <div class="tab-content" id="scraping">
       <div class="tab-inner">
-        <img src="images/webscraping.png" alt="Web Scraping" />
-        <div>
-          <h3>Web Scraping</h3>
-          <p>Web scraping allows analysts to collect data from websites that don’t offer APIs. With Python libraries like BeautifulSoup or Scrapy, you can extract valuable data from webpages for further analysis.</p>
+        <div class="tab-image">
+          <img src="images/WebScraping.jpg" alt="Web Scraping" />
+        </div>
+        <div class="tab-explanation">
+          <img src="images/scraping_explained.png" alt="Scraping Explained" />
         </div>
       </div>
     </div>
   </div>
 </section>
-
     <section id="about">
       <h2 class="section-title">About Me</h2>
       <div class="about-me about-flex">
