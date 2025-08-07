@@ -658,22 +658,37 @@ img, body {
 
 .tab-inner {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
   align-items: center;
+  justify-content: center;
 }
 
-.tab-inner img {
-  width: 300px;
+.tab-image, .tab-explanation {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.tab-image img,
+.tab-explanation img {
   max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
 }
 
-.tab-inner div {
-  flex: 1;
-  min-width: 250px;
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .tab-inner {
+    flex-direction: column;
+  }
+
+  .tab-image, .tab-explanation {
+    flex: 1 1 100%;
+  }
 }
+
 
 </style>
 
@@ -831,21 +846,25 @@ img, body {
   <h2 class="section-title">Explore Key Topics in Data Analytics</h2>
   <div class="tabs">
     <div class="tab-buttons">
-      <button class="tab-button" onclick="openTab(event, 'automation')">Automation</button>
-      <button class="tab-button active" onclick="openTab(event, 'modeling')">Data Modeling</button>
+      <button class="tab-button active" onclick="openTab(event, 'automation')">Automation</button>
+      <button class="tab-button" onclick="openTab(event, 'modeling')">Data Modeling</button>
       <button class="tab-button" onclick="openTab(event, 'extraction')">Data Extraction</button>
       <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
     </div>
 
-      <div class="tab-content" id="automation">
-      <div class="tab-inner">
-        <img src="images/DataAutomation.jpg" alt="Automation" class="clickable-image" />
-        <div>
-          <h3>What is Intelligent Automation?</h3>
-          <p>Intelligent Automation (IA) combines AI technologies (like machine learning and natural language processing) with automation tools (like bots or scripts) to perform tasks that generally require human effort and decision-making. It’s smarter than basic automation because it can learn from data, adapt, and make decisions.</p>
+            <div class="tab-content active" id="automation">
+        <div class="tab-inner">
+          <!-- Left image -->
+          <div class="tab-image">
+            <img src="images/DataAutomation.jpg" alt="Automation" class="clickable-image" />
+          </div>
+
+          <!-- Right image -->
+          <div class="tab-explanation">
+            <img src="images/automation_explained.png" alt="What is Automation" />
+          </div>
         </div>
       </div>
-    </div>
 
     <div class="tab-content active" id="modeling">
       <div class="tab-inner">
