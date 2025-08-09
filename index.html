@@ -1229,17 +1229,24 @@ img, body {
 
     updateVisibleTabs();
 
-    // Add hover event to last visible button
+    // Add hover events for first and last visible buttons
     tabButtons.forEach((btn, index) => {
       btn.addEventListener("mouseenter", function () {
+        const isFirstVisible = index === startIndex && startIndex > 0;
         const isLastVisible = index === startIndex + visibleCount - 1 && index < tabButtons.length - 1;
 
         if (isLastVisible) {
           hoverTimeout = setTimeout(() => {
             startIndex += visibleCount;
-            if (startIndex >= tabButtons.length) startIndex = 0; // Loop back
+            if (startIndex >= tabButtons.length) startIndex = 0; // Loop forward
             updateVisibleTabs();
           }, 800); // Delay in ms
+        } else if (isFirstVisible) {
+          hoverTimeout = setTimeout(() => {
+            startIndex -= visibleCount;
+            if (startIndex < 0) startIndex = Math.max(0, tabButtons.length - visibleCount); // Loop backward
+            updateVisibleTabs();
+          }, 800);
         }
       });
 
