@@ -172,11 +172,17 @@
   </p>
 
     <h2>Data Dictionary</h2>
+    <p>The data dictionary includes three datasets: <Bold>Customer_Table</Bold>, <Bold>Drug_Lookup</Bold>, and <Bold>Fact_Table</Bold>.
+    <ul>
+      <li><strong>Customer_Table:</strong>This dataset contains customer information, including the customer ID, which is unique to each customer. FirstName, LastName, Age, Gender, Country, OtherCustomerInf, indicating whether the customer is new, frequent, or preferred. And also the Images, with file paths to images related to the customer.</li>
+      <li><strong>Drug_Lookup:</strong>This is a product sales record, and each row represents one drug, and each column describes a different property of that drug. The first column is the DrugID, which is a unique identifier used to identify a drug in the database. The second column is Regulatory_ComplianceID, which is also a unique identifier from the regulatory or compliance authority. The third column is the DrugName, then followed by the UnitSalesPrice, CostOfProduction, and lastly the Treats column, which talks about the illness, infection, or medical condition the drug is intended to treat.</li>
+      <li><strong>Fact_Table:</strong>This dataset contains sales transactions, starting with the SalesID, followed by the DrugID, then the CustomerID, UnitSold, Sales_Date, and Buyer_Type, which segments sales between wholesale and retail buyers.</li>
+    </ul>
+    </p>
 
 
 
 
-    
   <!-- Example image and notes (you can add as many as you want) -->
   <img src="images/sample_note.png" alt="Example Note" style="max-width: 100%; margin-top: 15px;">
   <p>
