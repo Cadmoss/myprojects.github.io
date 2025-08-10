@@ -86,20 +86,18 @@
       border: none;
     }
 
-    /* About Section */
-    .about-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
-  text-align: left; /* Keep notes aligned left */
+/* Ensure analysis notes are left-aligned */
+.about-section,
+.about-section * {
+  text-align: left !important;
 }
 
+/* Make dashboard snippet images smaller */
 .about-section img {
   display: inline-block;
-  max-width: 350px; /* Smaller moderate size */
-  width: 100%;
+  max-width: 300px; /* smaller size */
   height: auto;
-  margin: 0 15px 15px 0; /* Space between text and image */
+  margin: 0 15px 15px 0;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   vertical-align: top;
