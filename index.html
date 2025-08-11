@@ -652,134 +652,68 @@ img, body {
 
 .tab-inner {
   display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; /* reduce or increase spacing as needed */
+  justify-content: space-between;
+  align-items: center;
 }
 
-#data-topics .tab-inner {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-#data-topics .tab-image {
-  flex: 0 0 auto;
-}
-
-#data-topics .tab-video {
-  flex: 0 0 320px; /* larger video width */
-}
-
-#data-topics .tab-image img.zoomable {
+.tab-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
   transition: transform 0.3s ease;
 }
 
-#data-topics .tab-image img.zoomable:hover {
-  transform: scale(1.2);
-  cursor: zoom-in;
-}
-
-/* left image */
-.tab-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-/* Left image */
-.tab-image {
-  flex: 0 0 auto; /* don't stretch */
-}
-.tab-image img.zoomable {
-  max-width: 520px;   /* adjust this for size */
-  width: 100%;
-  height: auto;
-  display: block;
-  cursor: zoom-in;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-}
-
-/* Right small video */
-.tabs {
-  display: flex;
-  gap: 20px;
-}
-
-.tab-left {
-  flex: 1;
-}
-
-.tab-video {
-  flex: 0 0 400px; /* bigger, fixed width */
-  position: sticky;
-  top: 20px; /* stays fixed as user scrolls */
-}
-
-.tab-video iframe {
-  width: 100%;
-  height: 225px;
-  border-radius: 8px;
-}
-
-/* Responsive: stack on small screens */
-@media (max-width: 700px) {
-  .tab-inner { flex-direction: column; align-items: center; }
-  .tab-video { flex: 0 0 auto; }
-  .tab-video iframe.lazy-video { 
-    width: 100%; 
-    height: auto; 
-    aspect-ratio: 16/9; 
-  }
-  .tab-image img.zoomable { max-width: 100%; }
-}
-
-/* Fullscreen overlay for zoomed image */
+/* Fullscreen overlay */
 #img-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99999;
+  z-index: 9999;
 }
+
 #img-overlay img {
-  height: 100vh;    
-  width: auto;
+  width: 100vw;        /* fill full screen width */
+  height: auto;        /* keep proportions */
   max-width: none;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-  border-radius: 4px;
+  max-height: none;
+  cursor: zoom-out;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-#img-overlay .close-hint {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  color: #fff;
-  font-size: 14px;
-  opacity: 0.9;
-  pointer-events: none;
+
+
+.tab-image:hover img {
+  transform: scale(1.15); /* zoom in */
+  cursor: zoom-out;
 }
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
   .tab-image img {
-    max-width: 100%;
+    max-width: 100%; /* full width on mobile */
   }
 }
+
 @media (max-width: 768px) {
   .tab-inner {
     flex-direction: column;
   }
 }
 
-/* Tab buttons */
 .tab-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
+
 .tab-button {
   padding: 10px 18px;
   background: #00b679;
@@ -790,10 +724,12 @@ img, body {
   font-size: 1rem;
   transition: transform 0.2s ease, background-color 0.3s ease;
 }
+
 .tab-button:hover {
   background-color: #009e65;
   transform: scale(1.08);
 }
+
 .tab-button.hidden {
   display: none;
 }
@@ -951,10 +887,9 @@ img, body {
     </section>
 
 
-   <section id="data-topics" style="margin-bottom: 4rem;">
+    <section id="data-topics" style="margin-bottom: 4rem;">
   <h2 class="section-title">Key Topics in Data Analytics & Automation</h2>
 
-  <!-- Tab Buttons -->
   <div class="tabs">
     <div class="tab-buttons">
       <button class="tab-button active" onclick="openTab(event, 'automation')">Automation</button>
@@ -967,92 +902,74 @@ img, body {
       <button class="tab-button" onclick="openTab(event, 'RAG SYSTEM')">RAG SYSTEM</button>
     </div>
 
-    <!-- Automation Tab -->
+    <!-- TAB CONTENTS -->
+
     <div class="tab-content active" id="automation">
       <div class="tab-inner">
-        <!-- Left: Image -->
         <div class="tab-image">
-          <img src="images/Intelligent Automation2.PNG" alt="Automation" class="zoomable" />
+          <img src="images/Intelligent Automation2.PNG" alt="Automation" />
         </div>
-        <!-- Right: Video -->
-        <div class="tab-video">
-          <iframe
-            class="lazy-video"
-            data-video-id="YOUR_VIDEO_ID"
-            src=""
-            frameborder="0"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen
-            title="Automation video snippet">
-          </iframe>
-        </div>
-      </div>
+        
+
+        
     </div>
 
-    <!-- Modeling Tab -->
+
     <div class="tab-content" id="modeling">
-      <div class="tab-inner">
-        <div class="tab-image">
-          <img src="images/Data Modelling2.PNG" alt="Data Modeling" class="zoomable" />
-        </div>
-      </div>
-    </div>
+  <div class="tab-inner">
+    <div class="tab-image">
+  <img src="images/Data Modelling2.PNG" alt="Data Modeling" id="zoomable-img" />
+</div>
+  </div>
+</div>
 
-    <!-- ETL Tab -->
     <div class="tab-content" id="ETL">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/ETL2.PNG" alt="ETL" class="zoomable" />
+          <img src="images/ETL2.PNG" alt="ETL" />
         </div>
-      </div>
+        </div>
     </div>
 
-    <!-- Web Scraping Tab -->
     <div class="tab-content" id="scraping">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/Webscrapping.PNG" alt="Web Scraping" class="zoomable" />
+          <img src="images/Webscrapping.PNG" alt="Web Scraping" />
         </div>
-      </div>
+        </div>
     </div>
 
-    <!-- API Tab -->
     <div class="tab-content" id="API">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/API2.PNG" alt="API" class="zoomable" />
+          <img src="images/API2.PNG" alt="API" />
         </div>
-      </div>
+        </div>
     </div>
 
-    <!-- Vibe Coding Tab -->
-    <div class="tab-content" id="Vibe Coding">
+     <div class="tab-content" id="Vibe Coding">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/vibecoding.PNG" alt="Vibe Coding" class="zoomable" />
+          <img src="images/vibecoding.PNG" alt="Vibe Coding" />
         </div>
-      </div>
+        </div>
     </div>
 
-    <!-- Workflow Tab -->
-    <div class="tab-content" id="Workflow">
+     <div class="tab-content" id="Workflow">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/workflow2.PNG" alt="Workflow" class="zoomable" />
+          <img src="images/workflow2.PNG" alt="Workflow" />
         </div>
-      </div>
+        </div>
     </div>
 
-    <!-- RAG SYSTEM Tab -->
-    <div class="tab-content" id="RAG SYSTEM">
+         <div class="tab-content" id="RAG SYSTEM">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/Rag2.PNG" alt="RAG SYSTEM" class="zoomable" />
+          <img src="images/Rag2.PNG" alt="RAG SYSTEM" />
         </div>
-      </div>
+        </div>
     </div>
-  </div>
-</section>
 
   </div>
 </section>
@@ -1376,32 +1293,6 @@ img, body {
       overlay.remove();
     });
   });
-</script>
-
-<script>
-
-function openTab(evt, tabName) {
-  // Hide all tab contents
-  document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-
-  // Remove 'active' from all buttons
-  document.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-
-  // Show the selected tab and activate button
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
-
-  // Handle autoplay for videos
-  document.querySelectorAll("iframe.lazy-video").forEach(iframe => {
-    iframe.src = ""; // Stop all videos
-  });
-
-  const activeVideo = document.querySelector(`#${tabName} iframe.lazy-video`);
-  if (activeVideo && activeVideo.dataset.videoId) {
-    activeVideo.src = `https://www.youtube.com/embed/${activeVideo.dataset.videoId}?autoplay=1&mute=1&loop=1&playlist=${activeVideo.dataset.videoId}`;
-  }
-}
-
 </script>
 
 </body>
