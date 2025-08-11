@@ -652,47 +652,70 @@ img, body {
 
 .tab-inner {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* reduce or increase spacing as needed */
-  justify-content: space-between;
-  align-items: center;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.tab-image img {
-  max-width: 400px;
+/* left image */
+.tab-image {
+  flex: 0 0 auto; /* don't stretch */
+}
+.tab-image img.zoomable {
+  max-width: 520px;   /* increase or reduce this to taste */
   width: 100%;
   height: auto;
+  display: block;
   cursor: zoom-in;
-  transition: transform 0.3s ease;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
 
-/* Fullscreen overlay */
+/* right small video */
+.tab-video {
+  flex: 0 0 240px;    /* fixed small block on the right */
+}
+.tab-video iframe.lazy-video {
+  width: 240px;
+  height: 140px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+/* responsive: stack on small screens */
+@media (max-width: 700px) {
+  .tab-inner { flex-direction: column; align-items: center; }
+  .tab-video { flex: 0 0 auto; }
+  .tab-video iframe.lazy-video { width: 100%; height: auto; aspect-ratio: 16/9; }
+  .tab-image img.zoomable { max-width: 100%; }
+}
+
+/* Fullscreen overlay for zoomed image */
 #img-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.85);
+  inset: 0;
+  background: rgba(0,0,0,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 99999;
 }
-
 #img-overlay img {
-  width: 100vw;        /* fill full screen width */
-  height: auto;        /* keep proportions */
+  height: 100vh;    /* fill viewport height for best readability */
+  width: auto;
   max-width: none;
-  max-height: none;
-  cursor: zoom-out;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border-radius: 4px;
 }
-
-
-.tab-image:hover img {
-  transform: scale(1.15); /* zoom in */
-  cursor: zoom-out;
+/* small close hint */
+#img-overlay .close-hint {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 /* Mobile adjustments */
@@ -909,7 +932,21 @@ img, body {
         <div class="tab-image">
           <img src="images/Intelligent Automation2.PNG" alt="Automation" />
         </div>
-        </div>
+          <!-- Right: small video frame (lazy-loaded for autoplay) -->
+    <div class="tab-video">
+      <!-- put the YouTube id in data-video-id below -->
+      <iframe 
+        class="lazy-video"
+        data-video-id="YOUR_VIDEO_ID"
+        src="" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media; picture-in-picture" 
+        allowfullscreen
+        title="Project video snippet">
+      </iframe>
+    </div>
+  </div>
+</div>
 
         
     </div>
