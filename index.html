@@ -658,15 +658,30 @@ img, body {
   align-items: center;
 }
 
+.tab-image {
+  overflow: hidden; /* prevents zoom from spilling outside */
+  display: inline-block;
+}
+
 .tab-image img {
-  max-width: 400px; /* adjust size as needed */
+  max-width: 400px; /* control size */
   width: 100%;
   height: auto;
   display: block;
-  margin: 0; /* removes auto-centering if applied elsewhere */
+  transition: transform 0.3s ease; /* smooth zoom */
+  cursor: zoom-in; /* hint to user */
 }
-.tab-image {
-  text-align: left;
+
+.tab-image:hover img {
+  transform: scale(1.15); /* zoom in */
+  cursor: zoom-out;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .tab-image img {
+    max-width: 100%; /* full width on mobile */
+  }
 }
 
 @media (max-width: 768px) {
@@ -882,7 +897,7 @@ img, body {
     <div class="tab-content" id="modeling">
   <div class="tab-inner">
     <div class="tab-image">
-      <img src="images/Data modeling.PNG" alt="Data Modeling" />
+      <img src="images/Data Modelling2.PNG" alt="Data Modeling" />
     </div>
   </div>
 </div>
@@ -890,7 +905,7 @@ img, body {
     <div class="tab-content" id="ETL">
       <div class="tab-inner">
         <div class="tab-image">
-          <img src="images/imageetl.jpeg" alt="ETL" />
+          <img src="images/ETL2.PNG" alt="ETL" />
         </div>
         </div>
     </div>
