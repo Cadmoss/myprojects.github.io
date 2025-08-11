@@ -199,10 +199,13 @@
   </div>
 
     <!-- Dashboard Image -->
-  <div class="content-section">
-    <h3>Dashboard Overview</h3>
-    <img src="images/NYC Analysis.PNG" alt="Dashboard" class="responsive-chart">
+ <div class="content-section dashboard-row">
+  <h3>Dashboard Overview</h3>
+  <div class="dashboard-container">
+    <img src="images/NYC Analysis1.PNG" alt="Dashboard 1" class="responsive-chart">
+    <img src="images/NYC Analysis 2.PNG" alt="Dashboard 2" class="responsive-chart">
   </div>
+</div>
 
      <!-- Video -->
   <div class="content-section">
@@ -216,98 +219,35 @@
 
     <!-- 📄 Section: Notes + PDF -->
     <div class="notes-section">
-  <h2>NYC Collision Analysis: Unveiling the Data Story</h2>
+  <h2>The Road to Safer Streets: Unraveling NYC's Collision Chronicles</h2>
 
 
-    <h3>BUSINESS OVERVIEW</h3>
+    <h3>Mapping the Mayhem and Unveiling the Mission</h3>
     <p>
-      Welcome to Café Harmony, a new and exciting virtual café chain! The café specializes in offering a variety of drinks, snacks, and light meals to customers. Over the past year, Café Harmony has seen impressive growth but now faces new challenges as the company is scaling to meet customer demand. The café has multiple locations across the city, each with its own performance metrics and unique customer preferences.
+      Envision New York City as a pulsating metropolis where millions navigate a web of streets. Still, hidden dangers lurk in every turn, collisions that claim lives, cause injuries, and disrupt daily rhythms. This NYC Collision Dashboard acts as a vigilant sentinel, aggregating data from 2021 to 2023 to spotlight patterns in 238,421 total collisions, 116,226 injuries, and 635 fatalities. The purpose is lifesaving vigilance: by dissecting when, where, why, and how accidents occur, city planners, policymakers, and residents can pinpoint vulnerabilities and craft targeted interventions. Behind these stark numbers lies a human story of preventable tragedy, driven by urban density, traffic behaviours, and seasonal shifts, all aimed at forging safer pathways for a city that never sleeps.
     </p>
 
     <h3>DATA DESCRIPTION</h3>
     <ul>
-      <li>Sales Data: This contains information on sales transactions across different locations, including item sold, prices, quantities, and sale dates.</li>
-      <li>Customer Data: This contains customer details such as age, gender, location, and preffered drink items.</li>
-      <li>Employee Data: This information is about employees ( e.g., name, role, salary and location.)</li>
-      <li>Stock Data: This is inventory of raw materials and supplies needed to prepare the cafe's menu items.</li>
-      <li>Feedback Data: This is customer satisfaction ratings and comments after each purchase.</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
     
 
-    <h3>BUSINESS PROBLEM</h3>
+    <h3>Navigating the Data Lanes—Patterns, Meanings, and Insights</h3>
     <p>
-      Café Harmony has grown rapidly and now faces the challenge of improving its overall operational efficiency and customer experience. The company needs to identify the following key business questions:
-      <ul>
-        <li>How is the overall sales trend looking?</li>
-        <li>What menu item are performing the best across differnt locations?</li>
-        <li>What is the customer profile that tends to spend the most?</li>
-        <li>How can the business improve its stock management to avoid running out of popular items while also reducing overstock?</li>
-        <li>Are there any locations or employee performance issue that requires attention?</li>
-      </ul>
+      At the dashboard's core are the headline figures: 238,421 collisions resulting in 116,226 injuries and 635 fatalities, filtered by boroughs like Bronx or Brooklyn. These totals underscore NYC's high-stakes mobility, where even minor incidents cascade into major human and economic costs, meaning a single collision can ripple through healthcare systems and families. The insight: Prioritising borough-specific hotspots (e.g., via the location filter) could reduce overall numbers by 10-20% through localised enforcement. 
+      </p>
+        <p>
+      The monthly vs. yearly trend line reveals a downward trajectory: peaking at around 10,000+ monthly in mid-2021, dipping to lower levels by 2023, with year totals of 110,545 (2021), 103,780 (2022), and 24,095 (2023), which is noted as incomplete. Year-over-year changes show a -6.1% drop from 2021 to 2022, then -76.8% to 2023 due to partial data. This pattern signifies progress, possibly from post-pandemic traffic reductions or safety initiatives like Vision Zero, but the incomplete 2023 data warns of potential underreporting. Insight: Sustaining this decline requires ongoing monitoring; extending data collection could reveal if 2023's low is a true win or artefact, guiding investments in tech like AI traffic cams.
     </p>
+    <img src="images/NYC Analysis3.PNG" alt="Sales Trend" class="responsive-chart" />
+
+
     
-<h3>CONTEXT AND DATA SOURCE</h3>
-    <p>
-      This analysis was conducted to support strategic decision-making as Café Harmony expands into multiple cities. By using the Café Harmony dashboard, I aimed to answer key business questions related to growth trends, customer behavior, operational efficiency, and overall performance. This data was sourced from 10Alytics and is entirely dummy data created to simulate realistic café operations. 
-    </p>
-
-
-    <h3>DATA CLEANING AND PROCESS OF CREATING THE DASHBOARD</h3>
-    <p>
-      The raw data was first imported into Excel, where an initial review revealed several issues, including blank fields, duplicate entries, and inconsistent formatting. To clean the data, I used a combination of Excel tools:
-      <ul>
-        <li>TRIM to remove extra spaces in the text fields.</li>
-        <li>REMOVE DUPLICATES to eliminate redundant records.</li>
-        <li>IFERROR to manage calculation errors.</li>
-        <li>Text inconsistencies were corrected using PROPOER and manual review.</li>
-        </ul>
-        This process ensured that the dataset was accurate, consistent, and ready for analysis. 
-
-    </p>
-    <h3>Creating Pivot Tables:</h3>
-    <p>After cleaning, the data was converted into structured tables using Excel’s Format as Table feature. From there, I created pivot tables to summarize key business metrics such as total revenue, total quantity, total transactions, total customers, and avaerage rating. This allowed for efficient data aggregation.</p>
-    
- </p>
-    <h3>Dashboard Design:</h3>
-    <p>The pivot tables were then used to build visualizations, including:</p>
-    <ul>
-        <li>Line charts for tracking monthly sales over time.</li>
-        <li>Bar charts is used to compare the average revenue, quantity and transaction over the period of three years. Also bar charts was used to compare product performance and stock level perfomance.</li>
-        <li>Infographic used to compare sales by gender.</li>
-        <li>Slicers for interactive filtering by time period.</li>
-        </ul>
-        <p>The dashboard was designed on a separate sheet, bringing together all major KPIs such as total revenue ($12,590), total quanity (3012), total transactions (1000), and average customer rating (3.047) into a single, easy-to-navigate interface. The focus was on creating a clear, interactive, and insightful tool to support management in making informed business decisions.</p>
-
- <h3>INSIGHTS AND MEANING BEHIND THE NUMBERS</h3>
-<ul>
-        <li>1. Performance Trends:</li>
-        
-<p>Over the three-year period from 2024 to 2026, Café Harmony generated a total revenue of $12,590 from 3,012 units sold. Monthly sales fluctuated between $783K and $1.22K, with a significant revenue peak in August, May, and January which accounted for 28% of total sales. This peak suggests a seasonal sales boost possibly driven by promotional events or holiday demand, making August a key month for strategic marketing and resource planning. Despite a temporary dip to $783K in August, the overall sales trend remains positive, indicating consistent and growing customer interest.</p>
- <img src="images/Cafe Analysis 2.PNG" alt="Sales Trend" class="responsive-chart" />
-
- <li>2. Quarterly and Service Quality Trends:</li>
-<p>Revenue distribution across quarters shows a strong performance in Quarter 3 (27.2%) and Quarter 1 (26.38%), suggesting these periods are particularly valuable for driving business.</p>
-<img src="images/Cafe Analysis 3.PNG" alt="Quarterly Sales View" class="responsive-chart" />
-
-<li>3. Menu Item Performance and Stock Observations:</li>
-<p>The café's bestsellers over the period were Muffins (2.4K units) and Cappuccinos (2.3K units), and Iced Tea (2.2K units), together driving 55% of total sales. These two items clearly resonate with customers and are core to the café’s revenue.<p>
-  <img src="images/Cafe Analysis 4.PNG" alt="Product Performance" class="responsive-chart" />
-<p>However, the stock data reveals challenges:</p>
-<li>Items like Tea Bags (-20.7%) and Iced Tea Bags (-49.3%) experienced substantial negative inventory movements, signaling possible shortages or forecasting issues.</li>
-<li>Essential ingredients like Milk (-52.7%) and Muffin Mix (-33%) also declined sharply, raising concerns about potential stockouts for high-demand products.</li>
- <img src="images/Cafe Analysis 5.PNG" alt="Stock Level Performance" class="responsive-chart" />
-<p>These insights stress the need for better stock monitoring to avoid interruptions in popular product availability.</p>
-<li>4. Customer Demographics and Spending Behavior.</li>
-<p>Female customers accounted for 54% of total sales, compared to 46% from male customers, making them a key demographic for future targeting and engagement strategies.</p>
-<img src="images/Cafe Analysis 6.PNG" alt="Stock Level Performance" class="responsive-chart" />
-<li>5. Location and Employee Performance:</li>
-<p>Among all locations, Uptown leads with 27% of total sales, outperforming the Suburbs (26%) and Downtown (25%), indicating stronger customer traction in that area.</p>
-<p>Top-performing employees like Elizabeth, Elizabeth Allen and David Smith contributed significantly to revenue, setting a benchmark for team performance and providing a case for recognizing high achievers.</p>
-<img src="images/Cafe Analysis 7.PNG" alt="Location Performance" class="responsive-chart" />
-</ul>
-
-<h3>SIGNIFICANCE AND ACTIONABLE INSIGHTS</h3>
-<p>These numbers reveal Café Harmony’s growth potential and operational challenges. The 28% August, May and January peak and 55% sales from Muffins and Cappuccinos emphasize the importance of capitalizing on high-demand periods and products. The 54% female contribution and $4,197 average revenue highlight a lucrative customer segment to target. Stock declines of -52.7% in Milk and -33% in Muffin Mix signal urgent inventory adjustments to avoid lost sales, while Uptown’s 27% share and top employees’ performance suggest location and staff optimization opportunities. The 20.28% neutral rating calls for enhanced customer experience initiatives. Together, these insights, derived from a meticulously cleaned and pivoted dataset, guide targeted promotions, inventory realignment, and performance recognition to sustain growth.</p>
 
   </div>
       <div class="download-link" style="margin-top: 20px;">
