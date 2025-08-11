@@ -658,19 +658,35 @@ img, body {
   align-items: center;
 }
 
-.tab-image {
-  overflow: hidden; /* prevents zoom from spilling outside */
-  display: inline-block;
-}
-
 .tab-image img {
-  max-width: 400px; /* control size */
+  max-width: 400px;
   width: 100%;
   height: auto;
-  display: block;
-  transition: transform 0.3s ease; /* smooth zoom */
-  cursor: zoom-in; /* hint to user */
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
 }
+
+/* Fullscreen overlay */
+#img-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#img-overlay img {
+  max-width: 95%;
+  max-height: 95%;
+  cursor: zoom-out;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
 
 .tab-image:hover img {
   transform: scale(1.15); /* zoom in */
@@ -897,8 +913,8 @@ img, body {
     <div class="tab-content" id="modeling">
   <div class="tab-inner">
     <div class="tab-image">
-      <img src="images/Data Modelling2.PNG" alt="Data Modeling" />
-    </div>
+  <img src="images/Data modeling.PNG" alt="Data Modeling" id="zoomable-img" />
+</div>
   </div>
 </div>
 
@@ -1259,6 +1275,29 @@ img, body {
       btn.addEventListener("mouseleave", function () {
         clearTimeout(hoverTimeout);
       });
+    });
+  });
+</script>
+
+<script>
+  const img = document.getElementById("zoomable-img");
+
+  img.addEventListener("click", () => {
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.id = "img-overlay";
+
+    // Create zoomed image
+    const zoomedImg = document.createElement("img");
+    zoomedImg.src = img.src;
+
+    // Add to overlay
+    overlay.appendChild(zoomedImg);
+    document.body.appendChild(overlay);
+
+    // Close when clicked
+    overlay.addEventListener("click", () => {
+      overlay.remove();
     });
   });
 </script>
