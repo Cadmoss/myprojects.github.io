@@ -658,24 +658,15 @@ img, body {
   align-items: center;
 }
 
-.tab-image {
-  flex: 1 1 40%;
-  display: flex;
-  justify-content: center;
-}
-
-.tab-explanation {
-  flex: 1 1 55%; /* slightly larger */
-  display: flex;
-  justify-content: center;
-}
-
-.tab-image img,
-.tab-explanation img {
-  max-width: 100%;
+.tab-image img {
+  max-width: 400px; /* adjust size as needed */
+  width: 100%;
   height: auto;
-  border-radius: 8px;
-  object-fit: contain;
+  display: block;
+  margin: 0; /* removes auto-centering if applied elsewhere */
+}
+.tab-image {
+  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -889,25 +880,19 @@ img, body {
     </div>
 
     <div class="tab-content" id="modeling">
-      <div class="tab-inner">
-        <div class="tab-image">
-          <img src="images/Data modeling.PNG" alt="Data Modeling" />
-        </div>
-        <div class="tab-explanation">
-          <img src="images/Data Modelling2.PNG" alt="Data Modeling Explained" />
-        </div>
-      </div>
+  <div class="tab-inner">
+    <div class="tab-image">
+      <img src="images/Data modeling.PNG" alt="Data Modeling" />
     </div>
+  </div>
+</div>
 
     <div class="tab-content" id="ETL">
       <div class="tab-inner">
         <div class="tab-image">
           <img src="images/imageetl.jpeg" alt="ETL" />
         </div>
-        <div class="tab-explanation">
-          <img src="images/ETL2.PNG" alt="ETL Explained" />
         </div>
-      </div>
     </div>
 
     <div class="tab-content" id="scraping">
@@ -915,10 +900,7 @@ img, body {
         <div class="tab-image">
           <img src="images/Webscarpping.jpg" alt="Web Scraping" />
         </div>
-        <div class="tab-explanation">
-          <img src="images/Webscrapping.PNG" alt="Scraping Explained" />
         </div>
-      </div>
     </div>
 
     <div class="tab-content" id="API">
