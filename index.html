@@ -695,6 +695,14 @@ img, body {
   cursor: zoom-out;
 }
 
+
+.tab-video iframe {
+  width: 200px;  /* small video size */
+  height: 120px; /* proportional height */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
 /* Mobile adjustments */
 @media (max-width: 600px) {
   .tab-image img {
@@ -910,7 +918,20 @@ img, body {
           <img src="images/Intelligent Automation2.PNG" alt="Automation" />
         </div>
         </div>
+
+        <!-- Small video on the right -->
+  <div class="tab-video">
+    <iframe 
+      src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID" 
+      title="Video Snippet"
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
     </div>
+
 
     <div class="tab-content" id="modeling">
   <div class="tab-inner">
