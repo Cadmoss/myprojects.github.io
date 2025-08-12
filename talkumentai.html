@@ -208,19 +208,16 @@
             </a>
         </div>
         <div class="notes">
-            <h3>The Spark of Innovation: Tackling the Data Deluge</h3>
+            <h2>The Spark of Innovation: Tackling the Data Deluge</h2>
             <p>Once upon a time in the bustling world of data analysis, I found myself drowning in a sea of information. As a data analyst, my days were filled with endless scrolling through dense PDFs, parsing cumbersome CSVs, and transcribing key points from YouTube videos to uncover hidden insights. The real-world problem? Time inefficiency and mental fatigue. Extracting actionable knowledge from documents often meant hours of manual labour, switching between tools, and risking overlooked details, especially when deadlines loomed and datasets grew exponentially. 
                 Why did this matter? In a data-driven era, where businesses rely on quick decisions from reports, research papers, or educational videos, the gap between raw data and usable intelligence is widening. I envisioned a solution: an intuitive platform where users could "talk" to their documents, asking questions in natural language and getting instant, context-aware responses. Thus, Talkument AI was born, a tool powered by AI agents and automation to democratize document interaction, saving precious time and turning overwhelming data into conversational wisdom. 
                 The "why" behind it? To empower analysts like me to focus on strategy and innovation, not drudgery, ultimately boosting productivity in fields like market research, compliance reviews, and content analysis.</p>
 
-                <h2>Building the Bridge: From Upload to Insightful Dialogue</h2>
+                <h3>Building the Bridge: From Upload to Insightful Dialogue</h3>
                 <p>Our story's hero, Talkument AI, begins its journey at the gateway, a sleek login screen that welcomes users back to a world of intelligent document processing. As seen in the first image, it's a simple yet secure portal with fields for email and password, a "Sign In" button, and options for password recovery or signing up. This entry point ensures only authorized users access their personal data hubs, setting the stage for seamless interactions.</p>
                 <p>Behind the scenes, the magic unfolds through n8n. This powerful open-source automation platform orchestrates the backend workflows like a masterful conductor, illustrating how the system handles diverse inputs with precision. It all starts with webhooks, triggers that activate when a user uploads a file or sends a chat message. For document uploads, the flow branches intelligently, a "Switch" node detects the file type (PDF, CSV, TXT), then extracts fields automatically. Text is pulled from PDFs or CSVs, and if it's a YouTube video, a dedicated path kicks in with a
                      "RapidAPI HTTP Request" to fetch the transcript via GET from APIs like those on youtube.com. The extracted content is combined into a payload, checked with an "If" node for errors (flagging issues in red), and then enriched, embeddings are generated using OpenAI models for semantic understanding, stored in a Supabase Vector Store for fast retrieval, and loaded via default data loaders.</p>
-                     <p>When a user wants to chat, another webhook listens for messages, routing them to an "AI Agent" node powered by OpenChat models with memory for context retention. Fields are edited automatically if needed, and responses are crafted by querying the vector store, pulling relevant embeddings, documents, or transcripts, and sent back via webhook. This setup allows parallel processing: for instance, a YouTube workflow would create a new row in the database, get row data, and embed it in under a minute, ensuring real-time progress tracking. Error handling is built-in, with error handling mechanisms and loops for retries, making the system robust.</p>
-                     <p>On the frontend, the second image showcases the "File Upload Hub," the heart of user interaction. Here, users drag-and-drop or choose files in TXT, PDF, or CSV formats, with a 10MB limit per file for efficiency. A "History" button lets them revisit past uploads. At the same time, the vibrant "YouTube Transcript Extractor" section stands out in red, users paste a video URL (like youtube.com or youtu.be), hit "Extract Transcript," and the system pulls, saves, and embeds the transcript. Once uploaded, an AI agent springs to life: users can chat directly about the content, asking questions such as "Summarise the key findings in this PDF" or 
-                        "What does the transcript say about market trends?" The agent draws from the embedded data in Supabase, providing accurate, cited responses. Plus, transcripts can be downloaded for offline use, closing the loop from input to output.</p>
-
+                     
         </div>
     </div>
 
@@ -233,8 +230,12 @@
 
 <!-- Additional info -->
 <div class="full-width-section">
-    <h2>Additional Information</h2>
-    <p>.</p>
+    <p>When a user wants to chat, another webhook listens for messages, routing them to an "AI Agent" node powered by OpenChat models with memory for context retention. Fields are edited automatically if needed, and responses are crafted by querying the vector store, pulling relevant embeddings, documents, or transcripts, and sent back via webhook. This setup allows parallel processing: for instance, a YouTube workflow would create a new row in the database, get row data, and embed it in under a minute, ensuring real-time progress tracking. Error handling is built-in, with error handling mechanisms and loops for retries, making the system robust.</p>
+    <p>On the frontend, the second image showcases the "File Upload Hub," the heart of user interaction. Here, users drag-and-drop or choose files in TXT, PDF, or CSV formats, with a 10MB limit per file for efficiency. A "History" button lets them revisit past uploads. At the same time, the vibrant "YouTube Transcript Extractor" section stands out in red, users paste a video URL (like youtube.com or youtu.be), hit "Extract Transcript," and the system pulls, saves, and embeds the transcript. Once uploaded, an AI agent springs to life: users can chat directly about the content, asking questions such as "Summarise the key findings in this PDF" or 
+    "What does the transcript say about market trends?" The agent draws from the embedded data in Supabase, providing accurate, cited responses. Plus, transcripts can be downloaded for offline use, closing the loop from input to output.</p>
+    <h3>The Triumph of Transformation: Empowering Everyday Heroes</h3>
+    
+
 </div>
 
 <script>
