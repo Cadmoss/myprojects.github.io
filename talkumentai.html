@@ -40,28 +40,28 @@
         background-color: #357abd;
     }
 
-    /* Layout for carousel + right column */
+    /* Layout for top section */
     .top-section {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
         max-width: 1100px;
-        margin: 30px auto;
+        margin: 30px auto 10px auto;
         padding: 0 20px;
     }
 
-    /* Carousel styles */
+    /* Carousel */
     .carousel {
         flex: 1 1 60%;
         position: relative;
-        height: 300px; 
+        height: 300px;
         overflow: hidden;
         border-radius: 8px;
     }
     .carousel img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;
         position: absolute;
         top: 0;
         left: 0;
@@ -76,8 +76,6 @@
     .dots {
         text-align: center;
         margin-top: 8px;
-        opacity: 0;
-        animation: fadeIn 0.8s ease-in-out forwards;
     }
     .dot {
         height: 10px;
@@ -93,16 +91,9 @@
         background-color: #4a90e2;
     }
 
-    @keyframes fadeIn {
-        to { opacity: 1; }
-    }
-
-    /* Right column (video + UI & info) */
-    .right-column {
+    /* Video */
+    .video-container {
         flex: 1 1 35%;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
     }
     .video-container iframe {
         width: 100%;
@@ -110,22 +101,22 @@
         border-radius: 8px;
     }
 
-    /* UI & info layout */
-    .ui-info-container {
+    /* Second row: link + notes on left, UI images on right */
+    .below-section {
         display: flex;
-        gap: 15px;
-        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
-    /* Left side: Link + Notes */
-    .ui-info-left {
-        flex: 1;
+    /* Left: link + notes */
+    .left-column {
+        flex: 1 1 60%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-    }
-    .link-section {
-        font-size: 1rem;
+        gap: 15px;
     }
     .link-section a {
         color: #4a90e2;
@@ -144,24 +135,26 @@
         fill: #4a90e2;
     }
     .notes {
+        background: #f9f9f9;
+        padding: 12px;
+        border-radius: 8px;
         font-size: 0.95rem;
         line-height: 1.5;
     }
 
-    /* Right side: Multiple UI images */
-    .ui-info-right {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    /* Right: UI images */
+    .ui-images {
+        flex: 1 1 35%;
     }
-    .ui-info-right img {
+    .ui-images img {
         width: 100%;
+        height: auto;
         border-radius: 8px;
         object-fit: cover;
+        margin-bottom: 10px;
     }
 
-    /* Full width content after UI section */
+    /* Full width section */
     .full-width-section {
         max-width: 1100px;
         margin: 20px auto;
@@ -170,10 +163,7 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-        .top-section {
-            flex-direction: column;
-        }
-        .ui-info-container {
+        .top-section, .below-section {
             flex-direction: column;
         }
         .video-container iframe {
@@ -189,6 +179,7 @@
     <a href="#">Home</a>
 </header>
 
+<!-- Top row -->
 <div class="top-section">
     <!-- Carousel -->
     <div class="carousel">
@@ -198,42 +189,38 @@
         <div class="dots"></div>
     </div>
 
-    <!-- Right Column -->
-    <div class="right-column">
-        <!-- Video -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/exampleID" allowfullscreen></iframe>
-        </div>
-
-        <!-- UI + Link + Notes -->
-        <div class="ui-info-container">
-            <!-- Left -->
-            <div class="ui-info-left">
-                <div class="link-section">
-                    <a href="https://example.com" target="_blank">
-                        Use this Application 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M12.293 2.293a1 1 0 011.414 0L19 7.586V8a1 1 0 01-1 1h-1v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6H2a1 1 0 01-1-1v-.414l5.293-5.293a1 1 0 011.414 0L12 4.586l.293-.293zM5 9v6h10V9h-2v2H7V9H5z"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="notes">
-                    <h3>My Notes</h3>
-                    <p>Here are some important points and reminders for my project.</p>
-                </div>
-            </div>
-
-            <!-- Right -->
-            <div class="ui-info-right">
-                <img src="images/Talkument AI 2.PNG" alt="UI Preview 1">
-                <img src="images/Talkument AI.PNG" alt="UI Preview 2">
-                
-            </div>
-        </div>
+    <!-- Video -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/exampleID" allowfullscreen></iframe>
     </div>
 </div>
 
-<!-- After UI Section -->
+<!-- Second row -->
+<div class="below-section">
+    <!-- Left: link + notes -->
+    <div class="left-column">
+        <div class="link-section">
+            <a href="https://example.com" target="_blank">
+                Use this Application 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M12.293 2.293a1 1 0 011.414 0L19 7.586V8a1 1 0 01-1 1h-1v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6H2a1 1 0 01-1-1v-.414l5.293-5.293a1 1 0 011.414 0L12 4.586l.293-.293zM5 9v6h10V9h-2v2H7V9H5z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="notes">
+            <h3>My Notes</h3>
+            <p>Here are some important points and reminders for my project.</p>
+        </div>
+    </div>
+
+    <!-- Right: UI images -->
+    <div class="ui-images">
+        <img src="images/Talkument AI 2.PNG" alt="UI Preview 1">
+        <img src="images/Talkument AI.PNG" alt="UI Preview 2">
+    </div>
+</div>
+
+<!-- Additional info -->
 <div class="full-width-section">
     <h2>Additional Information</h2>
     <p>This is where you can put more details or full-width content.</p>
