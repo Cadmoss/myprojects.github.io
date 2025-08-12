@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Talkument AI — Project Showcase</title>
+  <style>
+    :root{
+      --bg:#0b0b10; /* deep dark */
+      --panel:#121018; /* slightly lighter */
+      --muted:#9a8fb2;
+      --accent-purple:#7b4cff;
+      --accent-red:#ff3b6b;
+      --glass: rgba(255,255,255,0.03);
+      --card-shadow: 0 6px 18px rgba(11,10,16,0.7);
+      --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #07060a 0%, #0d0812 60%);
+      color: #eae6f7;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      min-height:100vh;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:24px;
+      align-items:start;
+    }
+
+    header{
+      grid-column:1/-1;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:6px;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent-purple),var(--accent-red));
+      display:flex;align-items:center;justify-content:center;font-weight:700;
+      box-shadow: var(--card-shadow);
+      color:white;font-size:20px
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+
+    /* Left column content */
+    .main-card{background:var(--panel);border-radius:var(--radius);padding:18px;box-shadow:var(--card-shadow)}
+    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .section-title h2{font-size:15px;margin:0}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Gallery controls */
+    .gallery-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent-purple),var(--accent-red));color:white;border:none}
+
+    .dropzone{
+      border:1px dashed rgba(255,255,255,0.04);
+      border-radius:10px;padding:14px;display:flex;gap:12px;align-items:center;justify-content:center;color:var(--muted);
+      transition:all .15s ease; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    }
+    .dropzone.dragover{border-color:rgba(123,76,255,0.9);box-shadow:0 6px 20px rgba(123,76,255,0.06)}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:12px}
+    .thumb{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:8px;border-radius:10px;position:relative;overflow:hidden}
+    .thumb img, .thumb video{width:100%;height:110px;object-fit:cover;border-radius:8px}
+    .thumb .caption{margin-top:8px;font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+    .thumb .caption input{flex:1;background:transparent;border:1px dashed rgba(255,255,255,0.02);padding:6px;border-radius:8px;color:inherit}
+    .thumb .actions{position:absolute;top:8px;right:8px;display:flex;gap:6px}
+    .icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35)}
+    .small-muted{font-size:12px;color:var(--muted)}
+
+    /* Right column */
+    .side{position:sticky;top:32px}
+    .video-card{background:linear-gradient(180deg, rgba(123,76,255,0.06), rgba(255,59,107,0.02));padding:10px;border-radius:12px}
+    .preview-video{width:100%;height:220px;background:#000;border-radius:8px;display:flex;align-items:center;justify-content:center}
+    .preview-video iframe{width:100%;height:100%;border-radius:6px}
+
+    .notes{margin-top:16px;background:var(--panel);padding:12px;border-radius:12px}
+    .notes h3{margin:0 0 8px 0}
+    .notes p{color:var(--muted);font-size:14px;line-height:1.5}
+
+    footer{grid-column:1/-1;margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .container{grid-template-columns:1fr; padding:18px}
+      .side{position:relative;top:auto}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">T</div>
+      <div>
+        <h1>Talkument AI — Project Showcase</h1>
+        <p class="lead">Upload docs, chat with AI, transcribe YouTube — built with n8n, RAG, Supabase & vibecoding</p>
+      </div>
+    </header>
+
+    <main class="main-card">
+      <div class="section-title">
+        <h2>Gallery — Backend Steps</h2>
+        <div class="small">Upload images that show pipeline steps (n8n flows, Supabase tables, RAG config)</div>
+      </div>
+
+      <div class="gallery-controls">
+        <label class="btn" for="fileInput">Choose images</label>
+        <input id="fileInput" type="file" accept="image/*,video/*" multiple style="display:none">
+        <button class="btn" id="clearBtn">Clear</button>
+        <button class="btn primary" id="saveBtn">Save snapshot</button>
+      </div>
+
+      <div id="dropzone" class="dropzone">Drag & drop images or click "Choose images"</div>
+
+      <div id="gallery" class="gallery" aria-live="polite"></div>
+
+    </main>
+
+    <aside class="side">
+      <div class="video-card">
+        <div class="section-title"><h2>Demo Video</h2><div class="small">Small embed frame — drag a YouTube URL or upload MP4</div></div>
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <input id="ytUrl" placeholder="Paste YouTube URL (https://...)" style="flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <button class="btn" id="embedBtn">Embed</button>
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <input id="videoFile" type="file" accept="video/*" style="flex:1">
+        </div>
+        <div id="videoPreview" class="preview-video">No video loaded</div>
+      </div>
+
+      <div class="notes">
+        <h3>Project Notes</h3>
+        <p><strong>Talkument AI</strong> lets users upload <em>txt, pdf, csv</em> files and have a chat with an AI about the document. You can also paste or upload a YouTube video — the system transcribes it and creates a chatable transcript. The backend pipeline uses <strong>n8n</strong> for orchestration, <strong>Supabase</strong> for optional storage, <strong>vibecoding</strong> and a <strong>RAG</strong> system for retrieval-augmented generation.</p>
+        <p class="small-muted">Tip: Use the gallery to show screenshots of n8n flows, the RAG index, Supabase tables, and any tool configuration.</p>
+      </div>
+    </aside>
+
+    <footer>Michael Afolayan  — dark purple & red UI • Replace images & video with your project assets</footer>
+  </div>
+
+  <script>
+    // Simple gallery logic: preview images/videos and allow captions
+    const fileInput = document.getElementById('fileInput');
+    const dropzone = document.getElementById('dropzone');
+    const gallery = document.getElementById('gallery');
+    const clearBtn = document.getElementById('clearBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const ytUrl = document.getElementById('ytUrl');
+    const embedBtn = document.getElementById('embedBtn');
+    const videoPreview = document.getElementById('videoPreview');
+    const videoFile = document.getElementById('videoFile');
+
+    function createThumb(file){
+      const url = URL.createObjectURL(file);
+      const div = document.createElement('div'); div.className='thumb';
+      let media;
+      if(file.type.startsWith('image/')){
+        media = document.createElement('img'); media.src=url; media.alt=file.name;
+      } else if(file.type.startsWith('video/')){
+        media = document.createElement('video'); media.src=url; media.controls = true; media.muted=true;
+      } else {
+        media = document.createElement('div'); media.textContent = file.name; media.style.padding='14px';
+      }
+      div.appendChild(media);
+      const captionWrap = document.createElement('div'); captionWrap.className='caption';
+      const inp = document.createElement('input'); inp.placeholder='Describe this step (e.g. n8n workflow screenshot)';
+      captionWrap.appendChild(inp);
+      const actions = document.createElement('div'); actions.className='actions';
+      const del = document.createElement('button'); del.className='icon'; del.innerHTML='✕';
+      del.title='Remove'; del.onclick = ()=>{ URL.revokeObjectURL(url); div.remove(); };
+      actions.appendChild(del);
+      div.appendChild(actions);
+      div.appendChild(captionWrap);
+      gallery.appendChild(div);
+    }
+
+    fileInput.addEventListener('change', (e)=>{
+      [...e.target.files].forEach(createThumb);
+      fileInput.value='';
+    });
+
+    dropzone.addEventListener('dragover', (e)=>{ e.preventDefault(); dropzone.classList.add('dragover') });
+    dropzone.addEventListener('dragleave', ()=>{ dropzone.classList.remove('dragover') });
+    dropzone.addEventListener('drop',(e)=>{
+      e.preventDefault(); dropzone.classList.remove('dragover');
+      const files = e.dataTransfer.files; [...files].forEach(createThumb);
+    });
+
+    clearBtn.addEventListener('click', ()=>{ gallery.innerHTML=''; });
+
+    saveBtn.addEventListener('click', ()=>{
+      // quick snapshot export: make a small HTML with thumbnails & captions
+      const items = Array.from(gallery.querySelectorAll('.thumb'));
+      const parts = items.map(it=>{
+        const img = it.querySelector('img,video');
+        const caption = it.querySelector('input').value || '';
+        let src = img ? img.src : '';
+        return `<figure style="margin:6px"><div style="width:280px;height:160px;overflow:hidden;border-radius:8px"><img src="${src}" style="width:100%;height:100%;object-fit:cover"/></div><figcaption style="color:#cfc7f3">${caption}</figcaption></figure>`;
+      });
+      const html = `<html><head><meta charset=\"utf-8\"><title>Gallery Snapshot</title></head><body style=\"background:#0b0b10;color:#eee;font-family:Arial;padding:20px\">${parts.join('')}</body></html>`;
+      const blob = new Blob([html], {type:'text/html'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download='talkument-gallery.html'; a.click();
+    });
+
+    // Embed YouTube
+    embedBtn.addEventListener('click', ()=>{
+      const url = ytUrl.value.trim();
+      if(!url) return alert('Paste a YouTube URL');
+      const m = url.match(/[?&]v=([^&]+)/) || url.match(/youtu\.be\/(.+)/);
+      const id = m && m[1];
+      if(!id) return alert('Could not extract video id');
+      videoPreview.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      ytUrl.value='';
+    });
+
+    videoFile.addEventListener('change',(e)=>{
+      const f = e.target.files[0]; if(!f) return;
+      const url = URL.createObjectURL(f);
+      videoPreview.innerHTML = `<video src="${url}" controls style="width:100%;height:100%;border-radius:8px"></video>`;
+    });
+
+    // Simple accessibility: keyboard support for dropzone click
+    dropzone.addEventListener('click', ()=> fileInput.click());
+
+  </script>
+</body>
+</html>
