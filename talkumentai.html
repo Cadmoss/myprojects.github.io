@@ -61,27 +61,41 @@
         .carousel img {
             width: 100%;
             height: auto;
-            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
         .carousel img.active {
-            display: block;
+            opacity: 1;
+            position: relative;
         }
-        .carousel button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+
+        /* Carousel dots */
+        .dots {
+            text-align: center;
+            margin-top: 8px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 4px;
+            background-color: #bbb;
             border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .carousel .prev {
-            left: 10px;
+        .dot.active {
+            background-color: #4a90e2;
         }
-        .carousel .next {
-            right: 10px;
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
 
         /* Video styles */
@@ -100,15 +114,23 @@
             max-width: 1100px;
             margin: 20px auto;
             padding: 0 20px;
+            font-size: 1.1rem;
         }
         .link-section a {
             color: #4a90e2;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .link-section a:hover {
             text-decoration: underline;
+        }
+        .link-section svg {
+            width: 18px;
+            height: 18px;
+            fill: #4a90e2;
         }
 
         /* Notes section */
@@ -148,8 +170,7 @@
             <img src="images/10.PNG" class="active" alt="Image 1">
             <img src="images/20.PNG" alt="Image 2">
             <img src="images/30.PNG" alt="Image 3">
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
+            <div class="dots"></div>
         </div>
 
         <!-- Video -->
@@ -160,7 +181,12 @@
 
     <!-- Link Section -->
     <div class="link-section">
-        <a href="https://example.com" target="_blank">Use this Application</a>
+        <a href="https://example.com" target="_blank">
+            Use this Application 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M12.293 2.293a1 1 0 011.414 0L19 7.586V8a1 1 0 01-1 1h-1v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6H2a1 1 0 01-1-1v-.414l5.293-5.293a1 1 0 011.414 0L12 4.586l.293-.293zM5 9v6h10V9h-2v2H7V9H5z"/>
+            </svg>
+        </a>
     </div>
 
     <!-- Notes Section -->
@@ -174,19 +200,47 @@
 
     <script>
         const images = document.querySelectorAll('.carousel img');
+        const dotsContainer = document.querySelector('.dots');
         let currentIndex = 0;
+        let interval;
 
-        document.querySelector('.next').addEventListener('click', () => {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
+        // Create dots
+        images.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                showSlide(i);
+                resetInterval();
+            });
+            dotsContainer.appendChild(dot);
         });
 
-        document.querySelector('.prev').addEventListener('click', () => {
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
             images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            dots[currentIndex].classList.remove('active');
+            currentIndex = index;
             images[currentIndex].classList.add('active');
-        });
+            dots[currentIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentIndex + 1) % images.length;
+            showSlide(nextIndex);
+        }
+
+        function startInterval() {
+            interval = setInterval(nextSlide, 3000); // Change every 3 seconds
+        }
+
+        function resetInterval() {
+            clearInterval(interval);
+            startInterval();
+        }
+
+        startInterval();
     </script>
 
 </body>
