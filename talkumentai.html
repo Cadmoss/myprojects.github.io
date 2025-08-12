@@ -163,13 +163,16 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-        .top-section, .below-section {
-            flex-direction: column;
-        }
-        .video-container iframe {
-            height: 200px;
-        }
+    .top-section, .below-section {
+        flex-direction: column;
     }
+    .carousel {
+        height: 400px; /* bigger height for mobile */
+    }
+    .video-container iframe {
+        height: 250px; /* slightly taller video too */
+    }
+}
 
     footer {
     background-color: #110622;
