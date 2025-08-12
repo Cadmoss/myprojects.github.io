@@ -168,16 +168,25 @@
         padding: 0 20px;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
     .top-section, .below-section {
         flex-direction: column;
     }
+
+    /* Bigger carousel on mobile */
     .carousel {
-        height: 400px; /* bigger height for mobile */
+        height: 60vh; /* about 60% of screen height, responsive */
     }
+
+    /* Make video a bit bigger too */
     .video-container iframe {
-        height: 250px; /* slightly taller video too */
+        height: 300px;
+    }
+
+    /* Reduce UI images size on mobile */
+    .ui-images img {
+        max-height: 250px;
+        object-fit: contain; /* so they don’t crop strangely */
     }
 }
 
