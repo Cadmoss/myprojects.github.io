@@ -1,259 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talkument AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: white;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talkument AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        background-color: white;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
 
-        /* Header */
-        header {
-            background-color: #1e1e2f;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-        header h1 {
-            font-size: 1.5rem;
-            margin: 0;
-        }
-        header a {
-            color: white;
-            text-decoration: none;
-            background-color: #4a90e2;
-            padding: 8px 15px;
-            border-radius: 6px;
-            transition: background-color 0.3s;
-        }
-        header a:hover {
-            background-color: #357abd;
-        }
+    /* Header */
+    header {
+        background-color: #1e1e2f;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    header a {
+        color: white;
+        text-decoration: none;
+        background-color: #4a90e2;
+        padding: 8px 15px;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+    }
+    header a:hover {
+        background-color: #357abd;
+    }
 
-        /* Layout for carousel + right column */
+    /* Layout for carousel + right column */
+    .top-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1100px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    /* Carousel styles */
+    .carousel {
+        flex: 1 1 60%;
+        position: relative;
+        height: 300px; 
+        overflow: hidden;
+        border-radius: 8px;
+    }
+    .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .carousel img.active {
+        opacity: 1;
+    }
+
+    /* Carousel dots */
+    .dots {
+        text-align: center;
+        margin-top: 8px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-in-out forwards;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 4px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .dot.active {
+        background-color: #4a90e2;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+
+    /* Right column (video + UI & info) */
+    .right-column {
+        flex: 1 1 35%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .video-container iframe {
+        width: 100%;
+        height: 300px;
+        border-radius: 8px;
+    }
+
+    /* UI & info layout */
+    .ui-info-container {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    /* Left side: Link + Notes */
+    .ui-info-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .link-section {
+        font-size: 1rem;
+    }
+    .link-section a {
+        color: #4a90e2;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .link-section a:hover {
+        text-decoration: underline;
+    }
+    .link-section svg {
+        width: 18px;
+        height: 18px;
+        fill: #4a90e2;
+    }
+    .notes {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Right side: Multiple UI images */
+    .ui-info-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .ui-info-right img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    /* Full width content after UI section */
+    .full-width-section {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
         .top-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* Carousel styles */
-        .carousel {
-            flex: 1 1 60%;
-            position: relative;
-            height: 300px; 
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .carousel img.active {
-            opacity: 1;
-        }
-
-        /* Carousel dots */
-        .dots {
-            text-align: center;
-            margin-top: 8px;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-in-out forwards;
-        }
-        .dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 4px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .dot.active {
-            background-color: #4a90e2;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Right column (video + UI image) */
-        .right-column {
-            flex: 1 1 35%;
-            display: flex;
             flex-direction: column;
-            gap: 15px;
+        }
+        .ui-info-container {
+            flex-direction: column;
         }
         .video-container iframe {
-            width: 100%;
-            height: 300px;
-            border-radius: 8px;
+            height: 200px;
         }
-        .ui-image img {
-            width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        /* Link section */
-        .link-section {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 0 20px;
-            font-size: 1.1rem;
-        }
-        .link-section a {
-            color: #4a90e2;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .link-section a:hover {
-            text-decoration: underline;
-        }
-        .link-section svg {
-            width: 18px;
-            height: 18px;
-            fill: #4a90e2;
-        }
-
-        /* Notes section */
-        .notes {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .notes p {
-            line-height: 1.6;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .top-section {
-                flex-direction: column;
-            }
-            .video-container iframe {
-                height: 200px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Talkument AI</h1>
-        <a href="#">Home</a>
-    </header>
+<header>
+    <h1>Talkument AI</h1>
+    <a href="#">Home</a>
+</header>
 
-    <!-- Top Section: Carousel + Right Column -->
-    <div class="top-section">
-        
-        <!-- Image Carousel -->
-        <div class="carousel">
-            <img src="images/10.PNG" class="active" alt="Image 1">
-            <img src="images/20.PNG" alt="Image 2">
-            <img src="images/30.PNG" alt="Image 3">
-            <div class="dots"></div>
+<div class="top-section">
+    <!-- Carousel -->
+    <div class="carousel">
+        <img src="images/10.PNG" class="active" alt="Image 1">
+        <img src="images/20.PNG" alt="Image 2">
+        <img src="images/30.PNG" alt="Image 3">
+        <div class="dots"></div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <!-- Video -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/exampleID" allowfullscreen></iframe>
         </div>
 
-        <!-- Right Column -->
-        <div class="right-column">
-            <!-- Video -->
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/exampleID" allowfullscreen></iframe>
+        <!-- UI + Link + Notes -->
+        <div class="ui-info-container">
+            <!-- Left -->
+            <div class="ui-info-left">
+                <div class="link-section">
+                    <a href="https://example.com" target="_blank">
+                        Use this Application 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M12.293 2.293a1 1 0 011.414 0L19 7.586V8a1 1 0 01-1 1h-1v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6H2a1 1 0 01-1-1v-.414l5.293-5.293a1 1 0 011.414 0L12 4.586l.293-.293zM5 9v6h10V9h-2v2H7V9H5z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="notes">
+                    <h3>My Notes</h3>
+                    <p>Here are some important points and reminders for my project.</p>
+                </div>
             </div>
-            <!-- UI Image -->
-            <div class="ui-image">
-                <img src="images/Talkument AI.PNG" alt="Application UI">
+
+            <!-- Right -->
+            <div class="ui-info-right">
+                <img src="images/ui1.png" alt="UI Preview 1">
+                <img src="images/ui2.png" alt="UI Preview 2">
+                <img src="images/ui3.png" alt="UI Preview 3">
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Link Section -->
-    <div class="link-section">
-        <a href="https://example.com" target="_blank">
-            Use this Application 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M12.293 2.293a1 1 0 011.414 0L19 7.586V8a1 1 0 01-1 1h-1v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6H2a1 1 0 01-1-1v-.414l5.293-5.293a1 1 0 011.414 0L12 4.586l.293-.293zM5 9v6h10V9h-2v2H7V9H5z"/>
-            </svg>
-        </a>
-    </div>
+<!-- After UI Section -->
+<div class="full-width-section">
+    <h2>Additional Information</h2>
+    <p>This is where you can put more details or full-width content.</p>
+</div>
 
-    <!-- Notes Section -->
-    <div class="notes">
-        <h2>My Notes</h2>
-        <p>
-            .
-        </p>
-    </div>
+<script>
+    const images = document.querySelectorAll('.carousel img');
+    const dotsContainer = document.querySelector('.dots');
+    let currentIndex = 0;
+    let interval;
 
-    <script>
-        const images = document.querySelectorAll('.carousel img');
-        const dotsContainer = document.querySelector('.dots');
-        let currentIndex = 0;
-        let interval;
-
-        // Create dots
-        images.forEach((_, i) => {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                showSlide(i);
-                resetInterval();
-            });
-            dotsContainer.appendChild(dot);
+    // Create dots
+    images.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            showSlide(i);
+            resetInterval();
         });
+        dotsContainer.appendChild(dot);
+    });
 
-        const dots = document.querySelectorAll('.dot');
+    const dots = document.querySelectorAll('.dot');
 
-        function showSlide(index) {
-            images[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
-            currentIndex = index;
-            images[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-        }
+    function showSlide(index) {
+        images[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+        currentIndex = index;
+        images[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+    }
 
-        function nextSlide() {
-            let nextIndex = (currentIndex + 1) % images.length;
-            showSlide(nextIndex);
-        }
+    function nextSlide() {
+        let nextIndex = (currentIndex + 1) % images.length;
+        showSlide(nextIndex);
+    }
 
-        function startInterval() {
-            interval = setInterval(nextSlide, 8000);
-        }
+    function startInterval() {
+        interval = setInterval(nextSlide, 8000);
+    }
 
-        function resetInterval() {
-            clearInterval(interval);
-            startInterval();
-        }
-
+    function resetInterval() {
+        clearInterval(interval);
         startInterval();
-    </script>
+    }
+
+    startInterval();
+</script>
 
 </body>
 </html>
