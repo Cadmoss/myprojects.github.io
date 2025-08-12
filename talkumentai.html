@@ -50,27 +50,30 @@
             padding: 0 20px;
         }
 
-        /* Carousel styles */
-        .carousel {
-            flex: 1 1 60%;
-            position: relative;
-            max-height: 400px;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        .carousel img {
-            width: 100%;
-            height: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .carousel img.active {
-            opacity: 1;
-            position: relative;
-        }
+       * Carousel styles */
+.carousel {
+    flex: 1 1 60%;
+    position: relative;
+    height: 300px; /* fixed height for all images */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%; /* fill the container height */
+    object-fit: cover; /* crop instead of stretch */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1;
+    position: absolute;
+}
 
         /* Carousel dots */
         .dots {
@@ -232,7 +235,7 @@
         }
 
         function startInterval() {
-            interval = setInterval(nextSlide, 3000); // Change every 3 seconds
+            interval = setInterval(nextSlide, 8000); // Change every 3 seconds
         }
 
         function resetInterval() {
