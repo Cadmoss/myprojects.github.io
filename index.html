@@ -1089,6 +1089,38 @@ img, body {
   });
 </script
 
+
+<!-- Chat Box -->
+<div id="popup-chat" style="display: none; position: fixed; bottom: 30px; right: 30px; width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; overflow: hidden; font-family: 'Roboto', sans-serif;">
+  <div style="background: #0a192f; color: #64ffda; padding: 12px 16px; font-weight: bold;">
+    👋 Hi there!
+  </div>
+  <div style="padding: 12px; font-size: 0.95rem; color: #333;">
+    <p>I'm Michael. How can I help you explore my portfolio today?</p>
+
+    <p style="margin-top: 10px;">
+      You can also <a href="https://www.linkedin.com/in/michael-afolayann" target="_blank" style="color: #0a192f; font-weight: bold; text-decoration: underline;">connect with me on LinkedIn</a>.
+    </p>
+
+    <form id="chat-form" action="https://formspree.io/f/xqalpgrk" method="POST" style="margin-top: 10px;">
+      <input type="hidden" name="_subject" value="New Portfolio Inquiry">
+
+      <textarea name="message" placeholder="Your question..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; resize: none; font-size: 0.85rem;" rows="3"></textarea>
+
+      <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; margin-top: 8px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem;" />
+
+      <button type="submit" style="margin-top: 10px; background: #64ffda; color: #0a192f; border: none; padding: 8px 14px; border-radius: 6px; font-weight: bold; cursor: pointer;">Send</button>
+    </form>
+
+    <div id="chat-confirmation" style="display: none; margin-top: 10px; color: #0a192f; font-size: 0.9rem;">
+      ✅ Got your message! I’ll get back to you soon.
+    </div>
+
+    <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 <script>
   document.getElementById("chat-form").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -1277,19 +1309,6 @@ img, body {
     });
   });
 </script>
-
-<!-- Chatbot Button -->
-<!-- Add to any page on your website -->
-<div style="width: 100%; height: 700px; margin: 2rem 0;">
-  <iframe 
-    src="https://your-chatbot-domain.com" 
-    width="100%" 
-    height="100%"
-    frameborder="0"
-    style="border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);"
-    title="Michael AI Chatbot">
-  </iframe>
-</div>
 
 </body>
 </html>
