@@ -1119,7 +1119,7 @@ img, body {
     <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
   </div>
 </div>
-<script-->>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 <script>
   document.getElementById("chat-form").addEventListener("submit", function(e) {
@@ -1180,7 +1180,7 @@ img, body {
 
     function showSlide(i) {
       index = i;
-      slides.style.transform = `translateX(-${index * 100}%)`;
+      slides.style.transform = translateX(-${index * 100}%);
       updateDots();
     }
 
@@ -1214,7 +1214,7 @@ img, body {
     };
 
     const showSlide = () => {
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      slides.style.transform = translateX(-${currentIndex * 100}%);
       updateDots();
     };
 
