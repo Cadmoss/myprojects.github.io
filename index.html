@@ -1181,7 +1181,7 @@ img, body {
 
     function showSlide(i) {
       index = i;
-      slides.style.transform = translateX(-${index * 100}%);
+      slides.style.transform = `translateX(-${index * 100}%)`;
       updateDots();
     }
 
@@ -1215,7 +1215,7 @@ img, body {
     };
 
     const showSlide = () => {
-      slides.style.transform = translateX(-${currentIndex * 100}%);
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`
       updateDots();
     };
 
