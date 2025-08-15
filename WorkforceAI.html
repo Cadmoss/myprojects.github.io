@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Talkument AI</title>
+<title>Workforce AI</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
     body {
-        background-color: rgb(205, 202, 245);
+        background-color: rgb(136, 133, 187);
         font-family: 'Poppins', sans-serif;
         margin: 0;
         padding: 0;
@@ -204,7 +204,7 @@
 <body>
 
 <header>
-    <h1>Talkument AI</h1>
+    <h1>Workforce AI</h1>
     <a href="index.html">Home</a>
 </header>
 
@@ -212,15 +212,15 @@
 <div class="top-section">
     <!-- Carousel -->
     <div class="carousel">
-        <img src="images/10.PNG" class="active" alt="Image 1">
-        <img src="images/20.PNG" alt="Image 2">
-        <img src="images/30.PNG" alt="Image 3">
+        <img src="images/Westbrom1.PNG" class="active" alt="Image 1">
+        <img src="Westbrom2.PNG" alt="Image 2">
+        <img src="Westbrom3.PNG" alt="Image 3">
         <div class="dots"></div>
     </div>
 
 <div class="video-container">
     <iframe 
-        src="https://www.youtube.com/embed/Gk8PQkNOoF8" 
+        src="https://www.youtube.com/embed/" 
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" 
         style="width:100%; height:300px; border-radius:8px;">
@@ -232,7 +232,7 @@
     <!-- Left: link + notes -->
     <div class="left-column">
         <div class="link-section">
-            <a href="https://jade-zuccutto-09270c.netlify.app/" target="_blank">
+            <a href="https://classy-daifuku-b01ffc.netlify.app/" target="_blank">
                 check it out 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <path d="M12.293 2.293a1 1 0 011.414 0L19 7.586V8a1 1 0 01-1 1h-1v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6H2a1 1 0 01-1-1v-.414l5.293-5.293a1 1 0 011.414 0L12 4.586l.293-.293zM5 9v6h10V9h-2v2H7V9H5z"/>
@@ -241,33 +241,28 @@
         </div>
         <div class="notes">
             <h2>The Spark of Innovation: Tackling the Data Deluge</h2>
-            <p>Once upon a time in the bustling world of data analysis, I found myself drowning in a sea of information. As a data analyst, my days were filled with endless scrolling through dense PDFs, parsing cumbersome CSVs, and transcribing key points from YouTube videos to uncover hidden insights. The real-world problem? Time inefficiency and mental fatigue. Extracting actionable knowledge from documents often meant hours of manual labour, switching between tools, and risking overlooked details, especially when deadlines loomed and datasets grew exponentially. 
-                Why did this matter? In a data-driven era, where businesses rely on quick decisions from reports, research papers, or educational videos, the gap between raw data and usable intelligence is widening. I envisioned a solution: an intuitive platform where users could "talk" to their documents, asking questions in natural language and getting instant, context-aware responses. Thus, Talkument AI was born, a tool powered by AI agents and automation to democratize document interaction, saving precious time and turning overwhelming data into conversational wisdom. 
-                The "why" behind it? To empower analysts like me to focus on strategy and innovation, not drudgery, ultimately boosting productivity in fields like market research, compliance reviews, and content analysis.</p>
+            <p></p>
 
                 <h3>Building the Bridge: From Upload to Insightful Dialogue</h3>
-                <p>Our story's hero, Talkument AI, begins its journey at the gateway, a sleek login screen that welcomes users back to a world of intelligent document processing. As seen in the first image, it's a simple yet secure portal with fields for email and password, a "Sign In" button, and options for password recovery or signing up. This entry point ensures only authorized users access their personal data hubs, setting the stage for seamless interactions.</p>
-                <p>Behind the scenes, the magic unfolds through n8n. This powerful open-source automation platform orchestrates the backend workflows like a masterful conductor, illustrating how the system handles diverse inputs with precision. It all starts with webhooks, triggers that activate when a user uploads a file or sends a chat message. For document uploads, the flow branches intelligently, a "Switch" node detects the file type (PDF, CSV, TXT), then extracts fields automatically. Text is pulled from PDFs or CSVs, and if it's a YouTube video, a dedicated path kicks in with a
-                     "RapidAPI HTTP Request" to fetch the transcript via GET from APIs like those on youtube.com. The extracted content is combined into a payload, checked with an "If" node for errors (flagging issues in red), and then enriched, embeddings are generated using OpenAI models for semantic understanding, stored in a Supabase Vector Store for fast retrieval, and loaded via default data loaders.</p>
+                <p></p>
+                <p></p>
                      
         </div>
     </div>
 
     <!-- Right: UI images -->
     <div class="ui-images">
-        <img src="images/Talkument AI 2.PNG" alt="UI Preview 1">
-        <img src="images/Talkument AI.PNG" alt="UI Preview 2">
+        <img src="Westbrom4.PNG" alt="UI Preview 1">
+        <img src="Westbrom5.PNG" alt="UI Preview 2">
     </div>
 </div>
 
 <!-- Additional info -->
 <div class="full-width-section">
-    <p>When a user wants to chat, another webhook listens for messages, routing them to an "AI Agent" node powered by OpenChat models with memory for context retention. Fields are edited automatically if needed, and responses are crafted by querying the vector store, pulling relevant embeddings, documents, or transcripts, and sent back via webhook. This setup allows parallel processing: for instance, a YouTube workflow would create a new row in the database, get row data, and embed it in under a minute, ensuring real-time progress tracking. Error handling is built-in, with error handling mechanisms and loops for retries, making the system robust.</p>
-    <p>On the frontend, the second image showcases the "File Upload Hub," the heart of user interaction. Here, users drag-and-drop or choose files in TXT, PDF, or CSV formats, with a 10MB limit per file for efficiency. A "History" button lets them revisit past uploads. At the same time, the vibrant "YouTube Transcript Extractor" section stands out in red, users paste a video URL (like youtube.com or youtu.be), hit "Extract Transcript," and the system pulls, saves, and embeds the transcript. Once uploaded, an AI agent springs to life: users can chat directly about the content, asking questions such as "Summarise the key findings in this PDF" or 
-    "What does the transcript say about market trends?" The agent draws from the embedded data in Supabase, providing accurate, cited responses. Plus, transcripts can be downloaded for offline use, closing the loop from input to output.</p>
+    <p></p>
+    <p></p>
     <h3>The Triumph of Transformation: Empowering Everyday Heroes</h3>
-    <p>In the end, Talkument AI emerges as a game-changer, transforming solitary data struggles into collaborative conversations. No more silos of information, users now upload a report, query its depths effortlessly, or extract a video's essence without watching hours of content. As a data analyst, this project solves my core pain points: accelerating insight extraction, reducing errors from manual transcription, and enabling scalable analysis for teams. The purpose shines through: to bridge the human-AI divide, making advanced tools accessible so anyone can unlock document potential without coding expertise. 
-        Imagine a world where analysts reclaim hours for creative problem-solving, businesses make faster decisions, and learning from videos becomes instantaneous. Talkument AI isn't just an app; it's a catalyst for efficiency, proving that with smart automation like n8n and AI agents, we can converse with data as naturally as with a colleague. And so, the story continues, advancing toward more sophisticated automation in the role of a data analyst.</p>
+    <p>.</p>
 
 
 </div>
