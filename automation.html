@@ -66,30 +66,30 @@
     }
 
     .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* was 250px */
-  gap: 1.5rem;
-  padding: 2rem;
-  justify-items: center;
-}
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      justify-items: stretch;
+      align-items: stretch;
+    }
 
-.project-card {
-  background: #cce8f3;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 370px; /* slightly taller */
-  max-width: 320px;  /* was 280px */
-}
+    .project-card {
+      background: #cce8f3;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-width: 320px;
+      height: 100%;
+    }
 
-.project-card img {
-  width: 100%;
-  height: 190px; /* slightly bigger image */
-  object-fit: cover;
-}
+    .project-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
 
     .content {
       padding: 1rem;
@@ -175,11 +175,13 @@
 
   <!-- Projects Grid -->
   <div class="projects-grid">
+    
+    <!-- Project 1 -->
     <div class="project-card">
       <img src="images/artificial-intelligence-png-29.png" alt="Talkument" />
       <div class="content">
         <h3>Talkument AI</h3>
-        <p>Talkument AI, leveraging AI agents and n8n automation to streamline the extraction, embedding, and conversational analysis of insights from uploaded documents and YouTube transcripts, enhancing efficiency in data-driven decision-making.</p>
+        <p>Talkument AI leverages AI agents and n8n automation to streamline the extraction, embedding, and conversational analysis of insights from uploaded documents and YouTube transcripts, enhancing efficiency in data-driven decision-making.</p>
         <div class="tool-icons">
           <span class="tool-label">Tools:</span>
           <img src="images/webhook.png" alt="webhook" title="webhook" />
@@ -188,15 +190,14 @@
           <img src="images/n8n logo.png" alt="n8n" title="n8n" />
           <img src="images/artificial-intelligence (1).png" alt="OpenAI" title="OpenAI" />
           <img src="images/postgre.png" alt="Postgre" title="Postgre" />
-          </div>
+        </div>
         <a href="talkumentai.html">View Project</a>
       </div>
     </div>
 
-
-    <div class="projects-grid">
+    <!-- Project 2 -->
     <div class="project-card">
-      <img src="Workplace.jpg" alt="Talkument" />
+      <img src="Workplace.jpg" alt="Workforce AI" />
       <div class="content">
         <h3>Workforce AI</h3>
         <p>This project introduces WorkforceAI, an innovative application that leverages real-time data and AI-powered simulations to optimise staffing, forecast demand, and enhance customer service performance across multiple communication channels.</p>
@@ -204,6 +205,6 @@
       </div>
     </div>
 
-    
+  </div>
 </body>
-</html
+</html>
