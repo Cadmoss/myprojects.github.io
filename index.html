@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWMH92PQ0G"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZWMH92PQ0G');
-  </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWMH92PQ0G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZWMH92PQ0G');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Michael Afolayan's Data Analyst Portfolio showcasing projects in Excel, SQL, Power BI, Python, and Automation">
   <title>Michael Afolayan | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
   <style>
     * {
       margin: 0;
@@ -26,12 +28,12 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #bbcfee, #e4ebf5);
-      color: #333;
-      line-height: 1.6;
-    }
+   body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom right, #bbcfee, #e4ebf5);
+  color: #333;
+  line-height: 1.6;
+}
 
     header {
       background: #0a192f;
@@ -40,22 +42,22 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
 
-    header h2 {
-      margin: -0.3rem 0 0.5rem 0;
-      font-size: 1.4rem;
-      line-height: 1.1;
-    }
+header h2 {
+  margin: -0.3rem 0 0.5rem 0; /* pull it closer to h1 */
+  font-size: 1.4rem;
+  line-height: 1.1;
+}
 
-    header p {
-      margin: 0;
-      color: #8892b0;
-      font-size: 1.2rem;
-    }
+header p {
+  margin: 0;
+  color: #8892b0;
+  font-size: 1.2rem;
+}
 
     nav {
       background: #112240;
@@ -72,26 +74,26 @@
     }
 
     nav {
-      background: #112240;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem;
-      flex-direction: row;
-    }
+  background: #112240;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  flex-direction: row;
+}
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      nav a {
-        font-size: 1rem;
-        padding: 0.5rem 0;
-      }
-    }
+  nav a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
 
     .container {
       padding: 1rem;
@@ -110,7 +112,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-bottom: 2rem; /* Reduced from 4rem */
+      margin-bottom: 4rem;
     }
 
     .project-card {
@@ -147,7 +149,6 @@
       background: #e0f7fa;
       padding: 2rem;
       border-radius: 10px;
-      margin-bottom: 1rem; /* Reduced to decrease spacing */
     }
 
     .about-me p {
@@ -160,24 +161,23 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       max-width: 900px;
-      margin: 0 auto 2rem; /* Reduced from 4rem */
+      margin: 0 auto 4rem;
       font-size: 1rem;
       line-height: 1.7;
       color: #333;
     }
 
     footer {
-      text-align: center;
-      padding: 1rem;
-      background: #0a192f;
-      color: #8892b0;
-    }
-
+  text-align: center;
+  padding: 1rem; /* Reduced from 2rem 1rem */
+  background: #0a192f;
+  color: #8892b0;
+}
     .icons a {
-      margin: 0 8px;
-      color: #64ffda;
-      font-size: 1.2rem;
-    }
+  margin: 0 8px; /* Reduced from 10px */
+  color: #64ffda;
+  font-size: 1.2rem; /* Reduced from 1.5rem */
+}
 
     .about-flex {
       display: flex;
@@ -200,483 +200,610 @@
       max-width: 700px;
     }
 
-    /* Back to Top Button - Centered */
-    .back-to-top {
-      position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 42px;
-      height: 42px;
-      background-color: transparent;
-      color: #64ffda;
-      border: 2px solid #64ffda;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 16px;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 999;
-      opacity: 0;
-      visibility: hidden;
-    }
+/* Back to Top Button - Centered */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+  color: #64ffda;
+  border: 2px solid #64ffda;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+}
 
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
 
-    .back-to-top:hover {
-      background-color: #64ffda;
-      color: #0a192f;
-      transform: translate(-50%, -4px);
-    }
+.back-to-top:hover {
+  background-color: #64ffda;
+  color: #0a192f;
+  transform: translate(-50%, -4px);
+}
 
-    /* Swiper Container */
-    .swiper {
-      width: 95%;
-      max-width: 1100px;
-      aspect-ratio: 16 / 9;
-      margin: 1rem auto 0 auto;
-      border-radius: 10px;
-      overflow: hidden;
-      background: transparent;
-    }
+/* Swiper Container */
+.swiper {
+  width: 95%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
+  margin: 1rem auto 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+}
 
-    .carousel-row {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin: 1rem auto; /* Reduced from 2rem */
-      max-width: 1200px;
-      padding: 1rem;
-    }
+.carousel-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
 
-    .carousel-block {
-      flex: 1;
-      max-width: 600px;
-      aspect-ratio: 16 / 9;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: transparent;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+.left-content {
+  flex: 1;
+  min-width: 250px;
+  max-width: 500px;
+  background: #070707;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .n8n-carousel {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 10px;
-      background: transparent;
-    }
+.swiper.mySwiper {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+}
 
-    .n8n-slides {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease;
-    }
+/* TOP NAV */
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #687180;
+  position: relative;
+  z-index: 999;
+}
 
-    .n8n-slide {
-      min-width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      text-align: center;
-    }
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-    .n8n-slide img {
-      object-fit: contain;
-      max-height: 100%;
-      width: 100%;
-      display: block;
-    }
+.tools-icon {
+  width: 32px;
+  height: 32px;
+  filter: brightness(1.6);
+}
 
-    .n8n-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 10px;
-    }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 2rem;
+  background-color: #0a192f;
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
 
-    .n8n-dots button {
-      width: 10px;
-      height: 10px;
-      background: #ccc;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+.dropdown-content a {
+  color: #64ffda;
+  padding: 0.75rem 1rem;
+  display: block;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
 
-    .n8n-dots button.active {
-      background: #64ffda;
-    }
+.dropdown-content a:hover {
+  background-color: #1c2e45;
+}
 
-    .swiper.mySwiper {
-      flex: 1;
-      min-width: 300px;
-      max-width: 600px;
-      aspect-ratio: 16 / 9;
-      border-radius: 10px;
-      overflow: hidden;
-      background: transparent;
-      box-shadow: none;
-    }
+.dropdown.show .dropdown-content {
+  display: block;
+}
 
-    /* TOP NAV */
-    .top-nav {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #687180;
-      position: relative;
-      z-index: 999;
-    }
+/* CENTERED NAV */
+.centered-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #0a192f;
+  padding: 1rem 0;
+}
 
-    .dropbtn {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+.centered-nav a {
+  color: #64ffda;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+}
 
-    .tools-icon {
-      width: 32px;
-      height: 32px;
-      filter: brightness(1.6);
-    }
+.centered-nav a:hover {
+  text-decoration: underline;
+}
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 2rem;
-      background-color: #0a192f;
-      border-radius: 8px;
-      min-width: 160px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-    }
+/* Responsive */
+@media (max-width: 768px) {
+  .top-nav {
+    justify-content: center;
+  }
 
-    .dropdown-content a {
-      color: #64ffda;
-      padding: 0.75rem 1rem;
-      display: block;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
+  .dropdown-content {
+    top: 58px;
+    right: 1rem;
+    width: 100%;
+    border-radius: 0;
+  }
+}
 
-    .dropdown-content a:hover {
-      background-color: #1c2e45;
-    }
+@media (max-width: 768px) {
+  .carousel-layout {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .dropdown.show .dropdown-content {
-      display: block;
-    }
+  .left-content,
+  .swiper.mySwiper {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
-    /* CENTERED NAV */
-    .centered-nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background-color: #0a192f;
-      padding: 1rem 0;
-      margin-bottom: 1rem; /* Added to separate from carousel */
-    }
+@media (max-width: 768px) {
+  .n8n-carousel {
+    width: 100%;
+    min-height: 240px;
+  }
 
-    .centered-nav a {
-      color: #64ffda;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1rem;
-    }
+  .n8n-slide img {
+    max-height: 180px;
+    object-fit: contain;
+  }
 
-    .centered-nav a:hover {
-      text-decoration: underline;
-    }
+  .n8n-slide {
+    padding: 1rem 0.5rem;
+  }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .top-nav {
-        justify-content: center;
-      }
+  .carousel-row {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .dropdown-content {
-        top: 58px;
-        right: 1rem;
-        width: 100%;
-        border-radius: 0;
-      }
+  .carousel-block {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
-      .carousel-row {
-        flex-direction: column;
-        align-items: center;
-      }
+.align-fix {
+  margin-top: -8px; /* Try -8px or -16px if needed */
+}
 
-      .carousel-block,
-      .swiper.mySwiper {
-        max-width: 100%;
-        height: auto;
-      }
+.carousel-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
 
-      .n8n-carousel {
-        width: 100%;
-        min-height: 240px;
-      }
+.carousel-block {
+  flex: 1;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #070707;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-      .n8n-slide img {
-        max-height: 180px;
-        object-fit: contain;
-      }
+.n8n-slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-      .n8n-slide {
-        padding: 1rem 0.5rem;
-      }
-    }
+.carousel-container,
+.swiper.mySwiper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
 
-    .align-fix {
-      margin-top: -8px;
-    }
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 
-    /* Swiper Slides */
-    .swiper-slide {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.carousel-slides img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
 
-    .swiper-slide img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      display: block;
-    }
+/* Dots only */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  gap: 8px;
+}
 
-    /* Pagination Dots */
-    .swiper-pagination-bullet {
-      background: #64ffda;
-      opacity: 0.6;
-    }
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    .swiper-pagination-bullet-active {
-      background: #0a192f;
-      opacity: 1;
-    }
+.carousel-dots button.active {
+  background: #306998;
+}
 
-    /* Hide arrows by default */
-    .swiper-button-next,
-    .swiper-button-prev {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
 
-    /* Show arrows on hover */
-    .swiper:hover .swiper-button-next,
-    .swiper:hover .swiper-button-prev {
-      opacity: 1;
-    }
+/* Slide */
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .tool-icons {
-      margin-top: 8px;
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+/* Images */
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
-    .tool-icons img {
-      width: 32px !important;
-      height: 32px !important;
-      object-fit: contain;
-      display: inline-block;
-      margin-right: 4px;
-      vertical-align: middle;
-    }
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  background: #64ffda;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  background: #0a192f;
+  opacity: 1;
+}
 
-    .tool-icons img:hover {
-      transform: scale(1.1);
-      opacity: 1;
-    }
+/* Hide arrows by default */
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-    img, body {
-      -webkit-user-select: none;
-      user-select: none;
-      -webkit-user-drag: none;
-    }
+/* Show arrows on hover */
+.swiper:hover .swiper-button-next,
+.swiper:hover .swiper-button-prev {
+  opacity: 1;
+}
 
-    .tabs {
-      margin-top: 1rem;
-    }
+.tool-icons {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    .tab-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 1.5rem;
-    }
+.tool-icons img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+}
 
-    .tab-button {
-      padding: 10px 18px;
-      background: #00b679;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: transform 0.2s ease, background-color 0.3s ease;
-    }
+.tool-icons img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
 
-    .tab-button:hover {
-      background-color: #009e65;
-      transform: scale(1.08);
-    }
+.n8n-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111;
+}
 
-    .tab-button.active {
-      background-color: #64ffda;
-      color: #0a192f;
-    }
+.n8n-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
-    .tab-button.hidden {
-      display: none;
-    }
+.n8n-slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
 
-    .tab-content {
-      display: none;
-    }
+.n8n-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fafafa;
+}
 
-    .tab-content.active {
-      display: block;
-    }
+.n8n-slide img {
+  flex: 1 1 auto;
+  object-fit: contain;
+  max-height: 100%;
+  width: 100%;
+  display: block;
+}
 
-    .tab-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-      align-items: center;
-    }
+.caption {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  background: #1a1a1a;
+}
 
-    .tab-image img {
-      max-width: 400px;
-      width: 100%;
-      height: auto;
-      cursor: zoom-in;
-      transition: transform 0.3s ease;
-    }
+.n8n-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
 
-    /* Fullscreen overlay */
-    #img-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.85);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
+.n8n-dots button {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-    #img-overlay img {
-      width: 100vw;
-      height: auto;
-      max-width: none;
-      max-height: none;
-      cursor: zoom-out;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
+.n8n-dots button.active {
+  background: #64ffda;
+}
 
-    .tab-image:hover img {
-      transform: scale(1.15);
-      cursor: zoom-out;
-    }
+img, body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
 
-    /* Mobile adjustments */
-    @media (max-width: 600px) {
-      .tab-image img {
-        max-width: 100%;
-      }
-    }
+.tabs {
+  margin-top: 1rem;
+}
 
-    @media (max-width: 768px) {
-      .tab-inner {
-        flex-direction: column;
-      }
-    }
-  </style>
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* reduce or increase spacing as needed */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+/* Fullscreen overlay */
+#img-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#img-overlay img {
+  width: 100vw;        /* fill full screen width */
+  height: auto;        /* keep proportions */
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+
+.tab-image:hover img {
+  transform: scale(1.15); /* zoom in */
+  cursor: zoom-out;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .tab-image img {
+    max-width: 100%; /* full width on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-inner {
+    flex-direction: column;
+  }
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab-button {
+  padding: 10px 18px;
+  background: #00b679;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #009e65;
+  transform: scale(1.08);
+}
+
+.tab-button.hidden {
+  display: none;
+}
+
+</style>
+
 </head>
 
 <body id="top" oncontextmenu="return false;">
+
   <header>
     <h1>Michael Afolayan</h1>
     <h2>Data Analyst</h2>
-    <p>Excel · SQL · Power BI · Tableau · Microsoft Project · Python · Automation</p>
+    <p> Excel · SQL · Power BI · Tableau · Microsoft Project · Python · Automation</p>
   </header>
 
   <!-- TOOLS DROPDOWN NAVIGATION (Top Right) -->
-  <nav class="top-nav">
-    <div class="dropdown">
-      <button onclick="toggleDropdown()" class="dropbtn" aria-label="Tools menu">
-        <img src="images/menu.png" alt="Tools Icon" class="tools-icon" />
-      </button>
-      <div id="dropdownContent" class="dropdown-content">
-        <a href="excelproject.html">Excel</a>
-        <a href="SQLProjects.html">SQL</a>
-        <a href="PowerBiProject.html">Power BI</a>
-        <a href="pythonproject.html">Python</a>
-        <a href="automation.html">Automation</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- CENTERED LINKS (About / Background / Contact) -->
-  <nav class="centered-nav">
-    <a href="#about">About</a>
-    <a href="#background">Background</a>
-    <a href="#Contact">Contact</a>
-  </nav>
-
-  <!-- Carousels -->
-  <div class="carousel-row">
-    <!-- n8n Carousel -->
-    <div class="carousel-block">
-      <div class="n8n-carousel" role="region" aria-label="n8n Workflow Carousel">
-        <div class="n8n-slides">
-          <div class="n8n-slide">
-            <img src="images/Agent AI.PNG" alt="Talkument AI n8n Workflow Diagram 1">
-          </div>
-          <div class="n8n-slide">
-            <img src="images/Agent AI2.PNG" alt="Talkument AI n8n Workflow Diagram 2">
-          </div>
-        </div>
-        <div class="n8n-dots"></div>
-      </div>
-    </div>
-    <!-- Swiper Dashboard Carousel -->
-    <div class="swiper mySwiper align-fix">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/Cafe Harm.PNG" alt="Cafe Harmony Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/Provider.PNG" alt="Provider Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/NYC Analysis.PNG" alt="NYC Analysis Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/Trend.PNG" alt="Trend Analysis Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/Details.PNG" alt="Details Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/Shopify PBI.PNG" alt="Shopify Power BI Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/Health9.PNG" alt="Health Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/Capture 2.PNG" alt="Capture 2 Dashboard" /></div>
-        <div class="swiper-slide"><img src="images/Capture 1.PNG" alt="Capture 1 Dashboard" /></div>
-      </div>
-      <div class="swiper-pagination"></div>
+<nav class="top-nav">
+  <div class="dropdown">
+    <button onclick="toggleDropdown()" class="dropbtn" aria-label="Tools menu">
+      <img src="images/menu.png" alt="Tools Icon" class="tools-icon" />
+    </button>
+    <div id="dropdownContent" class="dropdown-content">
+      <a href="excelproject.html">Excel</a>
+      <a href="SQLProjects.html">SQL</a>
+      <a href="PowerBiProject.html">Power BI</a>
+      <a href="pythonproject.html">Python</a>
+      <a href="automation.html">Automation</a>
     </div>
   </div>
+</nav>
 
+  <!-- CENTERED LINKS (About / Background / Contact) -->
+<nav class="centered-nav">
+  <a href="#about">About</a>
+  <a href="#background">Background</a>
+  <a href="#Contact">Contact</a>
+</nav>
+
+ 
+<!-- Swiper Carousel -->
+<div class="carousel-row">
+  <!-- n8n container -->
+  <div class="carousel-block">
+   <div class="n8n-carousel">
+  <div class="n8n-slides"> <!-- ✅ NEW wrapper added -->
+    <div class="n8n-slide">
+      <img src="images/Agent AI.PNG" alt="n8n Slide 1">
+      <p class="caption">The diagram illustrates the n8n workflow for Talkument AI, detailing the process of extracting data from files or YouTube URLs, embedding it with AI, and responding via webhooks using a Supabase Vector Store.</p>
+    </div>
+    <div class="n8n-slide">
+      <img src="images/Agent AI2.PNG" alt="n8n Slide 2">
+      <p class="caption">The diagram illustrates the n8n workflow for Talkument AI, detailing the process of extracting data from files or YouTube URLs, embedding it with AI, and responding via webhooks using a Supabase Vector Store.</p>
+    </div>
+  </div>
+  <div class="n8n-dots"></div>
+</div>
+  </div>
+
+  <!-- Swiper dashboard carousel -->
+ <div class="swiper mySwiper align-fix"> <!-- ⬅️ added align-fix -->
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="images/Cafe Harm.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Provider.PNG" /></div>
+    <div class="swiper-slide"><img src="images/NYC Analysis.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Trend.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Details.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Shopify PBI.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Health9.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Capture 2.PNG" /></div>
+    <div class="swiper-slide"><img src="images/Capture 1.PNG" /></div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+</div>
   <div class="container">
     <section id="projects">
       <h2 class="section-title">Projects</h2>
@@ -684,84 +811,91 @@
         <div class="project-card">
           <img src="images/jakub-zerdzicki-jWF_ObPpwzA-unsplash.jpg" alt="Cafe Harmony" />
           <div class="content">
-            <h3>A Strategic Review of Café Harmony's Performance</h3>
+            <h3>A strategic Review of Café Harmony's Performance</h3>
             <p>A detailed Excel-based report on inventory, sales, and customer trends with actionable recommendations.</p>
             <div class="tool-icons">
-              <span class="tool-label"><b>Tools Used:</b></span>
-              <img src="images/icons8-microsoft-excel-48.png" alt="Excel" title="Excel">
-            </div>
+          <span class="tool-label"><b>Tools Used:</b></span>
+          <img src="images/icons8-microsoft-excel-48.png" alt="Excel" title="Excel">
+          </div>
             <a href="Cafe.Analysis.html">View Project</a>
           </div>
         </div>
+
         <div class="project-card">
           <img src="images/alesia-kazantceva-iYoAPaSPBKI-unsplash.jpg" alt="Shopify Sales Report" />
           <div class="content">
             <h3>E-Commerce by the Numbers: Shopify Sales Report</h3>
-            <p>Using Power BI, I used Shopify sales data, performed data cleaning and transformation in Power Query, and built a relational data model.</p>
-            <div class="tool-icons">
-              <span class="tool-label"><b>Tools Used:</b></span>
-              <img src="images/icons8-microsoft-excel-48.png" alt="Excel" title="Excel">
-              <img src="images/PowerBI.png" alt="Power BI" title="Power BI">
-            </div>
+            <p>Using Power BI, I used Shopify sales data, performed data cleaning and transformation in Power Query, and built a relational data model. </p>
+          <div class="tool-icons">
+          <span class="tool-label"><b>Tools Used:</b></span>
+          <img src="images/icons8-microsoft-excel-48.png" alt="Excel" title="Excel">
+          <img src="images/PowerBI.png" alt="Power BI" title="Power BI">
+          </div>
             <a href="Shopify.html">View Project</a>
           </div>
         </div>
+
         <div class="project-card">
           <img src="images/online-marketing-hIgeoQjS_iE-unsplash.jpg" alt="Healthcare Financial Analysis" />
           <div class="content">
             <h3>Healthcare Economics: A Comprehensive Review of Medical Metrics</h3>
-            <p>Explore the fascinating world of healthcare economics, where financial trends and provider insights weave a compelling narrative of resilience and innovation.</p>
+            <p>Explore the fascinating world of healthcare economics, where financial trends and provider insights weave a compelling narrative of resilience and innovation. Uncover hidden challenges and opportunities that shape the future of medical care in this captivating review.</p>
             <div class="tool-icons">
-              <span class="tool-label"><b>Tools Used:</b></span>
-              <img src="images/PowerBI.png" alt="Power BI" title="Power BI">
-            </div>
+          <span class="tool-label"><b>Tools Used:</b></span>
+          <img src="images/PowerBI.png" alt="Power BI" title="Power BI">
+          </div>
             <a href="Healthcare.html">View Project</a>
           </div>
         </div>
-        <div class="project-card">
-          <img src="images/su-salud-ydrlq08RGSw-unsplash.jpg" alt="NovaMed Solutions Dashboard" />
+
+          <div class="project-card">
+          <img src="images/su-salud-ydrlq08RGSw-unsplash.jpg" alt="Healthcare Financial Analysis" />
           <div class="content">
-            <h3>NovaMed Solutions: Sales & Customer Performance Dashboard</h3>
-            <p>I developed an interactive Power BI dashboard for NovaMed Solutions to track pharmaceutical sales and customer performance.</p>
-            <div class="tool-icons">
-              <span class="tool-label"><b>Tools Used:</b></span>
-              <img src="images/PowerBI.png" alt="Power BI" title="Power BI">
-            </div>
+            <h3>NovaMed Solutions: Sales & Customer Performance Dashboard </h3>
+            <p>I developed an interactive Power BI dashboard for NovaMed Solutions to track pharmaceutical sales and customer performance, delivering real-time insights into revenue trends, product performance, and regional metrics to support data-driven decisions.</p>
+             <div class="tool-icons">
+          <span class="tool-label"><b>Tools Used:</b></span>
+          <img src="images/PowerBI.png" alt="Power BI" title="Power BI">
+          </div>
             <a href="NovaMed.html">View Project</a>
           </div>
         </div>
+
         <div class="project-card">
           <img src="images/jakub-zerdzicki-_c-ZfHMlrWc-unsplash.jpg" alt="Loan Spark Analytics" />
           <div class="content">
-            <h3>Loan Spark Analysis</h3>
-            <p>I performed this analysis using Python to evaluate a 550-row dataset, forecasting loan approval probabilities with tools such as pandas and scikit-learn.</p>
-            <div class="tool-icons">
-              <span class="tool-label"><b>Tools Used:</b></span>
-              <img src="images/icons8-python-50.png" alt="Python" title="Python">
-              <img src="images/icons8-pandas-48.png" alt="Pandas" title="Pandas">
-            </div>
+            <h3>Loan Spark Analysis </h3>
+            <p>I performed this analysis using Python to evaluate a 550-row dataset, forecasting loan approval probabilities with tools such as pandas and scikit-learn</p>
+             <div class="tool-icons">
+          <span class="tool-label"><b>Tools Used:</b></span>
+          <img src="images/icons8-python-50.png" alt="Python" title="Python">
+          <img src="images/icons8-pandas-48.png" alt="Pandas" title="Pandas">
+          </div>
             <a href="LoanSparkAnalytics.html">View Project</a>
           </div>
         </div>
-        <div class="project-card">
+
+          <div class="project-card">
           <img src="images/artificial-intelligence-png-29.png" alt="Talkument AI" />
           <div class="content">
-            <h3>Talkument AI</h3>
-            <p>Talkument AI, leveraging AI agents and n8n automation to streamline the extraction, embedding, and conversational analysis of insights.</p>
-            <div class="tool-icons">
-              <span class="tool-label"><b>Tools Used:</b></span>
-              <img src="images/webhook.png" alt="Webhook" title="Webhook" />
-              <img src="images/code.png" alt="Code" title="Code" />
-              <img src="images/data-transformation.png" alt="File Extract" title="File Extract" />
-              <img src="images/n8n logo.png" alt="n8n" title="n8n" />
-              <img src="images/artificial-intelligence (1).png" alt="OpenAI" title="OpenAI" />
-              <img src="images/postgre.png" alt="PostgreSQL" title="PostgreSQL" />
-            </div>
+            <h3>Talkument AI </h3>
+            <p>Talkument AI, leveraging AI agents and n8n automation to streamline the extraction, embedding, and conversational analysis of insights from uploaded documents and YouTube transcripts, enhancing efficiency in data-driven decision-making.</p>
+             <div class="tool-icons">
+          <span class="tool-label"><b>Tools Used:</b></span>
+          <img src="images/webhook.png" alt="webhook" title="webhook" />
+          <img src="images/code.png" alt="code" title="code" />
+          <img src="images/data-transformation.png" alt="File Extract" title="File Extract" />
+          <img src="images/n8n logo.png" alt="n8n" title="n8n" />
+          <img src="images/artificial-intelligence (1).png" alt="OpenAI" title="OpenAI" />
+          <img src="images/postgre.png" alt="Postgre" title="Postgre" />
+          </div>
             <a href="talkumentai.html">View Project</a>
           </div>
         </div>
+
+        
         <div class="project-card">
-          <img src="images/jack-baxter-L7Z8LGeNEJw-unsplash.jpg" alt="Project Archive" />
+          <img src="images/jack-baxter-L7Z8LGeNEJw-unsplash.jpg" alt="Project Archive"/>
           <div class="content">
             <a href="Archive.html" class="btn">View Project Archive</a>
           </div>
@@ -769,84 +903,96 @@
       </div>
     </section>
 
-    <section id="data-topics">
-      <h2 class="section-title">Key Topics in Data Analytics & Automation</h2>
-      <div class="tabs">
-        <div class="tab-buttons">
-          <button class="tab-button active" onclick="openTab(event, 'automation')">Automation</button>
-          <button class="tab-button" onclick="openTab(event, 'modeling')">Data Modeling</button>
-          <button class="tab-button" onclick="openTab(event, 'ETL')">ETL</button>
-          <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
-          <button class="tab-button" onclick="openTab(event, 'API')">API</button>
-          <button class="tab-button" onclick="openTab(event, 'Vibe Coding')">Vibe Coding</button>
-          <button class="tab-button" onclick="openTab(event, 'Workflow')">Workflow</button>
-          <button class="tab-button" onclick="openTab(event, 'RAG SYSTEM')">RAG SYSTEM</button>
-        </div>
-        <div class="tab-content active" id="automation">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/Intelligent Automation2.PNG" alt="Automation" />
-            </div>
-          </div>
-        </div>
-        <div class="tab-content" id="modeling">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/Data Modelling2.PNG" alt="Data Modeling" id="zoomable-img" />
-            </div>
-          </div>
-        </div>
-        <div class="tab-content" id="ETL">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/ETL2.PNG" alt="ETL" />
-            </div>
-          </div>
-        </div>
-        <div class="tab-content" id="scraping">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/Webscrapping.PNG" alt="Web Scraping" />
-            </div>
-          </div>
-        </div>
-        <div class="tab-content" id="API">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/API2.PNG" alt="API" />
-            </div>
-          </div>
-        </div>
-        <div class="tab-content" id="Vibe Coding">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/vibecoding.PNG" alt="Vibe Coding" />
-            </div>
-          </div>
-        </div>
-        <div class="tab-content" id="Workflow">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/workflow2.PNG" alt="Workflow" />
-            </div>
-          </div>
-        </div>
-        <div class="tab-content" id="RAG SYSTEM">
-          <div class="tab-inner">
-            <div class="tab-image">
-              <img src="images/Rag2.PNG" alt="RAG SYSTEM" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
+    <section id="data-topics" style="margin-bottom: 4rem;">
+  <h2 class="section-title">Key Topics in Data Analytics & Automation</h2>
+
+  <div class="tabs">
+    <div class="tab-buttons">
+      <button class="tab-button active" onclick="openTab(event, 'automation')">Automation</button>
+      <button class="tab-button" onclick="openTab(event, 'modeling')">Data Modeling</button>
+      <button class="tab-button" onclick="openTab(event, 'ETL')">ETL</button>
+      <button class="tab-button" onclick="openTab(event, 'scraping')">Web Scraping</button>
+      <button class="tab-button" onclick="openTab(event, 'API')">API</button>
+      <button class="tab-button" onclick="openTab(event, 'Vibe Coding')">Vibe Coding</button>
+      <button class="tab-button" onclick="openTab(event, 'Workflow')">Workflow</button>
+      <button class="tab-button" onclick="openTab(event, 'RAG SYSTEM')">RAG SYSTEM</button>
+    </div>
+
+    <!-- TAB CONTENTS -->
+
+    <div class="tab-content active" id="automation">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/Intelligent Automation2.PNG" alt="Automation" />
+        </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="modeling">
+  <div class="tab-inner">
+    <div class="tab-image">
+  <img src="images/Data Modelling2.PNG" alt="Data Modeling" id="zoomable-img" />
+</div>
+  </div>
+</div>
+
+    <div class="tab-content" id="ETL">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/ETL2.PNG" alt="ETL" />
+        </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="scraping">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/Webscrapping.PNG" alt="Web Scraping" />
+        </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="API">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/API2.PNG" alt="API" />
+        </div>
+        </div>
+    </div>
+
+     <div class="tab-content" id="Vibe Coding">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/vibecoding.PNG" alt="Vibe Coding" />
+        </div>
+        </div>
+    </div>
+
+     <div class="tab-content" id="Workflow">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/workflow2.PNG" alt="Workflow" />
+        </div>
+        </div>
+    </div>
+
+         <div class="tab-content" id="RAG SYSTEM">
+      <div class="tab-inner">
+        <div class="tab-image">
+          <img src="images/Rag2.PNG" alt="RAG SYSTEM" />
+        </div>
+        </div>
+    </div>
+
+  </div>
+</section>
     <section id="about">
       <h2 class="section-title">About Me</h2>
       <div class="about-me about-flex">
         <img src="images/Michael.jpeg" alt="Michael Afolayan" class="profile-pic" />
         <div class="about-text">
-          <p>I am Michael, a Data Analyst passionate about transforming raw data into actionable insights. My journey began in data entry at a manufacturing firm, evolving into expertise in Excel, SQL, Power BI, Tableau, Microsoft Project, and Data Storytelling.</p>
+          <p>I am Michael, a Data Analyst passionate about transforming raw data into actionable insights. My journey began in data entry at a manufacturing firm, evolving into expertise in Excel, SQL, Power BI, Tableau, Microsoft Project, and Data Storytelling. Through my portfolio, I showcase projects that demonstrate my ability to extract, clean, analyze, and visualize data to drive business decisions. I am eager to learn, tackle complex challenges, and empower organizations with data-driven solutions.</p>
         </div>
       </div>
     </section>
@@ -854,259 +1000,316 @@
     <section id="background">
       <h2 class="section-title">Background</h2>
       <div class="background-box">
-        <p>With six years of experience in various data-related roles, including data entry, data management, data administration, and data analysis, I bring a well-rounded and practical approach to data work.</p>
-        <p>I am passionate about continuous learning and thrive in environments where data is used to solve real-world problems. My technical skill set includes advanced proficiency in Excel, Power BI, SQL, AI, Robotics, and Automation.</p>
+        <p>With six years of experience in various data-related roles, including data entry, data management, data administration, and data analysis, I bring a well-rounded and practical approach to data work. I have a strong track record in data analysis, data visualization, and storytelling, having led end-to-end analytics projects that span data wrangling, data modelling, ETL procedures and dashboard creation. My work has directly supported strategic decision-making in industries such as engineering, automotive, and retail.</p>
+        <p> I am passionate about continuous learning and thrive in environments where data is used to solve real-world problems. My technical skill set includes advanced proficiency in Excel (PivotTables, Power Query), Power BI (DAX, custom visuals), SQL (joins, CTEs, views), AI, Robotics, and Automation. In addition to my technical capabilities, I bring strong soft skills to the table, including excellent verbal and written communication, strong interpersonal relationships, effective teamwork and collaboration, critical thinking, and sharp attention to detail.</p>
+
         <div style="margin-top: 30px;">
           <h3 style="color: #333;">Education</h3>
           <ul style="list-style-type: disc; padding-left: 20px;">
             <li><strong>B.A in History and International Studies</strong> – University of Ilorin, 2016</li>
-            <li><strong>Certifications:</strong> Scenario Academy: Data Analytics Certificate 2018</li>
-            <li>10Alytics: Data Analytics Certificate</li>
+            <li><strong>Certifications:</strong> Scenario Academy: Data Analytics Certificate 2018. </li>
+              <li>10Alytics: Data Analytics Certificate</li>
           </ul>
         </div>
+
         <div style="margin-top: 30px;">
           <h3 style="color: #333;">Work Experience</h3>
           <ul style="list-style-type: disc; padding-left: 20px;">
-            <li><strong>Data Analyst Consultant</strong> – AMDARI, United Kingdom. 2025 - Present<br /><small>Helping clients make smarter decisions using Power BI, Excel, and SQL.</small></li>
-            <li><strong>BoM Administrator / Release Analyst</strong> – Aston Martin Lagonda / Expleo Group, Gaydon, United Kingdom. 2022 - Present<br /><small>Managed large engineering datasets and improved data accuracy.</small></li>
-            <li><strong>Data Administrator</strong> – Mikano International Limited, Lagos, Nigeria. 2019 - 2022<br /><small>Collaborated to build and launch the company’s e-commerce website.</small></li>
+            <li><strong>Data Analyst Consultant</strong> – AMDARI, United Kingdom. 2025 - Present
+            <br /><small>At AMDARI, I work as a Data Analyst Consultant, helping clients make smarter decisions by turning raw data into clear, actionable insights using tools like Power BI, Excel, and SQL.</small></li>
+            <li><strong>BoM Administrator / Release Analyst</strong> – Aston Martin Lagonda (AML) / Expleo Group, Gaydon, United Kingdom. 2022 - Present
+             <br /><small>As a BoM Administrator and Release Analyst, I managed large engineering datasets and improved data accuracy and entry efficiency by building smart validation tools.</small></li>
+            <li><strong>Data Administrator</strong> – Mikano International Limited, Lagos Nigeria. 2019 - 2022
+            <br /><small>At Mikano International, I collaborated with multiple departments and developers to help build and launch the company’s e-commerce website.</small></li>
           </ul>
         </div>
       </div>
     </section>
+  </div>
 
-    <section style="background-color: #fff3cd; color: #856404; padding: 1.5rem; margin: 0 auto 2rem auto; border-left: 5px solid #ffeeba; max-width: 800px; border-radius: 6px; font-size: 0.95rem;">
-      <p><strong>Disclaimer:</strong> The data used in these projects is entirely fictional or simulated for learning and demonstration purposes.</p>
-    </section>
+<section style="background-color: #fff3cd; color: #856404; padding: 1.5rem; margin: -2rem auto 2rem auto; border-left: 5px solid #ffeeba; max-width: 800px; border-radius: 6px; font-size: 0.95rem;">
+  <p><strong>Disclaimer:</strong> The data used in these projects is entirely fictional or simulated. It has been created solely for learning and demonstration purposes and does not reflect real-world information.</p>
+</section>
 
-    <footer>
-      <p style="font-size: 0.9rem;">Connect with me:</p>
-      <div class="icons">
-        <a href="https://www.linkedin.com/in/michael-afolayann" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
-      <div style="margin-top: 8px; font-size: 0.85rem;">
-        <p>
-          Email: <a href="mailto:michaelcadmoss@gmail.com" style="color: #64ffda;">michaelcadmoss@gmail.com</a> |
-          Phone: <a href="tel:+447876159834" style="color: #64ffda;">+447876159834</a>
-        </p>
-      </div>
-      <p style="margin-top: 8px; font-size: 0.8rem;">&copy; 2025 Michael Afolayan</p>
-    </footer>
+  <footer>
+  <p style="font-size: 0.9rem;">Connect with me:</p>
+  <div class="icons">
+    <a href="https://www.linkedin.com/in/michael-afolayann" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-github"></i></a>
+  </div>
+  <div style="margin-top: 8px; font-size: 0.85rem;">
+    <p>
+      Email: <a href="mailto:michaelcadmoss@gmail.com" style="color: #64ffda;">michaelcadmoss@gmail.com</a> |
+      Phone: <a href="tel:+447876159834" style="color: #64ffda;">+447876159834</a>
+    </p>
+  </div>
+  <p style="margin-top: 8px; font-size: 0.8rem;">&copy; 2025 Michael Afolayan</p>
+</footer>
 
-    <!-- Back to Top Button -->
-    <a href="#top" class="back-to-top" title="Back to Top">
-      <i class="fas fa-arrow-up"></i>
-    </a>
+  <!-- Back to Top Button -->
+ <a href="#top" class="back-to-top" title="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</a>
 
-    <!-- Chat Box -->
-    <div id="popup-chat" style="display: none; position: fixed; bottom: 30px; right: 30px; width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; overflow: hidden; font-family: 'Roboto', sans-serif;">
-      <div style="background: #0a192f; color: #64ffda; padding: 12px 16px; font-weight: bold;">
-        👋 Hi there!
-      </div>
-      <div style="padding: 12px; font-size: 0.95rem; color: #333;">
-        <p>I'm Michael. How can I help you explore my portfolio today?</p>
-        <p style="margin-top: 10px;">
-          You can also <a href="https://www.linkedin.com/in/michael-afolayann" target="_blank" style="color: #0a192f; font-weight: bold; text-decoration: underline;">connect with me on LinkedIn</a>.
-        </p>
-        <form id="chat-form" action="https://formspree.io/f/xqalpgrk" method="POST" style="margin-top: 10px;">
-          <input type="hidden" name="_subject" value="New Portfolio Inquiry">
-          <label for="message" class="sr-only">Your question</label>
-          <textarea name="message" id="message" placeholder="Your question..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; resize: none; font-size: 0.85rem;" rows="3"></textarea>
-          <label for="email" class="sr-only">Your email</label>
-          <input type="email" name="email" id="email" placeholder="Your email (optional)" style="width: 100%; margin-top: 8px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem;" />
-          <button type="submit" style="margin-top: 10px; background: #64ffda; color: #0a192f; border: none; padding: 8px 14px; border-radius: 6px; font-weight: bold; cursor: pointer;">Send</button>
-        </form>
-        <div id="chat-confirmation" style="display: none; margin-top: 10px; color: #0a192f; font-size: 0.9rem;">
-          ✅ Got your message! I’ll get back to you soon.
-        </div>
-        <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
-      </div>
+<script>
+  const backToTopBtn = document.querySelector('.back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  // Show chat popup after 5 seconds
+  window.onload = () => {
+    setTimeout(() => {
+      document.getElementById("popup-chat").style.display = "block";
+    }, 5000); // Delay in milliseconds
+  };
+
+  function closeChat() {
+    document.getElementById("popup-chat").style.display = "none";
+  }
+</script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    speed: 500,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    // No navigation arrows
+  });
+</script>
+
+
+<!-- Chat Box -->
+<div id="popup-chat" style="display: none; position: fixed; bottom: 30px; right: 30px; width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; overflow: hidden; font-family: 'Roboto', sans-serif;">
+  <div style="background: #0a192f; color: #64ffda; padding: 12px 16px; font-weight: bold;">
+    👋 Hi there!
+  </div>
+  <div style="padding: 12px; font-size: 0.95rem; color: #333;">
+    <p>I'm Michael. How can I help you explore my portfolio today?</p>
+
+    <p style="margin-top: 10px;">
+      You can also <a href="https://www.linkedin.com/in/michael-afolayann" target="_blank" style="color: #0a192f; font-weight: bold; text-decoration: underline;">connect with me on LinkedIn</a>.
+    </p>
+
+    <form id="chat-form" action="https://formspree.io/f/xqalpgrk" method="POST" style="margin-top: 10px;">
+      <input type="hidden" name="_subject" value="New Portfolio Inquiry">
+
+      <textarea name="message" placeholder="Your question..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; resize: none; font-size: 0.85rem;" rows="3"></textarea>
+
+      <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; margin-top: 8px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.85rem;" />
+
+      <button type="submit" style="margin-top: 10px; background: #64ffda; color: #0a192f; border: none; padding: 8px 14px; border-radius: 6px; font-weight: bold; cursor: pointer;">Send</button>
+    </form>
+
+    <div id="chat-confirmation" style="display: none; margin-top: 10px; color: #0a192f; font-size: 0.9rem;">
+      ✅ Got your message! I’ll get back to you soon.
     </div>
 
-    <script>
-      const backToTopBtn = document.querySelector('.back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTopBtn.classList.add('show');
-        } else {
-          backToTopBtn.classList.remove('show');
-        }
-      });
+    <button onclick="closeChat()" style="margin-top: 8px; background: none; border: none; color: #aaa; font-size: 0.8rem; cursor: pointer;">Dismiss</button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-      window.onload = () => {
+<script>
+  document.getElementById("chat-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        document.getElementById("chat-confirmation").style.display = "block";
         setTimeout(() => {
-          document.getElementById("popup-chat").style.display = "block";
-        }, 5000);
-      };
-
-      function closeChat() {
-        document.getElementById("popup-chat").style.display = "none";
+          document.getElementById("popup-chat").style.display = "none";
+        }, 4000);
+      } else {
+        alert("Something went wrong.");
       }
-    </script>
+    });
+  });
+</script>
+</script>
 
-    <script>
-      const swiper = new Swiper(".mySwiper", {
-        loop: true,
-        speed: 500,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+<script>
+  function toggleDropdown() {
+    const dropdown = document.querySelector(".dropdown");
+    dropdown.classList.toggle("show");
+  }
+
+  window.onclick = function (e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelector(".dropdown")?.classList.remove("show");
+    }
+  };
+</script>
+
+<script>
+  document.querySelectorAll('.carousel-container').forEach((container) => {
+    const slides = container.querySelector('.carousel-slides');
+    const images = container.querySelectorAll('img');
+    const dotsContainer = container.querySelector('.carousel-dots');
+    let index = 0;
+
+    function createDots() {
+      images.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.addEventListener('click', () => showSlide(i));
+        dotsContainer.appendChild(dot);
       });
-    </script>
+    }
 
-    <script>
-      document.getElementById("chat-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        const form = e.target;
-        fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
-        }).then(response => {
-          if (response.ok) {
-            form.reset();
-            document.getElementById("chat-confirmation").style.display = "block";
-            setTimeout(() => {
-              document.getElementById("popup-chat").style.display = "none";
-            }, 4000);
-          } else {
-            alert("Something went wrong.");
-          }
-        });
+    function updateDots() {
+      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
       });
-    </script>
+    }
 
-    <script>
-      function toggleDropdown() {
-        const dropdown = document.querySelector(".dropdown");
-        dropdown.classList.toggle("show");
-      }
+    function showSlide(i) {
+      index = i;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      updateDots();
+    }
 
-      window.onclick = function(e) {
-        if (!e.target.closest('.dropdown')) {
-          document.querySelector(".dropdown")?.classList.remove("show");
-        }
-      };
-    </script>
+    createDots();
+    showSlide(0);
+  });
+</script>
 
-    <script>
-      document.querySelectorAll('.n8n-carousel').forEach((carousel) => {
-        const slides = carousel.querySelector('.n8n-slides');
-        const slideItems = carousel.querySelectorAll('.n8n-slide');
-        const dotsContainer = carousel.querySelector('.n8n-dots');
-        let currentIndex = 0;
-        let interval;
+<script>
+  document.querySelectorAll('.n8n-carousel').forEach((carousel) => {
+    const slides = carousel.querySelector('.n8n-slides');
+    const slideItems = carousel.querySelectorAll('.n8n-slide');
+    const dotsContainer = carousel.querySelector('.n8n-dots');
+    let currentIndex = 0;
+    let interval;
 
-        slideItems.forEach((_, index) => {
-          const dot = document.createElement('button');
-          dot.addEventListener('click', () => {
-            currentIndex = index;
-            showSlide();
-          });
-          dotsContainer.appendChild(dot);
-        });
-
-        const updateDots = () => {
-          dotsContainer.querySelectorAll('button').forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-          });
-        };
-
-        const showSlide = () => {
-          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-          updateDots();
-        };
-
-        const startAutoSlide = () => {
-          interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % slideItems.length;
-            showSlide();
-          }, 4000);
-        };
-
+    // Create dots
+    slideItems.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.addEventListener('click', () => {
+        currentIndex = index;
         showSlide();
-        updateDots();
-        startAutoSlide();
-
-        // Clear interval on page unload to prevent memory leaks
-        window.addEventListener('unload', () => clearInterval(interval));
       });
-    </script>
+      dotsContainer.appendChild(dot);
+    });
 
-    <script>
-      function openTab(evt, tabId) {
-        const tabs = document.querySelectorAll(".tab-content");
-        const buttons = document.querySelectorAll(".tab-button");
+    const updateDots = () => {
+      dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    };
 
-        tabs.forEach(tab => tab.classList.remove("active"));
-        buttons.forEach(btn => btn.classList.remove("active"));
+    const showSlide = () => {
+      slides.style.transform = 'translateX(-${currentIndex * 100}%);'
+      updateDots();
+    };
 
-        document.getElementById(tabId).classList.add("active");
-        evt.currentTarget.classList.add("active");
-      }
-    </script>
+    const startAutoSlide = () => {
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slideItems.length;
+        showSlide();
+      }, 4000);
+    };
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const tabButtons = document.querySelectorAll(".tab-button");
-        let startIndex = 0;
-        const visibleCount = 6;
-        let hoverTimeout;
+    showSlide();
+    updateDots();
+    startAutoSlide();
+  });
+</script>
 
-        function updateVisibleTabs() {
-          tabButtons.forEach((btn, index) => {
-            btn.classList.toggle("hidden", index < startIndex || index >= startIndex + visibleCount);
-          });
+<script>
+  function openTab(evt, tabId) {
+    const tabs = document.querySelectorAll(".tab-content");
+    const buttons = document.querySelectorAll(".tab-button");
+
+    tabs.forEach(tab => tab.classList.remove("active"));
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabButtons = document.querySelectorAll(".tab-button");
+    let startIndex = 0;
+    const visibleCount = 6;
+    let hoverTimeout;
+
+    function updateVisibleTabs() {
+      tabButtons.forEach((btn, index) => {
+        btn.classList.toggle("hidden", index < startIndex || index >= startIndex + visibleCount);
+      });
+    }
+
+    updateVisibleTabs();
+
+    // Add hover events for first and last visible buttons
+    tabButtons.forEach((btn, index) => {
+      btn.addEventListener("mouseenter", function () {
+        const isFirstVisible = index === startIndex && startIndex > 0;
+        const isLastVisible = index === startIndex + visibleCount - 1 && index < tabButtons.length - 1;
+
+        if (isLastVisible) {
+          hoverTimeout = setTimeout(() => {
+            startIndex += visibleCount;
+            if (startIndex >= tabButtons.length) startIndex = 0; // Loop forward
+            updateVisibleTabs();
+          }, 800); // Delay in ms
+        } else if (isFirstVisible) {
+          hoverTimeout = setTimeout(() => {
+            startIndex -= visibleCount;
+            if (startIndex < 0) startIndex = Math.max(0, tabButtons.length - visibleCount); // Loop backward
+            updateVisibleTabs();
+          }, 800);
         }
-
-        updateVisibleTabs();
-
-        tabButtons.forEach((btn, index) => {
-          btn.addEventListener("mouseenter", function() {
-            const isFirstVisible = index === startIndex && startIndex > 0;
-            const isLastVisible = index === startIndex + visibleCount - 1 && index < tabButtons.length - 1;
-
-            if (isLastVisible) {
-              hoverTimeout = setTimeout(() => {
-                startIndex += visibleCount;
-                if (startIndex >= tabButtons.length) startIndex = 0;
-                updateVisibleTabs();
-              }, 800);
-            } else if (isFirstVisible) {
-              hoverTimeout = setTimeout(() => {
-                startIndex -= visibleCount;
-                if (startIndex < 0) startIndex = Math.max(0, tabButtons.length - visibleCount);
-                updateVisibleTabs();
-              }, 800);
-            }
-          });
-
-          btn.addEventListener("mouseleave", function() {
-            clearTimeout(hoverTimeout);
-          });
-        });
       });
-    </script>
 
-    <script>
-      const img = document.getElementById("zoomable-img");
-      img.addEventListener("click", () => {
-        const overlay = document.createElement("div");
-        overlay.id = "img-overlay";
-        const zoomedImg = document.createElement("img");
-        zoomedImg.src = img.src;
-        overlay.appendChild(zoomedImg);
-        document.body.appendChild(overlay);
-        overlay.addEventListener("click", () => {
-          overlay.remove();
-        });
+      btn.addEventListener("mouseleave", function () {
+        clearTimeout(hoverTimeout);
       });
-    </script>
-  </body>
+    });
+  });
+</script>
+
+<script>
+  const img = document.getElementById("zoomable-img");
+
+  img.addEventListener("click", () => {
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.id = "img-overlay";
+
+    // Create zoomed image
+    const zoomedImg = document.createElement("img");
+    zoomedImg.src = img.src;
+
+    // Add to overlay
+    overlay.appendChild(zoomedImg);
+    document.body.appendChild(overlay);
+
+    // Close when clicked
+    overlay.addEventListener("click", () => {
+      overlay.remove();
+    });
+  });
+</script>
+
+</body>
 </html>
