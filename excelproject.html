@@ -70,44 +70,59 @@
     }
 
     /* PROJECT GRID */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1200px; /* keep it centered */
-      margin: 0 auto;
-      flex: 1;
-    }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ Always 4 per row on desktop */
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1400px; /* keeps it centered and not too wide */
+  margin: 0 auto;
+}
 
-    .project-card {
-      background: #dff7d6;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: transform 0.2s ease;
-    }
+.project-card {
+  background: #dff7d6;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 320px;       /* ✅ fixed height */
+  max-width: 300px;    /* ✅ controls card width */
+  margin: 0 auto;      /* center if smaller than grid cell */
+  transition: transform 0.2s ease;
+}
 
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
+.project-card:hover {
+  transform: translateY(-5px);
+}
 
-    .project-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
+.project-card img {
+  width: 100%;
+  height: 130px;       /* smaller image */
+  object-fit: cover;
+}
 
-    .content {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-    }
+.content {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* ✅ 1 per row on mobile */
+    padding: 1rem;
+  }
+}
 
     h3 {
       margin: 0 0 0.5rem 0;
