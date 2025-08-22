@@ -733,27 +733,32 @@ img, body {
   display: none;
 }
 
-/* Floating chat icon */
+* Floating chat icon */
 #chat-icon {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #4CAF50;
+  background: #4CAF50; /* <-- change this to any color */
   color: #fff;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   z-index: 1000;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 #chat-icon:hover {
   transform: scale(1.1);
+}
+
+/* SVG sizing */
+#chat-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 /* Chat box */
@@ -762,22 +767,29 @@ img, body {
   bottom: 80px;
   right: 20px;
   width: 300px;
-  background: white;
+  background: #fff;
   border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   padding: 15px;
-  display: none; /* hidden by default */
+  display: none;
   z-index: 1000;
+  animation: slideUp 0.3s ease;
 }
 
 /* Close button */
 #chat-box .close-chat {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   float: right;
   cursor: pointer;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 </style>
@@ -1156,17 +1168,30 @@ img, body {
   </script>
   // Show chat popup after 5 seconds
   <script>
+document.addEventListener("DOMContentLoaded", () => {
   const chatIcon = document.getElementById("chat-icon");
   const chatBox = document.getElementById("chat-box");
   const closeChat = document.querySelector(".close-chat");
+  const chatForm = document.getElementById("chat-form");
 
+  // Toggle open/close when clicking icon
   chatIcon.addEventListener("click", () => {
-    chatBox.style.display = "block";
+    chatBox.style.display = chatBox.style.display === "block" ? "none" : "block";
   });
 
+  // Close button
   closeChat.addEventListener("click", () => {
     chatBox.style.display = "none";
   });
+
+  // Example: form submission handling
+  chatForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("userInput").value;
+    alert("You typed: " + input); // replace with your real chatbot logic
+    chatForm.reset();
+  });
+});
 </script>
 
 <script>
@@ -1406,9 +1431,12 @@ img, body {
   });
 </script>
 
-<!-- Floating Chat Icon -->
+!-- Floating Chat Icon -->
 <div id="chat-icon">
-  💬
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M4 4h16v12H5.17L4 17.17V4zm0-2a2 2 0 0 0-2 2v20l4-4h14a2 2 0 0 0 2-2V4a2 
+             2 0 0 0-2-2H4z"/>
+  </svg>
 </div>
 
 <!-- Chat Box -->
