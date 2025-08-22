@@ -733,12 +733,12 @@ img, body {
   display: none;
 }
 
-* Floating chat icon */
+/* Floating chat icon */
 #chat-icon {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #4CAF50; /* <-- change this to any color */
+  background: #4CAF50; /* Change this color */
   color: #fff;
   width: 55px;
   height: 55px;
@@ -751,39 +751,107 @@ img, body {
   z-index: 1000;
   transition: transform 0.3s ease, background 0.3s ease;
 }
-#chat-icon:hover {
-  transform: scale(1.1);
-}
-
-/* SVG sizing */
-#chat-icon svg {
-  width: 28px;
-  height: 28px;
-}
+#chat-icon:hover { transform: scale(1.1); }
+#chat-icon svg { width: 28px; height: 28px; }
 
 /* Chat box */
 #chat-box {
   position: fixed;
   bottom: 80px;
   right: 20px;
-  width: 300px;
+  width: 320px;
+  max-height: 450px;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  padding: 15px;
   display: none;
+  flex-direction: column;
   z-index: 1000;
   animation: slideUp 0.3s ease;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
-/* Close button */
-#chat-box .close-chat {
+/* Header */
+.chat-header {
+  background: #4CAF50;
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+.chat-header-actions {
+  display: flex;
+  gap: 8px;
+}
+.chat-header button {
   background: none;
   border: none;
-  font-size: 20px;
-  float: right;
+  font-size: 18px;
+  color: white;
   cursor: pointer;
+}
+
+/* Settings */
+#chat-settings {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background: #f5f5f5;
+}
+.hidden { display: none; }
+
+/* Messages */
+.chat-messages {
+  padding: 10px;
+  height: 280px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bot-message, .user-message {
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.bot-message {
+  background: #e5e5ea;
+  align-self: flex-start;
+}
+.user-message {
+  background: #4CAF50;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Input */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background: white;
+}
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+.chat-input button {
+  margin-left: 8px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 /* Animation */
@@ -1467,6 +1535,58 @@ document.addEventListener("DOMContentLoaded", () => {
     <button type="submit">➤</button>
   </form>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const chatIcon = document.getElementById("chat-icon");
+  const chatBox = document.getElementById("chat-box");
+  const closeChat = document.querySelector(".close-chat");
+  const chatForm = document.getElementById("chat-form");
+  const chatMessages = document.getElementById("chat-messages");
+  const settingsBtn = document.getElementById("settings-btn");
+  const settingsPanel = document.getElementById("chat-settings");
+
+  // Toggle open/close
+  chatIcon.addEventListener("click", () => {
+    chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatBox.style.display = "none";
+  });
+
+  // Toggle settings panel
+  settingsBtn.addEventListener("click", () => {
+    settingsPanel.classList.toggle("hidden");
+  });
+
+  // Handle form submission
+  chatForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("userInput");
+    const message = input.value.trim();
+    if (message) {
+      // Add user message
+      const userMsg = document.createElement("div");
+      userMsg.classList.add("user-message");
+      userMsg.textContent = message;
+      chatMessages.appendChild(userMsg);
+
+      // Auto-reply (demo)
+      setTimeout(() => {
+        const botMsg = document.createElement("div");
+        botMsg.classList.add("bot-message");
+        botMsg.textContent = "Got it! (demo reply)";
+        chatMessages.appendChild(botMsg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 800);
+
+      input.value = "";
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+});
+</script>
 
 </body>
 </html>
