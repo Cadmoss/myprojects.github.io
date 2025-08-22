@@ -1431,7 +1431,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
-!-- Floating Chat Icon -->
+<!-- Floating Chat Icon -->
 <div id="chat-icon">
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
     <path d="M4 4h16v12H5.17L4 17.17V4zm0-2a2 2 0 0 0-2 2v20l4-4h14a2 2 0 0 0 2-2V4a2 
@@ -1441,9 +1441,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- Chat Box -->
 <div id="chat-box">
-  <button class="close-chat">&times;</button>
-  <h3>Hi 👋</h3>
-  <p>Need help? Let’s chat!</p>
+  <div class="chat-header">
+    <span>Chat Support</span>
+    <div class="chat-header-actions">
+      <button id="settings-btn">⚙</button>
+      <button class="close-chat">&times;</button>
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="chat-settings" class="hidden">
+    <label>
+      <input type="checkbox" id="notifications"> Enable Notifications
+    </label>
+  </div>
+
+  <!-- Chat Messages -->
+  <div class="chat-messages" id="chat-messages">
+    <div class="bot-message">Hi 👋 How can I help you today?</div>
+  </div>
+
+  <!-- Input -->
+  <form id="chat-form" class="chat-input">
+    <input type="text" id="userInput" placeholder="Type your message..." required />
+    <button type="submit">➤</button>
+  </form>
 </div>
 
 </body>
