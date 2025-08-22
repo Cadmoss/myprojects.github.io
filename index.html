@@ -733,6 +733,53 @@ img, body {
   display: none;
 }
 
+/* Floating chat icon */
+#chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+#chat-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Chat box */
+#chat-box {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 15px;
+  display: none; /* hidden by default */
+  z-index: 1000;
+}
+
+/* Close button */
+#chat-box .close-chat {
+  background: none;
+  border: none;
+  font-size: 18px;
+  float: right;
+  cursor: pointer;
+}
+
 </style>
 
 </head>
@@ -1109,14 +1156,17 @@ img, body {
 
   // Show chat popup after 5 seconds
   window.onload = () => {
-    setTimeout(() => {
-      document.getElementById("popup-chat").style.display = "block";
-    }, 5000); // Delay in milliseconds
-  };
+    const chatIcon = document.getElementById("chat-icon");
+  const chatBox = document.getElementById("chat-box");
+  const closeChat = document.querySelector(".close-chat");
 
-  function closeChat() {
-    document.getElementById("popup-chat").style.display = "none";
-  }
+  chatIcon.addEventListener("click", () => {
+    chatBox.style.display = "block";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatBox.style.display = "none";
+  });
 </script>
 
 <script>
@@ -1259,10 +1309,10 @@ img, body {
       });
     };
 
-    const showSlide = () => {
-      slides.style.transform = 'translateX(-${currentIndex * 100}%);'
-      updateDots();
-    };
+  const showSlide = () => {
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  updateDots();
+};
 
     const startAutoSlide = () => {
       interval = setInterval(() => {
@@ -1355,6 +1405,18 @@ img, body {
     });
   });
 </script>
+
+<!-- Floating Chat Icon -->
+<div id="chat-icon">
+  💬
+</div>
+
+<!-- Chat Box -->
+<div id="chat-box">
+  <button class="close-chat">&times;</button>
+  <h3>Hi 👋</h3>
+  <p>Need help? Let’s chat!</p>
+</div>
 
 </body>
 </html>
