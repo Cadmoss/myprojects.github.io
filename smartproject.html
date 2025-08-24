@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Project Progress Tracking: Gantt Charts & Budget Dashboards</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6d4a2;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+
+/* Add space below headings */
+.notes h3 {
+  margin-top: 30px;
+}
+
+/* Add space between bullet points */
+.notes ul {
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.notes ul li {
+  margin-bottom: 10px; /* spacing between bullet points */
+  line-height: 1.6;    /* improves readability */
+}
+
+
+.responsive-chart {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0; /* centers the image and adds space */
+  border-radius: 8px; /* optional: rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* optional: subtle shadow */
+}
+
+    .header {
+      background-color: #095325;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #04a755;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #028e49;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .embed-box {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-bottom: 40px;
+    }
+
+    .embed-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+.notes h3 {
+      margin-top: 30px;
+    }
+
+    .notes ul {
+      margin-left: 20px;
+      padding-left: 10px;
+    }
+
+    .notes ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+  .responsive-chart {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Changed from zoom-in to pointer */
+  transition: transform 0.3s ease;
+}
+
+   .responsive-chart.zoomed {
+  transform: scale(2.5);
+  z-index: 999;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .responsive-chart.zoomed {
+    transform: scale(1.5);
+  }
+}
+
+
+    .fun-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #02240a;
+      border-radius: 10px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #fffefe;
+    }
+
+    .toggle-theme {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .toggle-theme button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #04a755;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    .dark-mode .header {
+      background-color: #056d42;
+    }
+
+    .dark-mode .fun-box {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    .dark-mode .toggle-theme button {
+      background-color: #055f35;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <a href="index.html" class="home-button">HOME</a>
+  </div>
+  <h1>Smart Project Progress Tracking: Gantt Charts & Budget Dashboards</h1>
+  <p>Explore trends, insights & KPIs with Power BI</p>
+</div>
+
+<div class="container">
+
+  <!-- Power BI Embed -->
+  <div class="embed-box">
+    <iframe title="Smart Project Progress Tracking"
+      src=https://app.powerbi.com/reportEmbed?reportId=f6f2fb96-b05c-416c-8f78-8f1e933610dd&autoAuth=true&ctid=79401934-75b9-4f0a-b2e1-6bc24af8c9c9
+      allowFullScreen="true">
+    </iframe>
+  </div>
+
+    <!-- Power BI Direct Link -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://app.powerbi.com/reportEmbed?reportId=f6f2fb96-b05c-416c-8f78-8f1e933610dd&autoAuth=true&ctid=79401934-75b9-4f0a-b2e1-6bc24af8c9c9&actionBarEnabled=true"
+       target="_blank"
+       style="color: #095325; text-decoration: none; font-weight: 600;">
+      🔗 Open in Power BI
+    </a>
+  </div>
+
+ <!-- Toggle Theme Button -->
+  <div class="toggle-theme">
+    <button onclick="toggleTheme()">Toggle Dark Mode</button>
+  </div>
+
+  <!-- YouTube Video Embed -->
+  <div class="embed-box">
+    <iframe title="Smart Project Progress Tracking: Gantt Charts & Budget Dashboards Presentation Video"
+      src="https://www.youtube.com/embed/"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- 📄 Section: Notes + PDF -->
+    <section class="content-section">
+  <h2>Smart Project Progress Tracking: Gantt Charts & Budget Dashboards: Unveiling the Data Story</h2>
+  <div class="notes">
+
+<h3>INSIGHT ENGINE</h3>
+    
+<h3>DATA DICTIONARY</h3>
+   
+
+    <h3>Unravelling the insights</h3>
+   
+    
+    </p>
+    <p>
+    
+</p>
+    <p>
+     
+    </p>
+
+    <h3>Recommendations</h3>
+    <p><ul>
+      <li><b></b></li>
+    </ul>
+    </p>
+    <p><ul>
+      <li><b></b></li>
+    </ul>
+    </p>
+    <p><ul>
+      <li><b></b></li>
+    </ul>
+    </p>
+     <p><ul>
+      <li><b></b></li>
+    </ul>
+    </p>
+    <p><ul>
+      <li><b></b></li>
+    </ul>
+    </p>
+
+
+
+ <!-- PDF Link -->
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="Shopify Sales Report.pdf" target="_blank"
+       style="background-color: #04a755; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+      View PDF Presentation
+    </a>
+  </div>
+
+</div>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+  }
+   document.querySelectorAll('.responsive-chart').forEach(img => {
+    img.addEventListener('click', () => {
+      img.classList.toggle('zoomed');
+    });
+  });
+</script>
+
+</body>
+</html>
