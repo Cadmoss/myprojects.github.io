@@ -196,21 +196,20 @@
   flex-direction: column;
 }
 
-.container {
-  flex: 1; /* pushes footer down */
+main {
+  flex: 1; /* pushes footer to bottom */
 }
 
-    footer {
-  width: 100%;                /* full width */
-  background-color: #095325;  /* same as header */
+/* Footer Styling */
+footer {
+  width: 100%;
+  background-color: #095325;
   color: #fff;
   text-align: center;
   padding: 25px 15px;
   font-size: 0.95rem;
   line-height: 1.6;
-  position: relative;         /* normal flow by default */
-  bottom: 0;
-  left: 0;
+  margin-top: auto; /* makes it stick at bottom */
 }
 
 footer p {
@@ -232,8 +231,6 @@ footer a {
 footer a:hover {
   color: #fff;
 }
-
-
 
   </style>
 </head>
